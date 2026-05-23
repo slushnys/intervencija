@@ -1,0 +1,31 @@
+{
+	# Standalone static-site Caddyfile. The main home-server reverse proxy is intentionally untouched.
+	admin off
+}
+
+:8080 {
+	root * /Users/slusnys/home-server/projects/intervencija-website
+	encode zstd gzip
+
+	@html path / *.html
+	header @html Cache-Control "no-store"
+
+	@assets path *.css *.js *.mjs *.svg *.png *.jpg *.jpeg *.webp *.avif *.ico *.woff *.woff2
+	header @assets Cache-Control "public, max-age=31536000, immutable"
+
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+		X-Frame-Options "SAMEORIGIN"
+		-Server
+	}
+
+	try_files {path} /index.html
+	file_server
+
+	log {
+		output stdout
+		format console
+	}
+}

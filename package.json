@@ -1,0 +1,11 @@
+{
+  "name": "intervencija-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "HOST=0.0.0.0 node server.mjs",
+    "serve:local": "HOST=127.0.0.1 node server.mjs",
+    "serve:lan": "HOST=0.0.0.0 node server.mjs"
+  }
+}
