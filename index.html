@@ -3,12 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intervencija — Tactical Skill Intervention for Complex Systems</title>
-  <meta name="description" content="Intervencija engineers autonomous enterprise ecosystems, edge-native infrastructure, and sovereign AI pipelines for high-stakes organizations.">
+  <title>Intervencija — Boutique Architecture Agency for Critical Software Systems</title>
+  <meta name="description" content="Intervencija is a boutique architecture agency for business-critical software systems: diagnosis, workflow engineering, data infrastructure, cloud platforms, and safe AI-enabled operations.">
   <meta name="theme-color" content="#fbfaf7">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Privacy-first analytics placeholder: connect a self-hosted/low-retention endpoint only after launch. -->
+  <!-- <script defer data-domain="intervencija.akivaizdus.lt" src="https://plausible.example/js/script.js"></script> -->
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -16,18 +21,20 @@
         extend: {
           colors: {
             ivory: '#fbfaf7',
+            paper: '#f6f1e8',
+            warm: '#efe7da',
             espresso: '#1c1917',
-            muted: '#78716c',
-            line: '#e7e5e4',
-            warm: '#f5f1eb',
-            brass: '#a16207'
+            line: '#ded8ce',
+            brass: '#9a6b2f',
+            clay: '#7c6f64'
           },
           fontFamily: {
             serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
             sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
           },
           boxShadow: {
-            quiet: '0 24px 80px rgba(28, 25, 23, 0.07)'
+            paper: '0 24px 70px rgba(28, 25, 23, 0.075)',
+            hard: '12px 12px 0 rgba(28, 25, 23, 0.075)'
           }
         }
       }
@@ -35,368 +42,430 @@
   </script>
   <style>
     :root { color-scheme: light; }
-    * { text-rendering: geometricPrecision; }
+    * { box-sizing: border-box; text-rendering: geometricPrecision; }
+    html { scroll-behavior: smooth; }
     body {
       background:
-        radial-gradient(circle at top left, rgba(245, 241, 235, .95), transparent 34rem),
-        linear-gradient(180deg, #fbfaf7 0%, #f7f3ed 100%);
+        radial-gradient(circle at 18% 4%, rgba(239, 231, 218, .96), transparent 30rem),
+        radial-gradient(circle at 82% 12%, rgba(255,255,255,.74), transparent 34rem),
+        linear-gradient(180deg, #fbfaf7 0%, #f6f1e8 100%);
+      color: #1c1917;
     }
     .grain::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: .28;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+      opacity: .20;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
       mix-blend-mode: multiply;
-      z-index: 60;
+      z-index: 70;
     }
-    .intent-caret::after {
-      content: "";
-      display: inline-block;
-      width: 1px;
-      height: 1.05em;
-      margin-left: 3px;
-      background: #a16207;
-      vertical-align: -0.16em;
-      animation: blink 1.1s steps(2, start) infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 80;
-      width: 100%;
-      height: 2px;
-      transform: scaleX(0);
-      transform-origin: left;
-      background: linear-gradient(90deg, #a16207, rgba(161, 98, 7, .18));
-    }
-    .ambient-grid {
+    .paper-grid {
       background-image:
-        linear-gradient(rgba(231, 229, 228, .64) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(231, 229, 228, .64) 1px, transparent 1px);
+        linear-gradient(rgba(222,216,206,.78) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(222,216,206,.78) 1px, transparent 1px);
       background-size: 44px 44px;
-      mask-image: radial-gradient(circle at center, black 0%, transparent 74%);
+      mask-image: radial-gradient(circle at 50% 16%, black 0%, transparent 72%);
     }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .paper-card {
+      position: relative;
+      border: 1px solid #ded8ce;
+      background: rgba(251,250,247,.76);
+      backdrop-filter: blur(14px);
+    }
+    .paper-card::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border: 1px solid rgba(222,216,206,.58);
+      pointer-events: none;
+    }
+    .square-mark {
+      width: 34px;
+      height: 34px;
+      border: 1px solid #1c1917;
+      display: grid;
+      place-items: center;
+    }
+    .square-mark::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: 1px solid #1c1917;
+      background: #fbfaf7;
+    }
+    .field-line {
+      border: 0;
+      border-bottom: 1px solid rgba(120,113,108,.42);
+      border-radius: 0;
+      background: transparent;
+      outline: none;
+      transition: border-color 180ms ease, background-color 180ms ease;
+    }
+    .field-line:focus {
+      border-bottom-color: #1c1917;
+      background: rgba(251,250,247,.58);
+    }
+    .small-caps {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .65s ease, transform .65s ease; }
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
-    .diagnostic-lens {
-      background:
-        radial-gradient(circle at 50% 50%, rgba(161, 98, 7, .10), transparent 38%),
-        linear-gradient(90deg, transparent 49%, rgba(28, 25, 23, .16) 50%, transparent 51%),
-        linear-gradient(0deg, transparent 49%, rgba(28, 25, 23, .16) 50%, transparent 51%);
-    }
-    .signal-dot { animation: signal 3.2s ease-in-out infinite; }
-    .signal-dot:nth-child(2) { animation-delay: .4s; }
-    .signal-dot:nth-child(3) { animation-delay: .8s; }
-    @keyframes signal {
-      0%, 100% { transform: scale(.72); opacity: .38; }
-      46% { transform: scale(1); opacity: 1; }
-    }
-    .agent-orbit { animation: pulseLine 3.8s ease-in-out infinite; }
-    .agent-orbit:nth-child(2) { animation-delay: .75s; }
-    .agent-orbit:nth-child(3) { animation-delay: 1.5s; }
-    @keyframes pulseLine {
-      0%, 100% { opacity: .36; transform: translateX(0); }
-      45% { opacity: 1; transform: translateX(6px); }
-    }
-    .edge-node { animation: nodeSync 4.2s ease-in-out infinite; }
-    .edge-node:nth-child(2) { animation-delay: .45s; }
-    .edge-node:nth-child(3) { animation-delay: .9s; }
-    .edge-node:nth-child(4) { animation-delay: 1.35s; }
-    @keyframes nodeSync {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(161, 98, 7, 0); border-color: #d6d3d1; }
-      45% { box-shadow: 0 0 0 7px rgba(161, 98, 7, .08); border-color: rgba(161, 98, 7, .45); }
-    }
-    .enclave-ring { animation: breathe 4.6s ease-in-out infinite; }
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: .68; }
-      50% { transform: scale(1.035); opacity: 1; }
-    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body class="grain min-h-screen overflow-x-hidden font-sans text-espresso antialiased selection:bg-stone-300/70 selection:text-stone-950">
-  <div id="progressBar" class="progress-bar" aria-hidden="true"></div>
-  <div class="ambient-grid pointer-events-none fixed inset-x-0 top-0 h-[46rem] opacity-70" aria-hidden="true"></div>
-  <header class="sticky top-0 z-50 mx-auto flex max-w-7xl items-center justify-between border-b border-transparent bg-ivory/72 px-6 py-5 backdrop-blur-xl transition duration-500 sm:px-8 lg:px-10" aria-label="Primary navigation">
-    <a href="#top" class="group inline-flex items-center gap-3" aria-label="Intervencija home">
-      <span class="grid h-9 w-9 place-items-center border border-line bg-ivory shadow-sm transition duration-500 group-hover:border-stone-400">
-        <span class="h-3 w-3 border border-stone-900"></span>
-      </span>
-      <span class="font-serif text-2xl font-semibold tracking-[-0.03em]">Intervencija</span>
-    </a>
-    <nav class="hidden items-center gap-8 text-sm font-medium text-stone-600 md:flex">
-      <a href="#capabilities" class="transition duration-300 hover:text-stone-950">Capabilities</a>
-      <a href="#method" class="transition duration-300 hover:text-stone-950">Operating Model</a>
-      <a href="#intervention" class="transition duration-300 hover:text-stone-950">Request</a>
+  <div class="paper-grid pointer-events-none fixed inset-x-0 top-0 z-0 h-[48rem] opacity-80" aria-hidden="true"></div>
+
+  <a href="#contact" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:border focus:border-stone-900 focus:bg-ivory focus:px-4 focus:py-3 focus:text-stone-900">Skip to contact</a>
+
+  <header class="sticky top-0 z-50 border-b border-line/80 bg-ivory/78 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-8 lg:px-10" aria-label="Primary navigation">
+      <a href="#top" class="group inline-flex items-center gap-3" aria-label="Intervencija home">
+        <span class="square-mark transition group-hover:bg-paper" aria-hidden="true"></span>
+        <span class="font-serif text-2xl font-semibold tracking-[-0.035em]">Intervencija</span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#work" class="text-sm font-medium text-stone-600 transition hover:text-stone-950">Work</a>
+        <a href="#services" class="text-sm font-medium text-stone-600 transition hover:text-stone-950">Services</a>
+        <a href="#method" class="text-sm font-medium text-stone-600 transition hover:text-stone-950">Method</a>
+        <a href="#fit" class="text-sm font-medium text-stone-600 transition hover:text-stone-950">Fit</a>
+        <a href="#contact" class="text-sm font-medium text-stone-600 transition hover:text-stone-950">Contact</a>
+        <a href="#contact" class="border border-stone-900 bg-stone-900 px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-ivory transition hover:-translate-y-0.5 hover:bg-stone-800">Discuss a system</a>
+      </div>
+      <a href="#contact" class="border border-stone-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] transition hover:bg-stone-900 hover:text-ivory md:hidden">Contact</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="reveal mx-auto grid max-w-7xl gap-16 px-6 pb-20 pt-14 sm:px-8 md:pt-24 lg:grid-cols-[1.05fr_.95fr] lg:px-10 lg:pb-28">
-      <div class="max-w-4xl">
-        <p class="mb-7 inline-flex items-center gap-3 border border-line bg-warm px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-stone-600">
-          Enterprise architecture · Autonomous AI · Sovereign systems
-        </p>
-        <h1 class="font-serif text-[clamp(4rem,9vw,8.75rem)] font-semibold leading-[0.88] tracking-[-0.055em] text-stone-900">
-          Intervencija. Tactical Skill Intervention for Complex Systems.
-        </h1>
-        <p class="mt-9 max-w-2xl text-xl leading-8 text-stone-600 sm:text-2xl sm:leading-9">
-          Engineering autonomous enterprise ecosystems, edge-native infrastructure, and sovereign AI pipelines where failure is not an option.
-        </p>
-        <div class="mt-8 grid max-w-2xl gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-stone-500 sm:grid-cols-3" aria-label="High-stakes conversion signals">
-          <div class="border border-line bg-ivory/72 px-4 py-3 backdrop-blur">Board-level risk</div>
-          <div class="border border-line bg-ivory/72 px-4 py-3 backdrop-blur">Production-first AI</div>
-          <div class="border border-line bg-ivory/72 px-4 py-3 backdrop-blur">Sovereign delivery</div>
-        </div>
+  <main id="top" class="relative z-10">
+    <section class="mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-14 sm:px-8 md:pt-24 lg:grid-cols-[1.02fr_.98fr] lg:px-10 lg:pb-28" aria-labelledby="hero-title">
+      <div class="reveal max-w-4xl">
+        <p class="small-caps mb-7 inline-flex border border-line bg-paper/80 px-4 py-2 text-stone-600">Boutique architecture agency for business-critical software systems</p>
+        <h1 id="hero-title" class="font-serif text-[clamp(3.65rem,7.8vw,8rem)] font-semibold leading-[0.92] tracking-[-0.052em] text-stone-900">Critical software architecture for companies outgrowing their systems.</h1>
+        <p class="mt-9 max-w-2xl text-xl leading-8 text-stone-600 sm:text-2xl sm:leading-9">Intervencija helps companies replace fragile workflows, scattered data, and overloaded platforms with reliable software architecture — from diagnosis to production delivery.</p>
         <div class="mt-11 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <a href="#intervention" class="group inline-flex items-center justify-center border border-stone-900 bg-stone-900 px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-ivory transition duration-500 ease-out hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-quiet focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-4 focus:ring-offset-ivory">
-            Request Intervention
-            <span class="ml-3 transition duration-500 group-hover:translate-x-1">→</span>
-          </a>
-          <div class="flex-1 border border-line bg-ivory/80 px-5 py-4 shadow-sm backdrop-blur transition duration-500 hover:border-stone-300 hover:shadow-quiet" aria-label="Intent input simulation">
-            <div class="mb-2 flex items-center justify-between gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-              <span>Intent Input</span>
-              <span>Simulation</span>
-            </div>
-            <div class="min-h-7 text-sm font-medium text-stone-800 sm:text-base">
-              <span class="text-stone-400">›</span>
-              <span id="intentText" class="intent-caret">Sync global inventory across 4 cloud regions</span>
-            </div>
-          </div>
+          <a href="#contact" class="inline-flex items-center justify-center border border-stone-900 bg-stone-900 px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-ivory transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-paper focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-4 focus:ring-offset-ivory">Discuss a critical system</a>
+          <a href="#method" class="inline-flex items-center justify-center border border-line bg-ivory/70 px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-stone-700 transition duration-300 hover:border-stone-900 hover:text-stone-950">See how we work</a>
         </div>
       </div>
 
-      <aside class="relative lg:pt-12" aria-label="Architecture diagnostic panel">
-        <div class="absolute -left-10 top-0 hidden h-32 w-32 border border-line lg:block"></div>
-        <div class="relative border border-line bg-ivory/78 p-6 shadow-quiet backdrop-blur sm:p-8">
-          <div class="flex items-start justify-between border-b border-line pb-6">
+      <aside class="reveal relative lg:pt-10" aria-label="Architecture diagnostic card">
+        <div class="absolute -left-8 top-1 hidden h-28 w-28 border border-line bg-paper/50 lg:block"></div>
+        <div class="paper-card p-6 shadow-hard sm:p-8">
+          <div class="relative z-10 flex items-start justify-between border-b border-line pb-6">
             <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Intervention Protocol</p>
-              <h2 class="mt-3 font-serif text-4xl font-semibold tracking-[-0.04em]">From fracture to operating edge.</h2>
+              <p class="small-caps text-stone-500">Agency posture</p>
+              <h2 class="mt-3 font-serif text-4xl font-semibold leading-none tracking-[-0.04em]">The system is now a business constraint.</h2>
             </div>
             <span class="border border-stone-300 px-3 py-1 text-xs font-semibold text-stone-600">01</span>
           </div>
-          <div class="diagnostic-lens relative mt-8 h-44 overflow-hidden border border-line bg-warm/35" aria-label="Abstract diagnostic lens">
-            <div class="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 border border-stone-900/70 bg-ivory/65 backdrop-blur-sm"></div>
-            <div class="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center border border-stone-400 bg-ivory text-[10px] font-bold uppercase tracking-[0.18em] text-stone-700">Fit</div>
-            <span class="signal-dot absolute left-[18%] top-[30%] h-3 w-3 border border-brass bg-brass/20"></span>
-            <span class="signal-dot absolute right-[18%] top-[24%] h-3 w-3 border border-brass bg-brass/20"></span>
-            <span class="signal-dot absolute bottom-[24%] left-[46%] h-3 w-3 border border-brass bg-brass/20"></span>
+          <div class="relative z-10 mt-8 grid gap-4">
+            <div class="grid gap-4 border border-line bg-paper/55 p-4 sm:grid-cols-[8rem_1fr]">
+              <span class="small-caps text-stone-500">Symptoms</span>
+              <p class="text-sm leading-6 text-stone-700">Manual reconciliation, slow reporting, brittle integrations, unclear ownership, and cloud choices nobody wants to touch.</p>
+            </div>
+            <div class="grid gap-4 border border-line bg-paper/55 p-4 sm:grid-cols-[8rem_1fr]">
+              <span class="small-caps text-stone-500">Cause</span>
+              <p class="text-sm leading-6 text-stone-700">The operating model changed, but domains, data, workflows, and delivery paths stayed accidental.</p>
+            </div>
+            <div class="grid gap-4 border border-stone-300 bg-ivory p-4 sm:grid-cols-[8rem_1fr]">
+              <span class="small-caps text-stone-500">Intervention</span>
+              <p class="text-sm leading-6 text-stone-800">Senior architecture, production implementation, and clean handover — focused on the constraint that costs the business most.</p>
+            </div>
           </div>
-          <dl class="mt-4 grid gap-4">
-            <div class="grid grid-cols-[7rem_1fr] gap-5 border border-line bg-warm/50 p-4 transition duration-500 hover:border-stone-300">
-              <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Intent</dt>
-              <dd class="text-sm leading-6 text-stone-700">Business command translated into deterministic execution plans, not backlog theater.</dd>
+          <div class="relative z-10 mt-8 h-44 border border-line bg-paper/50 p-4" aria-hidden="true">
+            <div class="grid h-full grid-cols-4 grid-rows-3 gap-3">
+              <span class="border border-stone-300 bg-ivory"></span>
+              <span class="border border-stone-300 bg-ivory"></span>
+              <span class="col-span-2 border border-stone-900 bg-stone-900"></span>
+              <span class="col-span-2 border border-stone-300 bg-ivory"></span>
+              <span class="border border-brass bg-[#efe1cc]"></span>
+              <span class="border border-stone-300 bg-ivory"></span>
+              <span class="border border-stone-300 bg-ivory"></span>
+              <span class="col-span-3 border border-stone-300 bg-ivory"></span>
             </div>
-            <div class="grid grid-cols-[7rem_1fr] gap-5 border border-line bg-warm/50 p-4 transition duration-500 hover:border-stone-300">
-              <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Guardrails</dt>
-              <dd class="text-sm leading-6 text-stone-700">Policy, observability, rollback paths, and approval gates embedded before autonomy scales.</dd>
-            </div>
-            <div class="grid grid-cols-[7rem_1fr] gap-5 border border-line bg-warm/50 p-4 transition duration-500 hover:border-stone-300">
-              <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Outcome</dt>
-              <dd class="text-sm leading-6 text-stone-700">Measurable resilience: lower latency, lower operational drag, lower institutional risk.</dd>
-            </div>
-          </dl>
+          </div>
         </div>
       </aside>
     </section>
 
-    <section class="border-y border-line bg-warm/60 px-6 py-6 sm:px-8 lg:px-10" aria-label="Validation">
-      <p class="mx-auto max-w-7xl text-center text-sm font-medium leading-7 text-stone-600 md:text-base">
-        Trusted with the core architecture of tier-1 banking institutions, global logistics leaders (Coca-Cola scale), and enterprise pioneers.
-      </p>
+    <section id="proof" class="border-y border-line bg-paper/70 px-6 py-8 sm:px-8 lg:px-10" aria-label="Credibility summary">
+      <div class="mx-auto grid max-w-7xl gap-5 md:grid-cols-[.85fr_1.15fr] md:items-center">
+        <p class="small-caps text-stone-500">Operating credibility</p>
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-7 text-stone-700 md:text-base">Experience across European banking, SME lending, logistics platforms, ecommerce infrastructure, internal ERP/CRM systems, data-heavy operations, and cloud-native delivery.</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Founder-led from Vilnius. Built with a network of senior specialists when the problem requires scale.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="capabilities" class="reveal mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10 lg:py-32">
+    <section id="work" class="reveal mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10 lg:py-32" aria-labelledby="work-title">
       <div class="mb-14 grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
         <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Three next-generation pillars</p>
-          <h2 class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">Architecture for post-reactive enterprises.</h2>
+          <p class="small-caps text-stone-500">When Intervencija is called in</p>
+          <h2 id="work-title" class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">When the business changes faster than the system.</h2>
         </div>
-        <p class="max-w-2xl text-lg leading-8 text-stone-600 lg:justify-self-end">
-          Intervencija enters when conventional delivery models cannot absorb the technical, operational, or political blast radius of the problem.
-        </p>
+        <p class="max-w-2xl text-lg leading-8 text-stone-600 lg:justify-self-end">The problem is rarely a missing feature. It is usually an operating constraint: data that cannot be trusted, work that depends on people copying values between tools, platforms stretched beyond their original shape, or automation that cannot safely enter production.</p>
       </div>
 
-      <div class="grid gap-5 lg:grid-cols-3">
-        <article class="group border border-line bg-stone-100/50 p-7 transition duration-500 ease-out hover:-translate-y-1 hover:border-stone-300 hover:bg-ivory hover:shadow-quiet">
-          <div class="mb-8 h-32 border border-line bg-ivory p-4">
-            <div class="flex h-full items-center justify-between gap-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-600">
-              <span class="agent-orbit border border-stone-300 bg-warm px-3 py-2">Agent Alpha</span>
-              <span class="agent-orbit text-brass">→</span>
-              <span class="agent-orbit border border-stone-300 bg-warm px-3 py-2">Agent Beta</span>
-              <span class="agent-orbit text-brass">→</span>
-              <span class="agent-orbit border border-stone-900 bg-stone-900 px-3 py-2 text-ivory">Output</span>
-            </div>
+      <div class="grid gap-5 lg:grid-cols-4">
+        <article class="paper-card p-7 shadow-paper">
+          <div class="relative z-10 mb-12 flex items-center justify-between">
+            <span class="small-caps text-brass">01</span>
+            <span class="h-9 w-9 border border-line bg-paper"></span>
           </div>
-          <h3 class="font-serif text-3xl font-semibold tracking-[-0.035em]">Autonomous Agentic Workflows</h3>
-          <p class="mt-5 text-sm leading-7 text-stone-600">
-            Moving past reactive software into self-orchestrating machine-to-machine agent networks. We engineer deterministic AI pipelines that proactively execute multi-step business operations within strict guardrails.
-          </p>
+          <h3 class="relative z-10 font-serif text-3xl font-semibold leading-none tracking-[-0.035em]">Manual work becomes the operating model.</h3>
+          <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Teams compensate for software gaps with spreadsheets, Slack approvals, duplicate entry, and tribal knowledge. Output slows while payroll absorbs the complexity.</p>
         </article>
 
-        <article class="group border border-line bg-stone-100/50 p-7 transition duration-500 ease-out hover:-translate-y-1 hover:border-stone-300 hover:bg-ivory hover:shadow-quiet">
-          <div class="mb-8 grid h-32 grid-cols-[1fr_auto_1fr] items-center gap-4 border border-line bg-ivory p-4">
-            <div class="grid grid-cols-2 gap-3">
-              <span class="edge-node h-9 border border-stone-300 bg-warm"></span>
-              <span class="edge-node h-9 border border-stone-300 bg-warm"></span>
-              <span class="edge-node h-9 border border-stone-300 bg-warm"></span>
-              <span class="edge-node h-9 border border-stone-300 bg-warm"></span>
-            </div>
-            <div class="h-full w-px bg-stone-300 relative">
-              <span class="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 border border-stone-900 bg-ivory text-center text-[10px] font-bold uppercase leading-[3rem] tracking-widest text-stone-700">Core</span>
-            </div>
-            <div class="grid gap-3">
-              <span class="h-px bg-gradient-to-r from-stone-300 to-transparent"></span>
-              <span class="h-px bg-gradient-to-r from-stone-300 to-transparent"></span>
-              <span class="h-px bg-gradient-to-r from-stone-300 to-transparent"></span>
-            </div>
+        <article class="paper-card p-7 shadow-paper">
+          <div class="relative z-10 mb-12 flex items-center justify-between">
+            <span class="small-caps text-brass">02</span>
+            <span class="h-9 w-9 border border-line bg-paper"></span>
           </div>
-          <h3 class="font-serif text-3xl font-semibold tracking-[-0.035em]">Edge-Native & Event-Driven Resilience</h3>
-          <p class="mt-5 text-sm leading-7 text-stone-600">
-            Architectural frameworks designed for massive global ingestion, decentralized data meshes, and cross-regional data synchronization. Eliminating cloud bottlenecks and ensuring zero data loss under peak load.
-          </p>
+          <h3 class="relative z-10 font-serif text-3xl font-semibold leading-none tracking-[-0.035em]">Data exists, but decisions are still slow.</h3>
+          <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Reports disagree, ownership is vague, metrics lack lineage, and leaders wait for manual exports before they can act.</p>
         </article>
 
-        <article class="group border border-line bg-stone-100/50 p-7 transition duration-500 ease-out hover:-translate-y-1 hover:border-stone-300 hover:bg-ivory hover:shadow-quiet">
-          <div class="mb-8 grid h-32 place-items-center border border-line bg-ivory p-4">
-            <div class="relative grid h-24 w-24 place-items-center">
-              <span class="enclave-ring absolute h-24 w-24 border border-stone-300"></span>
-              <span class="enclave-ring absolute h-16 w-16 border border-stone-400"></span>
-              <span class="absolute top-4 h-8 w-12 rounded-t-full border border-b-0 border-stone-900"></span>
-              <span class="grid h-12 w-16 place-items-center border border-stone-900 bg-warm">
-                <span class="h-2 w-2 rounded-full bg-brass"></span>
-              </span>
-            </div>
+        <article class="paper-card p-7 shadow-paper">
+          <div class="relative z-10 mb-12 flex items-center justify-between">
+            <span class="small-caps text-brass">03</span>
+            <span class="h-9 w-9 border border-line bg-paper"></span>
           </div>
-          <h3 class="font-serif text-3xl font-semibold tracking-[-0.035em]">Private & Sovereign Intelligence</h3>
-          <p class="mt-5 text-sm leading-7 text-stone-600">
-            On-premise and private cloud foundational model deployment. We implement confidential computing topologies where enterprise data is encrypted in use, ensuring your proprietary operational intelligence remains entirely yours.
-          </p>
+          <h3 class="relative z-10 font-serif text-3xl font-semibold leading-none tracking-[-0.035em]">Integrations become a hidden liability.</h3>
+          <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Carrier, finance, CRM, ERP, and product systems keep running until one undocumented edge case blocks revenue or operations.</p>
+        </article>
+
+        <article class="paper-card p-7 shadow-paper">
+          <div class="relative z-10 mb-12 flex items-center justify-between">
+            <span class="small-caps text-brass">04</span>
+            <span class="h-9 w-9 border border-line bg-paper"></span>
+          </div>
+          <h3 class="relative z-10 font-serif text-3xl font-semibold leading-none tracking-[-0.035em]">AI experiments cannot safely enter production.</h3>
+          <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Useful prototypes stall because permissions, evaluation, logging, source data, human approval, and fallback paths were not designed first.</p>
         </article>
       </div>
     </section>
 
-    <section class="reveal mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-10" aria-label="Intervention fit matrix">
-      <div class="grid gap-8 border border-line bg-ivory/72 p-6 shadow-quiet backdrop-blur sm:p-8 lg:grid-cols-[.7fr_1.3fr]">
+    <section id="services" class="reveal border-y border-line bg-ivory/70 px-6 py-24 sm:px-8 lg:px-10" aria-labelledby="services-title">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
+          <div>
+            <p class="small-caps text-stone-500">Services</p>
+            <h2 id="services-title" class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">Architecture, workflow, data, and delivery under one roof.</h2>
+          </div>
+          <p class="max-w-2xl text-lg leading-8 text-stone-600 lg:justify-self-end">Intervencija sells operating leverage: fewer manual loops, clearer ownership, safer platform choices, reliable reporting, and production software the team can maintain after handover.</p>
+        </div>
+
+        <div class="mt-14 grid gap-5 lg:grid-cols-2">
+          <article class="paper-card p-7 shadow-paper transition duration-300 hover:-translate-y-1 hover:shadow-hard">
+            <div class="relative z-10 mb-14 flex items-center justify-between">
+              <span class="small-caps text-brass">Pillar 01</span>
+              <span class="h-9 w-9 border border-line bg-paper"></span>
+            </div>
+            <h3 class="relative z-10 font-serif text-4xl font-semibold leading-none tracking-[-0.035em]">Architecture &amp; System Diagnosis</h3>
+            <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Map the system, domain boundaries, data ownership, technical risk, cloud constraints, and delivery bottlenecks. Output is a concrete architecture decision record, risk register, and phased delivery path.</p>
+          </article>
+
+          <article class="paper-card p-7 shadow-paper transition duration-300 hover:-translate-y-1 hover:shadow-hard">
+            <div class="relative z-10 mb-14 flex items-center justify-between">
+              <span class="small-caps text-brass">Pillar 02</span>
+              <span class="h-9 w-9 border border-line bg-paper"></span>
+            </div>
+            <h3 class="relative z-10 font-serif text-4xl font-semibold leading-none tracking-[-0.035em]">Critical Workflow Engineering</h3>
+            <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Design and build internal tools, workflow automation, ERP/CRM-style systems, operational dashboards, integrations, and approval flows that replace fragile manual coordination.</p>
+          </article>
+
+          <article class="paper-card p-7 shadow-paper transition duration-300 hover:-translate-y-1 hover:shadow-hard">
+            <div class="relative z-10 mb-14 flex items-center justify-between">
+              <span class="small-caps text-brass">Pillar 03</span>
+              <span class="h-9 w-9 border border-line bg-paper"></span>
+            </div>
+            <h3 class="relative z-10 font-serif text-4xl font-semibold leading-none tracking-[-0.035em]">Data &amp; Decision Infrastructure</h3>
+            <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Create reliable data models, pipelines, reporting ownership, metrics definitions, analytical systems, and decision views so leaders can trust the numbers without waiting for manual reconciliation.</p>
+          </article>
+
+          <article class="paper-card p-7 shadow-paper transition duration-300 hover:-translate-y-1 hover:shadow-hard">
+            <div class="relative z-10 mb-14 flex items-center justify-between">
+              <span class="small-caps text-brass">Pillar 04</span>
+              <span class="h-9 w-9 border border-line bg-paper"></span>
+            </div>
+            <h3 class="relative z-10 font-serif text-4xl font-semibold leading-none tracking-[-0.035em]">AI-Enabled Operations</h3>
+            <p class="relative z-10 mt-5 text-sm leading-7 text-stone-600">Use AI only where it improves a real workflow: private assistants over company knowledge, retrieval over governed data, secure LLM integration, permissions, evaluation, logging, fallback paths, and human approval.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="reveal mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10 lg:py-32" aria-labelledby="method-title">
+      <div class="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-start">
         <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Intervention fit</p>
-          <h2 class="mt-4 font-serif text-4xl font-semibold leading-none tracking-[-0.04em] sm:text-5xl">Built for problems too exposed for experimentation.</h2>
+          <p class="small-caps text-stone-500">Method</p>
+          <h2 id="method-title" class="mt-4 font-serif text-5xl font-semibold leading-none tracking-[-0.045em]">Senior diagnosis first. Production path second.</h2>
+          <p class="mt-6 text-lg leading-8 text-stone-600">No bloated discovery. No abstract target-state diagrams with no delivery route. The work starts at the operating constraint and ends with ownership transferred.</p>
         </div>
-        <div class="grid gap-3 text-sm text-stone-700">
-          <div class="grid gap-3 border border-line bg-warm/45 p-4 sm:grid-cols-[9rem_1fr]">
-            <span class="font-semibold uppercase tracking-[0.16em] text-stone-500">Right fit</span>
-            <span>Autonomy is already a board mandate, but current architecture cannot guarantee control, auditability, or rollback.</span>
-          </div>
-          <div class="grid gap-3 border border-line bg-warm/45 p-4 sm:grid-cols-[9rem_1fr]">
-            <span class="font-semibold uppercase tracking-[0.16em] text-stone-500">Right fit</span>
-            <span>Cross-region synchronization, event integrity, or latency has become a revenue, compliance, or operational continuity risk.</span>
-          </div>
-          <div class="grid gap-3 border border-line bg-warm/45 p-4 sm:grid-cols-[9rem_1fr]">
-            <span class="font-semibold uppercase tracking-[0.16em] text-stone-500">Right fit</span>
-            <span>Private model deployment must survive legal, security, and infrastructure review without leaking proprietary intelligence.</span>
-          </div>
-          <div class="grid gap-3 border border-stone-300 bg-ivory p-4 sm:grid-cols-[9rem_1fr]">
-            <span class="font-semibold uppercase tracking-[0.16em] text-stone-500">Not fit</span>
-            <span>Generic app builds, cosmetic AI demos, or innovation theater without production accountability.</span>
-          </div>
-        </div>
+        <ol class="grid gap-4 md:grid-cols-2">
+          <li class="border border-line bg-paper/55 p-6">
+            <span class="small-caps text-brass">Step 01</span>
+            <h3 class="mt-10 font-serif text-3xl font-semibold tracking-[-0.035em]">Diagnose the operating constraint.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-600">Trace the workflow, data, systems, team responsibilities, failure modes, and cost of delay. Name the real constraint before prescribing technology.</p>
+          </li>
+          <li class="border border-line bg-paper/55 p-6">
+            <span class="small-caps text-brass">Step 02</span>
+            <h3 class="mt-10 font-serif text-3xl font-semibold tracking-[-0.035em]">Design the target architecture.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-600">Define boundaries, data flows, integration contracts, infrastructure posture, security assumptions, and decisions the team can defend later.</p>
+          </li>
+          <li class="border border-line bg-paper/55 p-6">
+            <span class="small-caps text-brass">Step 03</span>
+            <h3 class="mt-10 font-serif text-3xl font-semibold tracking-[-0.035em]">Build the first production path.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-600">Ship the smallest reliable slice: working code, real data, monitored deployment, clear rollback, and a path that proves the architecture under load.</p>
+          </li>
+          <li class="border border-line bg-paper/55 p-6">
+            <span class="small-caps text-brass">Step 04</span>
+            <h3 class="mt-10 font-serif text-3xl font-semibold tracking-[-0.035em]">Transfer ownership to the team.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-600">Document decisions, coach maintainers, simplify runbooks, and leave the system understandable enough to operate without ongoing dependency.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section id="method" class="reveal border-y border-line bg-ivory/72 px-6 py-20 sm:px-8 lg:px-10">
-      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Operating model</p>
-          <h2 class="mt-4 font-serif text-5xl font-semibold leading-none tracking-[-0.045em]">Senior-only execution. No theater.</h2>
+    <section id="engagements" class="reveal border-y border-line bg-paper/70 px-6 py-24 sm:px-8 lg:px-10" aria-labelledby="engagements-title">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
+          <div>
+            <p class="small-caps text-stone-500">Engagement models</p>
+            <h2 id="engagements-title" class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">Clear entry points for serious system work.</h2>
+          </div>
+          <p class="max-w-2xl text-lg leading-8 text-stone-600 lg:justify-self-end">Each engagement is scoped around business consequence, not hours. If the constraint is not painful or owned, Intervencija is the wrong instrument.</p>
         </div>
-        <div class="grid gap-3 sm:grid-cols-3">
-          <div class="border border-line bg-warm/70 p-5">
-            <p class="font-serif text-4xl font-semibold tracking-[-0.04em]">72h</p>
-            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">System diagnosis</p>
-          </div>
-          <div class="border border-line bg-warm/70 p-5">
-            <p class="font-serif text-4xl font-semibold tracking-[-0.04em]">0</p>
-            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Junior handoffs</p>
-          </div>
-          <div class="border border-line bg-warm/70 p-5">
-            <p class="font-serif text-4xl font-semibold tracking-[-0.04em]">N-1</p>
-            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Failure domain design</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="intervention" class="reveal mx-auto grid max-w-7xl gap-14 px-6 py-24 sm:px-8 lg:grid-cols-[.85fr_1.15fr] lg:px-10 lg:py-32">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">B2B consultation capture</p>
-        <h2 class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">Request intervention.</h2>
-        <p class="mt-6 max-w-md text-lg leading-8 text-stone-600">
-          Send the architectural fracture, system ambition, or intelligence constraint. You will receive a direct assessment of fit, risk, and likely intervention path.
-        </p>
-      </div>
-
-      <form class="border border-line bg-ivory/80 p-6 shadow-quiet backdrop-blur sm:p-8" action="mailto:intervention@intervencija.com" method="post" enctype="text/plain">
-        <!-- Drop Cal.com/Calendly embed script here after the form or replace the submit block with the scheduler container. Keep async/defer and reserve vertical space to prevent layout shift. -->
-        <div class="grid gap-5 sm:grid-cols-2">
-          <label class="block">
-            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Name</span>
-            <input name="name" required autocomplete="name" class="mt-2 w-full border border-line bg-warm/60 px-4 py-3 text-sm text-stone-900 outline-none transition duration-300 placeholder:text-stone-400 focus:border-stone-500 focus:bg-ivory" placeholder="Full name">
-          </label>
-          <label class="block">
-            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Corporate Email</span>
-            <input name="corporate_email" type="email" required autocomplete="email" class="mt-2 w-full border border-line bg-warm/60 px-4 py-3 text-sm text-stone-900 outline-none transition duration-300 placeholder:text-stone-400 focus:border-stone-500 focus:bg-ivory" placeholder="name@enterprise.com">
-          </label>
-          <label class="block sm:col-span-2">
-            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Role</span>
-            <input name="role" required autocomplete="organization-title" class="mt-2 w-full border border-line bg-warm/60 px-4 py-3 text-sm text-stone-900 outline-none transition duration-300 placeholder:text-stone-400 focus:border-stone-500 focus:bg-ivory" placeholder="CTO, CIO, VP Architecture, Head of AI">
-          </label>
-          <div class="sm:col-span-2" aria-label="Challenge shortcuts">
-            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Fast brief</span>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <button type="button" data-challenge="We need autonomous agents executing multi-step enterprise operations with deterministic guardrails, audit trails, and controlled rollback." class="challenge-chip border border-line bg-warm/60 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-stone-600 transition duration-300 hover:border-stone-500 hover:bg-ivory">Agentic workflow</button>
-              <button type="button" data-challenge="We need resilient event ingestion and cross-region synchronization under peak load without data loss or cloud bottlenecks." class="challenge-chip border border-line bg-warm/60 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-stone-600 transition duration-300 hover:border-stone-500 hover:bg-ivory">Edge sync</button>
-              <button type="button" data-challenge="We need private model deployment with encrypted-in-use data paths, enterprise controls, and no proprietary intelligence leakage." class="challenge-chip border border-line bg-warm/60 px-3 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-stone-600 transition duration-300 hover:border-stone-500 hover:bg-ivory">Sovereign AI</button>
+        <div class="mt-14 grid gap-5 lg:grid-cols-3">
+          <article class="border border-line bg-ivory/72 p-7">
+            <p class="small-caps text-brass">10 business days</p>
+            <h3 class="mt-12 font-serif text-4xl font-semibold leading-none tracking-[-0.04em]">System Audit Sprint</h3>
+            <div class="mt-6 space-y-4 text-sm leading-7 text-stone-600">
+              <p><strong class="text-stone-900">Best for:</strong> leaders who know the system is slowing the business but need a clear technical and operational map.</p>
+              <p><strong class="text-stone-900">What happens:</strong> interviews, flow mapping, architecture review, data ownership review, risk analysis, and delivery sequencing.</p>
+              <p><strong class="text-stone-900">Output:</strong> decision map, risk register, architecture options, and first-build recommendation.</p>
             </div>
+          </article>
+
+          <article class="border border-stone-900 bg-stone-900 p-7 text-ivory shadow-hard">
+            <p class="small-caps text-stone-300">4–8 weeks</p>
+            <h3 class="mt-12 font-serif text-4xl font-semibold leading-none tracking-[-0.04em]">Critical Build Sprint</h3>
+            <div class="mt-6 space-y-4 text-sm leading-7 text-stone-300">
+              <p><strong class="text-ivory">Best for:</strong> one workflow, integration, reporting path, or internal system that is already costing time or trust.</p>
+              <p><strong class="text-ivory">What happens:</strong> architecture, implementation, deployment, monitoring, operator feedback, and production hardening.</p>
+              <p><strong class="text-ivory">Output:</strong> a working production path, source code, decisions, runbook, and handover.</p>
+            </div>
+          </article>
+
+          <article class="border border-line bg-ivory/72 p-7">
+            <p class="small-caps text-brass">Monthly / interim</p>
+            <h3 class="mt-12 font-serif text-4xl font-semibold leading-none tracking-[-0.04em]">Fractional Architecture Partner</h3>
+            <div class="mt-6 space-y-4 text-sm leading-7 text-stone-600">
+              <p><strong class="text-stone-900">Best for:</strong> founders, CTOs, COOs, and product leaders who need senior architecture direction plus hands-on delivery pressure.</p>
+              <p><strong class="text-stone-900">What happens:</strong> decision support, design reviews, team mentoring, cloud/platform guidance, delivery unblockers, and critical implementation.</p>
+              <p><strong class="text-stone-900">Output:</strong> better technical decisions, faster delivery, cleaner ownership, and fewer expensive wrong turns.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fit" class="reveal mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10 lg:py-32" aria-labelledby="fit-title">
+      <div class="grid gap-8 border border-line bg-ivory/72 p-6 shadow-paper backdrop-blur sm:p-8 lg:grid-cols-[.72fr_1.28fr]">
+        <div>
+          <p class="small-caps text-stone-500">Fit filter</p>
+          <h2 id="fit-title" class="mt-4 font-serif text-5xl font-semibold leading-none tracking-[-0.045em]">Built for painful operational system problems. Not generic delivery demand.</h2>
+        </div>
+        <div class="grid gap-5 lg:grid-cols-2">
+          <div class="border border-line bg-paper/55 p-5">
+            <p class="small-caps text-brass">Good fit</p>
+            <ul class="mt-5 space-y-3 text-sm leading-7 text-stone-700">
+              <li>Founder, CTO, COO, product, or operations leader owns a painful system constraint.</li>
+              <li>The business depends on software reliability, reporting accuracy, or workflow speed.</li>
+              <li>The team needs senior architecture and hands-on delivery, not another unmanaged vendor queue.</li>
+              <li>AI is wanted only if it improves a real workflow and can be governed safely.</li>
+            </ul>
           </div>
-          <label class="block sm:col-span-2">
-            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Current System Challenge</span>
-            <textarea name="current_system_challenge" required rows="6" class="mt-2 w-full resize-y border border-line bg-warm/60 px-4 py-3 text-sm leading-6 text-stone-900 outline-none transition duration-300 placeholder:text-stone-400 focus:border-stone-500 focus:bg-ivory" placeholder="Describe the architecture failure mode, autonomy objective, data sovereignty constraint, or edge synchronization problem."></textarea>
-          </label>
+          <div class="border border-stone-300 bg-ivory p-5">
+            <p class="small-caps text-stone-500">Bad fit</p>
+            <ul class="mt-5 space-y-3 text-sm leading-7 text-stone-700">
+              <li>Generic marketing website.</li>
+              <li>Cheap app build with no ownership of outcome.</li>
+              <li>AI showcase for optics rather than operational use.</li>
+              <li>Chat-only product with no integration, data, permissions, or reliability requirements.</li>
+              <li>Staff augmentation where architecture accountability stays nowhere.</li>
+            </ul>
+          </div>
         </div>
-        <div class="mt-6 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p class="text-xs leading-5 text-stone-500">Static-safe mail submission. Replace action with your CRM endpoint when ready.</p>
-          <button type="submit" class="inline-flex items-center justify-center border border-stone-900 bg-stone-900 px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-ivory transition duration-500 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-quiet focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-4 focus:ring-offset-ivory">
-            Submit Challenge
-          </button>
+      </div>
+    </section>
+
+    <section id="stack" class="reveal border-y border-line bg-ivory/70 px-6 py-14 sm:px-8 lg:px-10" aria-label="Technology range">
+      <div class="mx-auto grid max-w-7xl gap-5 md:grid-cols-[.85fr_1.15fr] md:items-center">
+        <p class="small-caps text-stone-500">Technology range</p>
+        <p class="text-sm leading-7 text-stone-600">TypeScript, Python, Go, AWS, GCP, Kubernetes, Terraform, event-driven services, search, queues, serverless infrastructure, data pipelines, dashboards, and internal platforms. Tools are selected after the system constraint is understood.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal px-6 py-24 sm:px-8 lg:px-10 lg:py-32" aria-labelledby="contact-title">
+      <div class="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[.85fr_1.15fr]">
+        <div>
+          <p class="small-caps text-stone-500">Contact</p>
+          <h2 id="contact-title" class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">Describe the system that needs intervention.</h2>
+          <p class="mt-6 max-w-md text-lg leading-8 text-stone-600">Keep it concrete: what is slow, manual, risky, expensive, unreliable, or hard to own? What changes if the system works properly?</p>
         </div>
-      </form>
+
+        <!-- Secure inquiry endpoint placeholder: replace mailto with a privacy-first backend when production lead capture is finalized. -->
+        <form id="inquiry-form" class="border border-line bg-ivory/80 p-6 shadow-paper backdrop-blur sm:p-8" data-recipient="hello@intervencija.lt" aria-describedby="form-note">
+          <div class="grid gap-7 sm:grid-cols-2">
+            <label class="block" for="name">
+              <span class="small-caps text-stone-500">Name</span>
+              <input id="name" name="name" required autocomplete="name" class="field-line mt-2 w-full px-0 py-3 text-sm text-stone-900 placeholder:text-stone-400" placeholder="Full name">
+            </label>
+            <label class="block" for="email">
+              <span class="small-caps text-stone-500">Corporate Email</span>
+              <input id="email" name="email" type="email" required autocomplete="email" class="field-line mt-2 w-full px-0 py-3 text-sm text-stone-900 placeholder:text-stone-400" placeholder="name@company.com">
+            </label>
+            <label class="block" for="role">
+              <span class="small-caps text-stone-500">Role</span>
+              <input id="role" name="role" required autocomplete="organization-title" class="field-line mt-2 w-full px-0 py-3 text-sm text-stone-900 placeholder:text-stone-400" placeholder="Founder / CTO / COO / Product Lead">
+            </label>
+            <label class="block" for="company">
+              <span class="small-caps text-stone-500">Company</span>
+              <input id="company" name="company" autocomplete="organization" class="field-line mt-2 w-full px-0 py-3 text-sm text-stone-900 placeholder:text-stone-400" placeholder="Company name">
+            </label>
+            <label class="block sm:col-span-2" for="challenge">
+              <span class="small-caps text-stone-500">System / workflow challenge</span>
+              <textarea id="challenge" name="challenge" required rows="6" class="field-line mt-2 w-full resize-y px-0 py-3 text-sm leading-6 text-stone-900 placeholder:text-stone-400" placeholder="Example: lending approvals are slow, shipping integrations break, reporting disagrees, operators reconcile data manually, the current platform cannot support the next business model..."></textarea>
+            </label>
+          </div>
+          <div class="mt-7 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p id="form-note" class="text-xs leading-5 text-stone-500">Static-safe form: opens an email draft. No third-party lead capture is running.</p>
+            <button type="submit" class="inline-flex items-center justify-center border border-stone-900 bg-stone-900 px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-ivory transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-paper focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-4 focus:ring-offset-ivory">Submit system context</button>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer class="border-t border-line px-6 py-10 sm:px-8 lg:px-10">
+  <footer class="relative z-10 border-t border-line px-6 py-10 sm:px-8 lg:px-10">
     <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between">
       <p class="font-serif text-2xl font-semibold tracking-[-0.03em] text-stone-900">Intervencija</p>
-      <p>Autonomous architecture. Edge-native resilience. Sovereign intelligence.</p>
+      <p>Intervencija © 2026. Founder-led from Vilnius.</p>
     </div>
   </footer>
 
   <script>
-    const progressBar = document.getElementById('progressBar');
-    const updateProgress = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = max > 0 ? window.scrollY / max : 0;
-      progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
-    };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -407,48 +476,24 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach((node) => revealObserver.observe(node));
 
-    document.querySelectorAll('.challenge-chip').forEach((button) => {
-      button.addEventListener('click', () => {
-        const textarea = document.querySelector('textarea[name="current_system_challenge"]');
-        textarea.value = button.dataset.challenge;
-        textarea.focus();
-        document.querySelectorAll('.challenge-chip').forEach((chip) => chip.classList.remove('border-stone-900', 'bg-ivory', 'text-stone-900'));
-        button.classList.add('border-stone-900', 'bg-ivory', 'text-stone-900');
-      });
+    document.getElementById('inquiry-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const data = new FormData(form);
+      const recipient = form.dataset.recipient || 'hello@intervencija.lt';
+      const subject = 'Intervencija inquiry — ' + (data.get('company') || data.get('role') || 'Critical system');
+      const body = [
+        'Name: ' + data.get('name'),
+        'Corporate Email: ' + data.get('email'),
+        'Role: ' + data.get('role'),
+        'Company: ' + (data.get('company') || ''),
+        '',
+        'System / workflow challenge:',
+        data.get('challenge')
+      ].join('\n');
+      window.location.href = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      document.getElementById('form-note').textContent = 'Email draft opened. If nothing happened, send the details directly to ' + recipient + '.';
     });
-
-    const intents = [
-      'Sync global inventory across 4 cloud regions',
-      'Contain model risk across private AI workflows',
-      'Recover event streams after regional failure',
-      'Deploy autonomous agents with deterministic controls'
-    ];
-    const target = document.getElementById('intentText');
-    let intentIndex = 0;
-    let charIndex = intents[0].length;
-    let deleting = true;
-
-    function tickIntent() {
-      const phrase = intents[intentIndex];
-      if (deleting) {
-        charIndex -= 1;
-        if (charIndex <= 0) {
-          deleting = false;
-          intentIndex = (intentIndex + 1) % intents.length;
-        }
-      } else {
-        charIndex += 1;
-        if (charIndex >= intents[intentIndex].length) {
-          deleting = true;
-          setTimeout(tickIntent, 1450);
-          target.textContent = intents[intentIndex];
-          return;
-        }
-      }
-      target.textContent = intents[intentIndex].slice(0, charIndex);
-      setTimeout(tickIntent, deleting ? 30 : 54);
-    }
-    setTimeout(tickIntent, 1400);
   </script>
 </body>
 </html>
