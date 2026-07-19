@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intervencija — Enterprise Architecture &amp; Custom Software</title>
+  <title>Intervencija - Enterprise Architecture &amp; Custom Software</title>
   <meta name="description" content="Intervencija is a strategic partner for enterprise architecture, critical software builds, and dependable systems designed to scale with the business.">
   <meta name="theme-color" content="#fbfaf7">
 
@@ -113,6 +113,44 @@
       letter-spacing: .19em;
       text-transform: uppercase;
     }
+    .brand-card {
+      position: relative;
+      display: flex;
+      min-height: 7.5rem;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid #ded8ce;
+      background: rgba(251,250,247,.6);
+      padding: 1.5rem;
+      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+    .brand-card::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(222,216,206,.55);
+      pointer-events: none;
+    }
+    .brand-card:hover {
+      border-color: #1c1917;
+      background: #1c1917;
+      color: #fbfaf7;
+    }
+    .brand-wordmark {
+      position: relative;
+      z-index: 1;
+      color: currentColor;
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.05em;
+      text-align: center;
+    }
+    .brand-wordmark--serif { font-family: "Playfair Display", Georgia, serif; font-weight: 600; }
+    .brand-wordmark--caps { font-size: clamp(1.05rem, 1.85vw, 1.5rem); letter-spacing: .12em; }
+    .brand-wordmark--wide { letter-spacing: .05em; }
+    .brand-wordmark--script { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 700; }
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity .65s ease, transform .65s ease; }
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) {
@@ -233,12 +271,29 @@
       </div>
     </section>
 
-    <section id="proof" class="border-y border-line bg-paper/70 px-6 py-8 sm:px-8 lg:px-10" aria-label="Credibility summary">
-      <div class="mx-auto grid max-w-7xl gap-5 md:grid-cols-[.85fr_1.15fr] md:items-center">
-        <p class="small-caps text-stone-500">Operating credibility</p>
-        <div class="space-y-2">
-          <p class="text-sm font-medium leading-7 text-stone-700 md:text-base">Experience in payment-grade commerce environments, European banking, SME lending, logistics platforms, ecommerce infrastructure, internal ERP/CRM systems, data-heavy operations, and cloud-native delivery.</p>
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">A senior team based in Vilnius, supporting organisations where reliability, scale, and operational continuity are material priorities.</p>
+    <section id="proof" class="border-y border-line bg-paper/70 px-6 py-20 sm:px-8 lg:px-10 lg:py-24" aria-labelledby="proof-title">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
+          <div>
+            <p class="small-caps text-stone-500">Selected experience</p>
+            <h2 id="proof-title" class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">Experience that carries weight.</h2>
+          </div>
+          <div class="max-w-2xl lg:justify-self-end">
+            <p class="text-lg leading-8 text-stone-600">Professional experience across payments, banking, commerce, logistics, and enterprise delivery - in environments where reliable systems are central to the operation.</p>
+            <p class="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">The organisations below represent direct engagements, prior roles, and partner-delivered work.</p>
+          </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <div class="brand-card" aria-label="Sendcloud"><span class="brand-wordmark">sendcloud</span></div>
+          <div class="brand-card" aria-label="New10"><span class="brand-wordmark brand-wordmark--wide">New10</span></div>
+          <div class="brand-card" aria-label="ABN AMRO"><span class="brand-wordmark brand-wordmark--caps">ABN AMRO</span></div>
+          <div class="brand-card" aria-label="Rabobank"><span class="brand-wordmark">Rabobank</span></div>
+          <div class="brand-card" aria-label="SNS"><span class="brand-wordmark brand-wordmark--caps">SNS</span></div>
+          <div class="brand-card" aria-label="Helmes"><span class="brand-wordmark brand-wordmark--serif">Helmes</span></div>
+          <div class="brand-card" aria-label="Costa Coffee"><span class="brand-wordmark brand-wordmark--serif">Costa<br>Coffee</span></div>
+          <div class="brand-card" aria-label="Coca-Cola"><span class="brand-wordmark brand-wordmark--script">Coca-Cola</span></div>
+          <div class="brand-card" aria-label="VML"><span class="brand-wordmark brand-wordmark--caps">VML</span></div>
         </div>
       </div>
     </section>
@@ -371,7 +426,7 @@
             <p class="small-caps text-stone-500">Engagements</p>
             <h2 id="engagements-title" class="mt-4 font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl">Three calibrated ways to work together.</h2>
           </div>
-          <p class="max-w-2xl text-lg leading-8 text-stone-600 lg:justify-self-end">Each engagement is designed to complement your existing operations and leadership structure—providing exactly the depth, continuity, and implementation support the moment requires.</p>
+          <p class="max-w-2xl text-lg leading-8 text-stone-600 lg:justify-self-end">Each engagement is designed to complement your existing operations and leadership structure - providing exactly the depth, continuity, and implementation support the moment requires.</p>
         </div>
 
         <div class="mt-14 grid gap-5 lg:grid-cols-3">
@@ -440,7 +495,7 @@
     <section id="stack" class="reveal border-y border-line bg-ivory/70 px-6 py-14 sm:px-8 lg:px-10" aria-label="Technology range">
       <div class="mx-auto grid max-w-7xl gap-5 md:grid-cols-[.85fr_1.15fr] md:items-center">
         <p class="small-caps text-stone-500">Technology range</p>
-        <p class="text-sm leading-7 text-stone-600">TypeScript, Python, Go, AWS, GCP, Kubernetes, Terraform, event-driven services, search, queues, serverless infrastructure, data pipelines, dashboards, internal platforms, and legacy integration paths. Technology follows the operating context—not the other way around.</p>
+        <p class="text-sm leading-7 text-stone-600">TypeScript, Python, Go, AWS, GCP, Kubernetes, Terraform, event-driven services, search, queues, serverless infrastructure, data pipelines, dashboards, internal platforms, and legacy integration paths. Technology follows the operating context - not the other way around.</p>
       </div>
     </section>
 
@@ -521,7 +576,7 @@
         role: data.get('role'),
         company: data.get('company') || 'N/A',
         challenge: data.get('challenge'),
-        _subject: 'Intervencija request — ' + (data.get('company') || data.get('role') || 'Architecture')
+        _subject: 'Intervencija request - ' + (data.get('company') || data.get('role') || 'Architecture')
       };
 
       try {
