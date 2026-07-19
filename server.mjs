@@ -13,6 +13,9 @@ const types = {
   '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
   '.png': 'image/png',
@@ -46,7 +49,7 @@ const server = createServer((req, res) => {
   }
 
   const ext = extname(file).toLowerCase();
-  const isAsset = !['.html', ''].includes(ext);
+  const isAsset = !['.html', '', '.xml', '.txt', '.webmanifest'].includes(ext);
 
   res.writeHead(200, {
     'Content-Type': types[ext] || 'application/octet-stream',

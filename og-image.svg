@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Intervencija - Enterprise Architecture and Custom Software</title>
+  <desc id="description">The architecture beneath your next stage of growth.</desc>
+  <defs>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M 52 0 L 0 0 0 52" fill="none" stroke="#ded8ce" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="wash" cx="16%" cy="4%" r="72%">
+      <stop offset="0" stop-color="#efe7da"/>
+      <stop offset="1" stop-color="#fbfaf7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#fbfaf7"/>
+  <rect width="1200" height="630" fill="url(#wash)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity=".72"/>
+  <rect x="56" y="54" width="52" height="52" fill="#fbfaf7" stroke="#1c1917" stroke-width="2"/>
+  <rect x="75" y="73" width="14" height="14" fill="#1c1917"/>
+  <text x="130" y="90" fill="#1c1917" font-family="Georgia, serif" font-size="36" font-weight="700">Intervencija</text>
+  <line x1="56" y1="138" x2="1144" y2="138" stroke="#ded8ce" stroke-width="2"/>
+  <text x="56" y="197" fill="#6b625b" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="4">ENTERPRISE ARCHITECTURE &amp; CUSTOM SOFTWARE</text>
+  <text x="56" y="300" fill="#1c1917" font-family="Georgia, serif" font-size="76" font-weight="700" letter-spacing="-4">Architecture beneath</text>
+  <text x="56" y="382" fill="#1c1917" font-family="Georgia, serif" font-size="76" font-weight="700" letter-spacing="-4">your next stage of growth.</text>
+  <text x="58" y="486" fill="#5f5852" font-family="Arial, sans-serif" font-size="27">Dependable systems, deliberate architecture, and custom software</text>
+  <text x="58" y="524" fill="#5f5852" font-family="Arial, sans-serif" font-size="27">that scales quietly with the business.</text>
+</svg>
