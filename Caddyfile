@@ -21,8 +21,13 @@
 		-Server
 	}
 
-	try_files {path} /index.html
+	try_files {path} {path}/index.html =404
 	file_server
+
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
 
 	log {
 		output stdout

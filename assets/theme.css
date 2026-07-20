@@ -1,0 +1,201 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 3px solid #1c1917;
+  outline-offset: 4px;
+}
+
+.bg-stone-900 :focus-visible {
+  outline-color: #fbfaf7;
+}
+
+body {
+  background:
+    radial-gradient(circle at 18% 4%, rgba(239, 231, 218, .96), transparent 30rem),
+    radial-gradient(circle at 82% 12%, rgba(255, 255, 255, .74), transparent 34rem),
+    linear-gradient(180deg, #fbfaf7 0%, #f6f1e8 100%);
+  color: #1c1917;
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: .14;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.paper-grid {
+  background-image:
+    linear-gradient(rgba(222, 216, 206, .78) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(222, 216, 206, .78) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at 50% 16%, black 0%, transparent 68%);
+}
+
+.paper-card {
+  position: relative;
+  border: 1px solid #ded8ce;
+  background: rgba(251, 250, 247, .76);
+  backdrop-filter: blur(14px);
+}
+
+.paper-card::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(222, 216, 206, .58);
+  pointer-events: none;
+}
+
+.square-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #1c1917;
+}
+
+.square-mark::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #1c1917;
+}
+
+.field-line {
+  border: 0;
+  border-bottom: 1px solid rgba(120, 113, 108, .55);
+  border-radius: 0;
+  background: transparent;
+  outline: none;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.field-line:focus {
+  border-bottom-color: #1c1917;
+  background: rgba(251, 250, 247, .58);
+}
+
+.small-caps {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+}
+
+.brand-card {
+  position: relative;
+  display: flex;
+  min-height: 6.6rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #ded8ce;
+  background: rgba(251, 250, 247, .6);
+  padding: 1.25rem;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.brand-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(222, 216, 206, .55);
+  pointer-events: none;
+}
+
+.brand-card:hover {
+  border-color: #1c1917;
+  background: #1c1917;
+  color: #fbfaf7;
+}
+
+.brand-wordmark {
+  position: relative;
+  z-index: 1;
+  color: currentColor;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.05em;
+  text-align: center;
+}
+
+.brand-wordmark--serif {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+}
+
+.brand-wordmark--caps {
+  font-size: clamp(.95rem, 1.6vw, 1.3rem);
+  letter-spacing: .12em;
+}
+
+.brand-wordmark--wide {
+  letter-spacing: .05em;
+}
+
+.brand-wordmark--script {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#form-note[data-state="success"] {
+  color: #166534;
+}
+
+#form-note[data-state="error"] {
+  color: #991b1b;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: .72;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

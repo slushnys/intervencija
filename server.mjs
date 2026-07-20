@@ -38,20 +38,33 @@ function safePath(urlPath) {
 const server = createServer((req, res) => {
   const candidate = safePath(req.url || '/');
   let file = candidate;
+  let statusCode = 200;
 
-  if (!file || !existsSync(file)) file = join(root, 'index.html');
+  if (!file || !existsSync(file)) {
+    file = join(root, '404.html');
+    statusCode = 404;
+  }
 
   try {
     const meta = statSync(file);
-    if (meta.isDirectory()) file = join(file, 'index.html');
+    if (meta.isDirectory()) {
+      const directoryIndex = join(file, 'index.html');
+      if (existsSync(directoryIndex)) {
+        file = directoryIndex;
+      } else {
+        file = join(root, '404.html');
+        statusCode = 404;
+      }
+    }
   } catch {
-    file = join(root, 'index.html');
+    file = join(root, '404.html');
+    statusCode = 404;
   }
 
   const ext = extname(file).toLowerCase();
   const isAsset = !['.html', '', '.xml', '.txt', '.webmanifest'].includes(ext);
 
-  res.writeHead(200, {
+  res.writeHead(statusCode, {
     'Content-Type': types[ext] || 'application/octet-stream',
     'Cache-Control': isAsset ? 'public, max-age=31536000, immutable' : 'no-store',
     'X-Content-Type-Options': 'nosniff',
