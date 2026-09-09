@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Critical Software Builds | Intervencija</title>
-  <meta name="description" content="Architecture and delivery for critical enterprise workflows, integrations, internal platforms, and data capabilities with a dependable path into production.">
+  <title>Custom Software Development &amp; Critical Builds | Intervencija</title>
+  <meta name="description" content="Custom software, enterprise integrations, and business platforms. Intervencija connects architecture with hands-on delivery and operational handover.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#fbfaf7">
   <script>document.documentElement.classList.add('js');</script>
@@ -15,8 +15,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Intervencija">
-  <meta property="og:title" content="Critical Software Builds | Intervencija">
-  <meta property="og:description" content="Focused architecture and delivery for software that carries operational or commercial importance.">
+  <meta property="og:title" content="Custom Software Development &amp; Critical Builds | Intervencija">
+  <meta property="og:description" content="Custom software, enterprise integrations, and business platforms. Intervencija connects architecture with hands-on delivery and operational handover.">
   <meta property="og:url" content="https://intervencija.eu/critical-builds/">
   <meta property="og:image" content="https://intervencija.eu/og-image.png">
   <meta property="og:image:secure_url" content="https://intervencija.eu/og-image.png">
@@ -25,8 +25,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Intervencija - Enterprise architecture and critical software">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Critical Software Builds | Intervencija">
-  <meta name="twitter:description" content="Focused architecture and delivery for software that carries operational or commercial importance.">
+  <meta name="twitter:title" content="Custom Software Development &amp; Critical Builds | Intervencija">
+  <meta name="twitter:description" content="Custom software, enterprise integrations, and business platforms. Intervencija connects architecture with hands-on delivery and operational handover.">
   <meta name="twitter:image" content="https://intervencija.eu/og-image.png">
   <meta name="twitter:image:alt" content="Intervencija - Enterprise architecture and critical software">
   <script type="application/ld+json">
@@ -44,126 +44,77 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css">
-  <link rel="stylesheet" href="/assets/theme.css">
-  <script defer src="/assets/site.js"></script>
+  <link rel="stylesheet" href="/assets/site.css?v=20260909">
+  <link rel="stylesheet" href="/assets/theme.css?v=20260909">
+  <script defer src="/assets/site.js?v=20260909"></script>
 </head>
-<body class="grain min-h-screen overflow-x-hidden bg-ivory font-sans text-stone-900 antialiased">
-  <div class="paper-grid pointer-events-none fixed inset-x-0 top-0 z-0 h-[40rem] opacity-80" aria-hidden="true"></div>
-  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:border focus:border-stone-900 focus:bg-ivory focus:px-4 focus:py-3">Skip to content</a>
-  <header class="sticky top-0 z-50 border-b border-line bg-ivory/90 backdrop-blur-xl">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-10" aria-label="Primary navigation">
-      <a href="/" class="inline-flex items-center gap-3" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span class="font-serif text-2xl font-semibold tracking-[-0.035em]">Intervencija</span></a>
-      <div class="hidden items-center gap-7 md:flex">
-        <a href="/system-audits/" class="text-sm font-medium text-stone-600 hover:text-stone-950">System Audits</a>
-        <a href="/critical-builds/" aria-current="page" class="text-sm font-semibold text-stone-950">Critical Builds</a>
-        <a href="/fractional-architecture/" class="text-sm font-medium text-stone-600 hover:text-stone-950">Fractional Architecture</a>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap header-inner" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a>
+      <div class="desktop-nav">
+        <a href="/#engagements" data-nav-section="engagements">Services</a>
+        <a href="/#experience" data-nav-section="experience">Experience</a>
+        <a href="/#approach" data-nav-section="approach">Approach</a>
+        <a class="button button-small" href="#contact" data-track="header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
       </div>
-      <a href="/#contact" data-track="service_header_contact" aria-label="Discuss a Critical Build" class="border border-stone-900 bg-stone-900 px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-ivory">Contact</a>
+      <details class="mobile-nav" data-nav-menu>
+        <summary>Menu <span aria-hidden="true">+</span></summary>
+        <div class="mobile-panel">
+          <a href="/#engagements">Services</a><a href="/#experience">Experience</a><a href="/#approach">Approach</a>
+          <a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a>
+          <a class="button" href="#contact" data-track="mobile_header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
     </nav>
   </header>
-
-  <main id="content" class="relative z-10">
-    <section class="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-10 lg:py-24" aria-labelledby="page-title">
-      <div class="reveal">
-        <p class="small-caps text-stone-500">Critical Builds</p>
-        <h1 id="page-title" class="mt-5 max-w-4xl font-serif text-[clamp(3.5rem,6.6vw,7rem)] font-semibold leading-[.92] tracking-[-.052em]">Critical software, carried deliberately into production.</h1>
-        <p class="mt-7 max-w-2xl text-xl leading-8 text-stone-600">Focused architecture and implementation for workflows, integrations, internal platforms, and data capabilities that carry operational or commercial importance.</p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="/#contact" data-track="build_primary_contact" class="inline-flex justify-center border border-stone-900 bg-stone-900 px-7 py-4 text-xs font-semibold uppercase tracking-[.18em] text-ivory">Discuss a critical build</a>
-          <a href="#delivery" class="inline-flex justify-center border border-line bg-ivory px-7 py-4 text-xs font-semibold uppercase tracking-[.18em] text-stone-700">Review the delivery model</a>
-        </div>
-      </div>
-      <aside class="paper-card reveal p-7 shadow-hard sm:p-8" aria-label="Build principles">
-        <div class="relative z-10">
-          <p class="small-caps text-brass">Production from the outset</p>
-          <h2 class="mt-5 font-serif text-4xl font-semibold leading-none tracking-[-.04em]">The build is shaped by the operation it must enter.</h2>
-          <dl class="mt-8 space-y-5 border-t border-line pt-7">
-            <div><dt class="small-caps text-stone-500">Fit</dt><dd class="mt-2 text-sm leading-7 text-stone-600">Clear boundaries, integration contracts, data ownership, and responsibilities.</dd></div>
-            <div><dt class="small-caps text-stone-500">Control</dt><dd class="mt-2 text-sm leading-7 text-stone-600">Deployment, monitoring, rollback, failure handling, and operational feedback.</dd></div>
-            <div><dt class="small-caps text-stone-500">Continuity</dt><dd class="mt-2 text-sm leading-7 text-stone-600">Documented decisions, operating guidance, and a handover that respects the existing team.</dd></div>
-          </dl>
-        </div>
-      </aside>
-    </section>
-
-    <section class="border-y border-line bg-paper/70 px-6 py-16 sm:px-8 lg:px-10" aria-labelledby="initiatives-title">
-      <div class="mx-auto max-w-7xl">
-        <p class="small-caps text-stone-500">Appropriate initiatives</p>
-        <h2 id="initiatives-title" class="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-none tracking-[-.045em] sm:text-5xl">Defined capability with a real path into operation.</h2>
-        <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <article class="border border-line bg-ivory/75 p-6"><h3 class="font-serif text-2xl font-semibold">Operational workflows</h3><p class="mt-4 text-sm leading-7 text-stone-600">Approval, fulfilment, reporting, service, or revenue workflows that need a dependable system boundary.</p></article>
-          <article class="border border-line bg-ivory/75 p-6"><h3 class="font-serif text-2xl font-semibold">Integration layers</h3><p class="mt-4 text-sm leading-7 text-stone-600">Reliable movement between finance, CRM, ERP, payments, carriers, products, and partner systems.</p></article>
-          <article class="border border-line bg-ivory/75 p-6"><h3 class="font-serif text-2xl font-semibold">Internal platforms</h3><p class="mt-4 text-sm leading-7 text-stone-600">Focused tools that give operators clear ownership, better decisions, and fewer manual transitions.</p></article>
-          <article class="border border-line bg-ivory/75 p-6"><h3 class="font-serif text-2xl font-semibold">Data capabilities</h3><p class="mt-4 text-sm leading-7 text-stone-600">Pipelines, reporting layers, search, automation, or governed AI foundations tied to a defined use.</p></article>
-        </div>
+  <main id="content">
+    <section class="wrap service-hero" aria-labelledby="page-title">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Critical Builds</span></nav>
+      <div class="service-hero-layout">
+        <div><p class="eyebrow">Critical Builds</p><h1 id="page-title">Important software.<br><em>Considered from the start.</em></h1><p class="lead">For engineering leaders delivering a business platform, critical integration, or custom application. We connect architecture, implementation, and production readiness in one focused engagement, with responsibilities and acceptance criteria agreed from the start.</p><div class="button-row"><a class="button" href="#contact" data-track="critical-builds_contact">Discuss a software project <span aria-hidden="true">↗</span></a><a class="text-link" href="#deliverables">Explore the deliverables <span aria-hidden="true">↓</span></a></div></div>
+        <aside class="engagement-brief" aria-labelledby="brief-title"><h2 id="brief-title">The engagement at a glance.</h2><dl><div><dt>Best suited to</dt><dd>A business application, platform, integration, data service, or focused modernisation.</dd></div><div><dt>What you receive</dt><dd>Working software, agreed tests, deployment documentation, and an operational handover.</dd></div><div><dt>How it starts</dt><dd>An agreed outcome, delivery scope, responsibilities, milestones, and commercial model.</dd></div></dl></aside>
       </div>
     </section>
-
-    <section id="delivery" class="reveal mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24" aria-labelledby="delivery-title">
-      <div class="grid gap-10 lg:grid-cols-[.68fr_1.32fr]">
-        <div>
-          <p class="small-caps text-stone-500">Delivery model</p>
-          <h2 id="delivery-title" class="mt-4 font-serif text-4xl font-semibold leading-none tracking-[-.045em] sm:text-5xl">A focused production path, integrated with the organisation.</h2>
-          <p class="mt-6 text-lg leading-8 text-stone-600">The engagement combines architectural direction and hands-on implementation. Work is sequenced around operational risk and the points where early evidence matters.</p>
-        </div>
-        <ol class="grid gap-4 sm:grid-cols-2">
-          <li class="border border-line bg-paper/55 p-6"><span class="small-caps text-brass">01 - Frame</span><h3 class="mt-7 font-serif text-2xl font-semibold">Define the capability.</h3><p class="mt-4 text-sm leading-7 text-stone-600">Clarify the workflow, system boundary, operating responsibility, and production outcome.</p></li>
-          <li class="border border-line bg-paper/55 p-6"><span class="small-caps text-brass">02 - Prove</span><h3 class="mt-7 font-serif text-2xl font-semibold">Test the sensitive path.</h3><p class="mt-4 text-sm leading-7 text-stone-600">Use real interfaces and representative data to reduce the most consequential uncertainty early.</p></li>
-          <li class="border border-line bg-paper/55 p-6"><span class="small-caps text-brass">03 - Build</span><h3 class="mt-7 font-serif text-2xl font-semibold">Deliver the production slice.</h3><p class="mt-4 text-sm leading-7 text-stone-600">Implement with deployment, monitoring, failure handling, and operational feedback included.</p></li>
-          <li class="border border-stone-900 bg-stone-900 p-6 text-ivory"><span class="small-caps text-stone-300">04 - Transfer</span><h3 class="mt-7 font-serif text-2xl font-semibold">Establish clear ownership.</h3><p class="mt-4 text-sm leading-7 text-stone-300">Share the decisions, operating model, maintenance context, and the next sensible sequence.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="border-y border-line bg-ivory/70 px-6 py-20 sm:px-8 lg:px-10" aria-labelledby="standards-title">
-      <div class="mx-auto max-w-7xl">
-        <p class="small-caps text-stone-500">Production standards</p>
-        <h2 id="standards-title" class="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-none tracking-[-.045em] sm:text-5xl">Reliability is designed into the delivery, not added at the end.</h2>
-        <div class="mt-10 grid gap-4 md:grid-cols-3">
-          <article class="border border-line bg-paper/55 p-7"><p class="small-caps text-brass">Observable</p><h3 class="mt-6 font-serif text-3xl font-semibold">The system can explain its state.</h3><p class="mt-4 text-sm leading-7 text-stone-600">Useful logs, metrics, traces, and business signals are shaped around the operation and its likely failure modes.</p></article>
-          <article class="border border-line bg-paper/55 p-7"><p class="small-caps text-brass">Recoverable</p><h3 class="mt-6 font-serif text-3xl font-semibold">Change has a controlled path.</h3><p class="mt-4 text-sm leading-7 text-stone-600">Deployment, rollback, data movement, and fallback decisions reflect the consequence of interruption.</p></article>
-          <article class="border border-stone-900 bg-stone-900 p-7 text-ivory"><p class="small-caps text-stone-300">Owned</p><h3 class="mt-6 font-serif text-3xl font-semibold">Responsibility remains clear.</h3><p class="mt-4 text-sm leading-7 text-stone-300">Documentation and operating guidance support the people who will continue to evolve the capability.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="reveal mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10" aria-labelledby="collaboration-title">
-      <div class="grid gap-10 lg:grid-cols-2">
-        <div>
-          <p class="small-caps text-stone-500">Collaboration</p>
-          <h2 id="collaboration-title" class="mt-4 font-serif text-4xl font-semibold tracking-[-.04em]">Designed to work alongside the team already carrying the business.</h2>
-          <p class="mt-7 text-base leading-8 text-stone-600">The build does not create a parallel technical world. Architecture decisions, interfaces, delivery practices, and handover are shaped with the people who will operate and extend the system.</p>
-        </div>
-        <div>
-          <p class="small-caps text-stone-500">Boundaries</p>
-          <h2 class="mt-4 font-serif text-4xl font-semibold tracking-[-.04em]">A Critical Build is defined, not unlimited.</h2>
-          <p class="mt-7 text-base leading-8 text-stone-600">The engagement works best when the capability and production outcome are clear enough to govern. Large portfolio transformation, round-the-clock managed operations, formal certification, and unrelated staff augmentation require separate scope or specialist partners.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="border-y border-line bg-paper/70 px-6 py-20 sm:px-8 lg:px-10" aria-labelledby="faq-title">
-      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.55fr_1.45fr]">
-        <div><p class="small-caps text-stone-500">Questions</p><h2 id="faq-title" class="mt-4 font-serif text-4xl font-semibold">Before delivery begins.</h2></div>
-        <div class="space-y-4">
-          <details class="border border-line bg-ivory/75 p-6"><summary class="cursor-pointer font-semibold">Can Intervencija join an existing engineering team?</summary><p class="mt-4 text-sm leading-7 text-stone-600">Yes. The model is intended to integrate with existing technical and operational ownership. Responsibilities and decision boundaries are made explicit at the start.</p></details>
-          <details class="border border-line bg-ivory/75 p-6"><summary class="cursor-pointer font-semibold">Can the build begin with uncertainty?</summary><p class="mt-4 text-sm leading-7 text-stone-600">Yes, when the uncertainty can be framed and reduced through evidence. A System Audit may be the better first step when the decision itself is still unclear.</p></details>
-          <details class="border border-line bg-ivory/75 p-6"><summary class="cursor-pointer font-semibold">What happens after handover?</summary><p class="mt-4 text-sm leading-7 text-stone-600">Ownership can remain with the internal team, continue through a defined follow-on scope, or be supported through Fractional Architecture. The intended model is agreed before production handover.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="px-6 py-20 sm:px-8 lg:px-10">
-      <div class="mx-auto flex max-w-7xl flex-col gap-7 border border-stone-900 bg-stone-900 p-8 text-ivory shadow-hard sm:p-10 lg:flex-row lg:items-end lg:justify-between">
-        <div><p class="small-caps text-stone-300">A defined production initiative</p><h2 class="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-none tracking-[-.04em]">Bring the capability that needs a dependable path into operation.</h2></div>
-        <a href="/#contact" data-track="build_final_contact" class="inline-flex shrink-0 justify-center border border-ivory px-6 py-4 text-xs font-semibold uppercase tracking-[.18em] text-ivory hover:bg-ivory hover:text-stone-900">Discuss a critical build</a>
+    <section class="section faq-section" aria-labelledby="fit-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">Where this fits</p><h2 id="fit-title">Built around your business.</h2></div></div><div class="fit-grid"><article><h3>Create a new platform</h3><p>Translate a business idea or product requirement into software with a clear foundation for subsequent releases.</p></article><article><h3>Connect the operation</h3><p>Integrate existing services and partner APIs, automate a workflow, or establish a reliable path between systems.</p></article><article><h3>Evolve a critical system</h3><p>Replace or extend a defined part of your software estate while accounting for the operation around it.</p></article></div></div></section>
+    <section id="deliverables" class="section deliverables-section" aria-labelledby="deliverables-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">What you receive</p><h2 id="deliverables-title">More than a release.<br>A system you can carry forward.</h2></div><p>Operational needs shape the build from the beginning. The proposal makes deliverables and acceptance criteria explicit.</p></div><div class="deliverable-grid"><article><h3>Architecture and implementation</h3><p>Documented design decisions and working software aligned with the agreed business and technical requirements.</p></article><article><h3>Integration and testing</h3><p>Defined interfaces, handling of failure and exception paths, and tests appropriate to the system’s responsibilities.</p></article><article><h3>Deployment and operational readiness</h3><p>Release and rollback planning, configuration guidance, and agreed monitoring and support responsibilities.</p></article><article><h3>Documentation and knowledge transfer</h3><p>A practical handover of the implementation, key decisions, and operating knowledge to the team taking ownership.</p></article></div></div></section>
+    <section class="section" aria-labelledby="process-title"><div class="wrap"><p class="eyebrow">How we work together</p><h2 id="process-title" style="margin-top:18px">A clear route to production.</h2><ol class="process-list"><li><span class="eyebrow">01</span><h3>Define</h3><p>Agree the outcome, system boundaries, dependencies, and criteria for acceptance.</p></li><li><span class="eyebrow">02</span><h3>Design</h3><p>Choose the architecture and validate the assumptions with the greatest delivery impact.</p></li><li><span class="eyebrow">03</span><h3>Build</h3><p>Deliver in increments with regular reviews, integration checks, and visible decisions.</p></li><li><span class="eyebrow">04</span><h3>Transition</h3><p>Validate readiness, plan the release, and complete the agreed operational handover.</p></li></ol></div></section>
+    <section class="section faq-section" aria-labelledby="faq-title"><div class="wrap faq-layout"><div><p class="eyebrow">Before we begin</p><h2 id="faq-title">Useful details.<br>Clear expectations.</h2></div><div class="faq-list"><details><summary>Can you build alongside our engineering team?</summary><p>Yes. Responsibilities, code review, delivery tools, and integration points can be agreed around your existing team and partners.</p></details><details><summary>What if we only have a business idea?</summary><p>We can begin by shaping the requirements, identifying the critical assumptions, and defining a focused first scope before estimating the full build.</p></details><details><summary>Can you work with legacy systems?</summary><p>Yes. We start with the interfaces, dependencies, and operational constraints that shape the change. The approach may be an integration, an extension, or a phased replacement.</p></details><details><summary>How do you manage changes to scope?</summary><p>Changes are discussed in terms of their effect on the outcome, dependencies, effort, and delivery plan. The commercial proposal sets out how changes are agreed.</p></details><details><summary>What happens after delivery?</summary><p>Documentation, knowledge transfer, and an agreed handover are part of planning the engagement. Any continuing support, maintenance, or further development is scoped explicitly.</p></details></div></div></section>
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow">Start a conversation</p>
+          <h2 id="contact-title">Bring your ambition.<br><em>Let’s shape the build.</em></h2>
+          <p class="lead">Describe what you want the software to do, who it will serve, and what it needs to connect with. A brief introduction is enough.</p>
+          <ol class="next-steps">
+            <li><span>01</span><div><h3>Share the context</h3><p>A few lines about the goal, the system, and any important timing.</p></div></li>
+            <li><span>02</span><div><h3>Talk through the possibilities</h3><p>We review your enquiry and arrange a focused technical conversation.</p></div></li>
+            <li><span>03</span><div><h3>Agree a useful next step</h3><p>A clear scope, approach, and commercial proposal before work begins.</p></div></li>
+          </ol>
+          <a class="text-link" href="mailto:hello@intervencija.eu" data-track="direct_email">hello@intervencija.eu <span aria-hidden="true">↗</span></a>
+        </div><form id="inquiry-form" class="inquiry-form" action="https://submit-form.com/4GyxKJ37V" method="post" accept-charset="UTF-8" aria-describedby="form-privacy form-note"><input type="hidden" name="interest" value="Critical Builds"><h3 class="form-heading">Enquire about Critical Builds</h3><div class="form-grid">
+            <div class="form-field"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name" maxlength="120" placeholder="Full name"></div>
+            <div class="form-field"><label for="email">Work email</label><input id="email" name="email" type="email" required autocomplete="email" maxlength="254" placeholder="you@company.com"></div>
+            <div class="form-field form-wide"><label for="company">Company <span>(optional)</span></label><input id="company" name="company" autocomplete="organization" maxlength="200" placeholder="Company name"></div>
+            <div class="form-field form-wide"><label for="message">What would you like to achieve?</label><textarea id="message" name="message" required rows="5" maxlength="8000" placeholder="A little context about your project, the challenge, and any timing you have in mind."></textarea></div>
+          </div>
+          <p id="form-privacy" class="form-privacy">We use your details to respond to this enquiry. Submissions are processed by our form provider. <a href="/privacy.html">Privacy notice</a>.</p>
+          <p class="form-privacy">Keep your first message high level. Access and confidentiality arrangements can be discussed before sharing sensitive material.</p>
+          <button class="button form-submit" type="submit">Send project enquiry <span aria-hidden="true">↗</span></button>
+          <p id="form-note" class="form-status" role="status" aria-live="polite" aria-atomic="true">An introduction is enough to begin.</p>
+          <noscript><p class="form-privacy">This form opens our form provider to send your enquiry. You can also email hello@intervencija.eu.</p></noscript>
+        </form>
       </div>
     </section>
   </main>
-
-  <footer class="border-t border-line px-6 py-8 sm:px-8 lg:px-10">
-    <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between"><p>Intervencija © 2026.</p><nav class="flex flex-wrap gap-5" aria-label="Footer navigation"><a href="/" class="text-stone-700">Home</a><a href="/system-audits/" class="text-stone-700">System Audits</a><a href="/critical-builds/" aria-current="page" class="text-stone-900">Critical Builds</a><a href="/fractional-architecture/" class="text-stone-700">Fractional Architecture</a><a href="mailto:hello@intervencija.eu" data-track="service_footer_email" class="text-stone-700">Email</a><a href="/privacy.html" class="text-stone-700">Privacy</a></nav></div>
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <div><a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a><p>Architecture beneath your next stage of growth.</p><p class="footer-location">Vilnius, Lithuania · Working internationally</p></div>
+      <nav aria-label="Services"><p class="eyebrow">Services</p><a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a></nav>
+      <div><p class="eyebrow">Let’s talk</p><a class="text-link" href="mailto:hello@intervencija.eu" data-track="footer_email">hello@intervencija.eu <span aria-hidden="true">↗</span></a><p>Bring the ambition.<br>We’ll help shape the software.</p></div>
+    </div>
+    <div class="wrap footer-bottom"><p>© 2026 Intervencija</p><a href="/privacy.html">Privacy notice</a><a href="#content">Back to top <span aria-hidden="true">↑</span></a></div>
   </footer>
 </body>
 </html>

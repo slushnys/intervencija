@@ -62,11 +62,11 @@ const server = createServer((req, res) => {
   }
 
   const ext = extname(file).toLowerCase();
-  const isAsset = !['.html', '', '.xml', '.txt', '.webmanifest'].includes(ext);
 
   res.writeHead(statusCode, {
     'Content-Type': types[ext] || 'application/octet-stream',
-    'Cache-Control': isAsset ? 'public, max-age=31536000, immutable' : 'no-store',
+    // This is the local preview server. Always reflect the latest source edits.
+    'Cache-Control': 'no-store',
     'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',

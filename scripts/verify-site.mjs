@@ -11,6 +11,7 @@ const pages = [
   'privacy.html'
 ];
 const publicPages = pages.filter((page) => page !== 'privacy.html');
+const siteOrigin = 'https://intervencija.eu';
 const errors = [];
 const titles = new Map();
 const descriptions = new Map();
@@ -37,11 +38,14 @@ for (const page of pages) {
 
   if (!title) fail(`${page}: title is missing`);
   if (!description) fail(`${page}: meta description is missing`);
-  if (!canonical) fail(`${page}: canonical URL is missing`);
+  const expectedCanonical = `${siteOrigin}/${page.replace(/index\.html$/, '')}`;
+  if (canonical !== expectedCanonical) {
+    fail(`${page}: canonical URL must be ${expectedCanonical}`);
+  }
   if (h1Count !== 1) fail(`${page}: expected one H1, found ${h1Count}`);
   if (html.includes('—')) fail(`${page}: contains an em dash`);
   if (html.includes('cdn.tailwindcss.com')) fail(`${page}: still uses the Tailwind browser CDN`);
-  if (!html.includes('href="/assets/site.css"')) fail(`${page}: compiled production stylesheet is missing`);
+  if (!/href="\/assets\/site\.css(?:\?[^\"]*)?"/.test(html)) fail(`${page}: compiled production stylesheet is missing`);
 
   if (titles.has(title)) fail(`${page}: title duplicates ${titles.get(title)}`);
   if (descriptions.has(description)) fail(`${page}: description duplicates ${descriptions.get(description)}`);
@@ -58,7 +62,32 @@ for (const page of pages) {
     }
   }
 
-  const ids = new Set(Array.from(html.matchAll(/\sid="([^"]+)"/g), (match) => match[1]));
+  const idValues = Array.from(html.matchAll(/\sid="([^"]+)"/g), (match) => match[1]);
+  const ids = new Set(idValues);
+  if (ids.size !== idValues.length) fail(`${page}: duplicate element IDs`);
+  if (/\bTODO\b|https?:\/\/[^"\s<>]*\.example(?:\/|")/i.test(html)) {
+    fail(`${page}: unfinished public content or placeholder URL`);
+  }
+  for (const match of html.matchAll(/aria-(?:labelledby|describedby)="([^"]+)"/g)) {
+    for (const id of match[1].split(/\s+/)) {
+      if (!ids.has(id)) fail(`${page}: missing accessible description target ${id}`);
+    }
+  }
+  for (const match of html.matchAll(/<img\b([^>]+)>/g)) {
+    if (!/\balt="[^"]*"/.test(match[1])) fail(`${page}: image has no alt attribute`);
+    const src = match[1].match(/\bsrc="([^"]+)"/)?.[1];
+    if (src?.startsWith('/')) {
+      const imagePath = new URL(src, 'https://intervencija.eu').pathname.slice(1);
+      if (!existsSync(resolve(root, imagePath))) {
+        fail(`${page}: missing image ${src}`);
+      } else if (imagePath.endsWith('.svg')) {
+        const svg = readFileSync(resolve(root, imagePath), 'utf8');
+        if (!svg.includes('xmlns="http://www.w3.org/2000/svg"')) {
+          fail(`${page}: SVG image ${src} is missing its namespace`);
+        }
+      }
+    }
+  }
   for (const match of html.matchAll(/href="([^"]+)"/g)) {
     const href = match[1];
     if (href.startsWith('#')) {
@@ -74,7 +103,10 @@ for (const page of pages) {
         ? `${url.pathname.slice(1)}index.html`
         : url.pathname.slice(1);
 
-    if (!existsSync(resolve(root, target))) fail(`${page}: link target ${url.pathname} does not exist`);
+    if (!existsSync(resolve(root, target))) {
+      fail(`${page}: link target ${url.pathname} does not exist`);
+      continue;
+    }
     if (url.hash) {
       const targetHtml = documents.get(target) || readFileSync(resolve(root, target), 'utf8');
       if (!targetHtml.includes(`id="${url.hash.slice(1)}"`)) fail(`${page}: target ${href} has no matching ID`);
@@ -82,13 +114,24 @@ for (const page of pages) {
   }
 }
 
-const homepage = documents.get('index.html') || '';
-if (!/<form\b[^>]*\bmethod="post"/i.test(homepage)) fail('index.html: enquiry form is not POST');
-if (!/<form\b[^>]*\baction="https:\/\/submit-form\.com\//i.test(homepage)) fail('index.html: enquiry form action is missing');
-if (!homepage.includes('id="form-note"')) fail('index.html: form-note status element is missing');
-if (!homepage.includes('role="status"')) fail('index.html: form status role is missing');
-if (!homepage.includes('mailto:hello@intervencija.eu')) fail('index.html: direct email fallback is missing');
-if (!homepage.includes('/privacy.html')) fail('index.html: privacy link is missing');
+for (const page of publicPages) {
+  const html = documents.get(page) || '';
+  if (!/<form\b[^>]*\bmethod="post"/i.test(html)) fail(`${page}: enquiry form is not POST`);
+  if (!/<form\b[^>]*\baction="https:\/\/submit-form\.com\//i.test(html)) fail(`${page}: enquiry form action is missing`);
+  if (!html.includes('id="form-note"') || !html.includes('role="status"')) fail(`${page}: form status is missing`);
+  if (!html.includes('mailto:hello@intervencija.eu')) fail(`${page}: direct email fallback is missing`);
+  if (!html.includes('/privacy.html')) fail(`${page}: privacy link is missing`);
+}
+
+for (const [page, interest] of [
+  ['system-audits/index.html', 'System Audits'],
+  ['critical-builds/index.html', 'Critical Builds'],
+  ['fractional-architecture/index.html', 'Fractional Architecture']
+]) {
+  if (!documents.get(page)?.includes(`name="interest" value="${interest}"`)) {
+    fail(`${page}: the enquiry does not identify its service`);
+  }
+}
 
 const sitemap = readFileSync(resolve(root, 'sitemap.xml'), 'utf8');
 for (const page of publicPages) {
@@ -102,7 +145,7 @@ if (!notFoundPage.includes('name="robots" content="noindex, follow"')) fail('404
 if ((notFoundPage.match(/<h1\b/gi) || []).length !== 1) fail('404.html: expected one H1');
 if (notFoundPage.includes('—')) fail('404.html: contains an em dash');
 if (notFoundPage.includes('cdn.tailwindcss.com')) fail('404.html: still uses the Tailwind browser CDN');
-if (!notFoundPage.includes('href="/assets/site.css"')) fail('404.html: compiled production stylesheet is missing');
+if (!/href="\/assets\/site\.css(?:\?[^\"]*)?"/.test(notFoundPage)) fail('404.html: compiled production stylesheet is missing');
 
 for (const asset of [
   'favicon.svg',

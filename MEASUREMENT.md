@@ -1,48 +1,24 @@
 # Intervencija measurement integration
 
-No analytics vendor is connected by default. The website emits privacy-neutral browser events that can be connected to a selected analytics provider later without changing the public interaction design.
+No analytics vendor is connected. The site emits browser events that can be connected to a selected provider later.
 
-## Event interface
+Listen for `intervencija:measurement` on `window`; the event name is in `event.detail.name`.
 
-Events are dispatched on `window` as `intervencija:measurement` custom events. The event payload is available at `event.detail`.
+| Event | Meaning |
+|---|---|
+| header_contact / mobile_header_contact | Header project enquiry link |
+| hero_contact | Homepage primary CTA |
+| hero_services | Homepage service exploration |
+| service_system_audits / service_critical_builds / service_fractional_architecture | Homepage service links |
+| capabilities_contact / approach_contact | Homepage context CTA |
+| system-audits_contact / critical-builds_contact / fractional-architecture_contact | Service page primary CTA |
+| direct_email / footer_email | Direct email alternative |
+| form_start | First form interaction |
+| form_success | Form endpoint confirmed acceptance |
+| form_failure | Rejected, failed, or timed-out request |
 
-Example integration:
+Click events include the link destination. Form events contain only the event name. Names, emails, companies, selected service, and enquiry contents are not included.
 
-```js
-window.addEventListener('intervencija:measurement', (event) => {
-  const { name, ...properties } = event.detail;
-  // Forward only the approved event name and properties to the selected provider.
-});
-```
+A form success event measures acceptance by the endpoint, not a qualified lead, inbox delivery, or revenue. When analytics is connected, track enquiries through qualification and won work outside the public website to assess lead quality.
 
-## Current events
-
-| Event | Trigger | Included properties |
-|---|---|---|
-| `header_contact` | Desktop homepage header CTA | Link destination |
-| `mobile_header_contact` | Mobile homepage header CTA | Link destination |
-| `hero_contact` | Homepage primary CTA | Link destination |
-| `hero_engagements` | Homepage engagement CTA | Link destination |
-| `service_system_audits` | Homepage System Audits link | Link destination |
-| `service_critical_builds` | Homepage Critical Builds link | Link destination |
-| `service_fractional_architecture` | Homepage Fractional Architecture link | Link destination |
-| `direct_email` | Homepage direct email link | `mailto:` destination |
-| `footer_email` | Homepage footer email link | `mailto:` destination |
-| `service_header_contact` | Service-page header CTA | Link destination |
-| `audit_primary_contact` | System Audits primary CTA | Link destination |
-| `audit_final_contact` | System Audits final CTA | Link destination |
-| `build_primary_contact` | Critical Builds primary CTA | Link destination |
-| `build_final_contact` | Critical Builds final CTA | Link destination |
-| `fractional_primary_contact` | Fractional Architecture primary CTA | Link destination |
-| `fractional_final_contact` | Fractional Architecture final CTA | Link destination |
-| `service_footer_email` | Service-page email link | `mailto:` destination |
-| `form_start` | First focus inside the enquiry form | None |
-| `form_success` | Confirmed successful form submission | None |
-| `form_failure` | Failed form submission | None |
-
-## Privacy boundary
-
-- Enquiry field values are never placed in event payloads.
-- No names, email addresses, companies, roles, or message contents are emitted.
-- No provider should be connected until its retention, cookies, consent requirements, and privacy notice impact are reviewed.
-- Search Console and webmaster-tool connections remain external owner actions and are not configured in this repository.
+No tracker, consent service, external account, or Search Console integration was configured by this overhaul.

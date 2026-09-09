@@ -15,7 +15,7 @@ module.exports = {
         warm: '#efe7da',
         espresso: '#1c1917',
         line: '#ded8ce',
-        brass: '#9a6b2f',
+        brass: '#8a5e26',
         clay: '#7c6f64'
       },
       fontFamily: {
