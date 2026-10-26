@@ -10,6 +10,8 @@ The website is static, but its Tailwind stylesheet is compiled before publishing
 4. Leave **Custom domain** set to `intervencija.eu`.
 5. Enable **Enforce HTTPS** so HTTP visitors are redirected to `https://intervencija.eu/`.
 
+This change has not been made yet. On 27 October 2026 every push to `main` still triggered two deployments: GitHub's built-in "pages build and deployment" from the branch, and this repository's workflow. The branch build was the one serving the site, so files such as `README.md` and `package.json` were publicly reachable and the verification gates did not protect production. `_config.yml` now limits the branch build to the same public files as `dist/`; switching the source to **GitHub Actions** makes the verified artifact the only deployment path, after which `_config.yml` can be deleted.
+
 `intervencija.eu` is already the active custom domain. The workflow does not replace or reconfigure it. With a custom GitHub Actions workflow, GitHub uses the domain stored in the repository's Pages settings and ignores the artifact's `CNAME` file.
 
 GitHub Pages manages the TLS certificate for the correctly configured custom domain. The existing HTTPS configuration remains in place when the publishing source changes. If **Enforce HTTPS** is enabled, GitHub also redirects HTTP requests to HTTPS.
