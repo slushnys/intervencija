@@ -81,16 +81,41 @@ if (customDomain !== 'intervencija.eu') {
   throw new Error(`Unexpected CNAME value: ${customDomain || '(empty)'}`);
 }
 
+const siteHost = 'intervencija.eu';
+const toFile = (pathname) => (pathname === '/'
+  ? 'index.html'
+  : pathname.endsWith('/') ? `${pathname.slice(1)}index.html` : pathname.slice(1));
+
 for (const htmlFile of actualFiles.filter((file) => file.endsWith('.html'))) {
   const html = readFileSync(join(distRoot, htmlFile), 'utf8');
+  // Every same-site reference must ship in the artifact, including social images and JSON-LD URLs.
+  const references = [
+    ...Array.from(html.matchAll(/\s(?:src|href)="(\/(?!\/)[^"]*)"/g), (match) => match[1]),
+    ...Array.from(html.matchAll(/https:\/\/intervencija\.eu(\/[^"'\s<>)]*)/g), (match) => match[1])
+  ];
+  for (const reference of references) {
+    const file = toFile(decodeURIComponent(reference.split(/[?#]/)[0]));
+    if (!actualFiles.includes(file)) {
+      throw new Error(`${htmlFile} references ${reference}, which is not in the artifact.`);
+    }
+  }
+  for (const match of html.matchAll(/<(?:script|link|img|iframe|source|video|audio|embed)\b[^>]*?\s(?:src|href|srcset)="((?:https?:)?\/\/[^"\s]+)/gi)) {
+    if (new URL(match[1], `https://${siteHost}`).host !== siteHost) {
+      throw new Error(`${htmlFile} loads a third-party resource: ${match[1]}`);
+    }
+  }
   if (html.includes('cdn.tailwindcss.com')) {
     throw new Error(`${htmlFile} still loads Tailwind from the CDN.`);
   }
-  if (/fonts\.(googleapis|gstatic)\.com/.test(html)) {
-    throw new Error(`${htmlFile} still requests third-party fonts.`);
-  }
   if (!html.includes('/assets/site.css')) {
     throw new Error(`${htmlFile} does not load the compiled site stylesheet.`);
+  }
+}
+
+for (const cssFile of actualFiles.filter((file) => file.endsWith('.css'))) {
+  const css = readFileSync(join(distRoot, cssFile), 'utf8');
+  if (/@import|url\(\s*['"]?(?:https?:)?\/\//i.test(css)) {
+    throw new Error(`${cssFile} loads a third-party resource.`);
   }
 }
 

@@ -30,6 +30,11 @@ const documents = new Map();
 
 const fail = (message) => errors.push(message);
 const decode = (value) => value.replaceAll('&amp;', '&').replaceAll('&#39;', "'").replaceAll('&quot;', '"');
+const emDash = /—|&mdash;|&#8212;|&#x2014;/i;
+const thirdPartyLoads = (html) => Array.from(
+  html.matchAll(/<(?:script|link|img|iframe|source|video|audio|embed)\b[^>]*?\s(?:src|href|srcset)="((?:https?:)?\/\/[^"\s]+)/gi),
+  (match) => match[1]
+).filter((url) => new URL(url, siteOrigin).host !== new URL(siteOrigin).host);
 
 for (const page of pages) {
   const path = resolve(root, page);
@@ -53,12 +58,7 @@ for (const page of pages) {
     fail(`${page}: canonical URL must be ${expectedCanonical}`);
   }
   if (h1Count !== 1) fail(`${page}: expected one H1, found ${h1Count}`);
-  if (html.includes('—')) fail(`${page}: contains an em dash`);
   if (html.includes('cdn.tailwindcss.com')) fail(`${page}: still uses the Tailwind browser CDN`);
-  if (/fonts\.(googleapis|gstatic)\.com/.test(html)) fail(`${page}: requests third-party fonts`);
-  for (const match of html.matchAll(/<link\s+rel="preload"\s+href="([^"]+)"/g)) {
-    if (!existsSync(resolve(root, match[1].replace(/^\//, '').split('?')[0]))) fail(`${page}: preloaded file ${match[1]} is missing`);
-  }
   if (!/href="\/assets\/site\.css(?:\?[^\"]*)?"/.test(html)) fail(`${page}: compiled production stylesheet is missing`);
 
   if (titles.has(title)) fail(`${page}: title duplicates ${titles.get(title)}`);
@@ -76,6 +76,15 @@ for (const page of pages) {
     }
   }
 
+  checkDocument(page, html);
+}
+
+function checkDocument(page, html) {
+  if (emDash.test(html)) fail(`${page}: contains an em dash`);
+  for (const url of thirdPartyLoads(html)) fail(`${page}: loads a third-party resource ${url}`);
+  for (const match of html.matchAll(/<link\s+rel="preload"\s+href="([^"]+)"/g)) {
+    if (!existsSync(resolve(root, match[1].replace(/^\//, '').split('?')[0]))) fail(`${page}: preloaded file ${match[1]} is missing`);
+  }
   const idValues = Array.from(html.matchAll(/\sid="([^"]+)"/g), (match) => match[1]);
   const ids = new Set(idValues);
   if (ids.size !== idValues.length) fail(`${page}: duplicate element IDs`);
@@ -174,9 +183,13 @@ for (const [, loc] of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
 const notFoundPage = readFileSync(resolve(root, '404.html'), 'utf8');
 if (!notFoundPage.includes('name="robots" content="noindex, follow"')) fail('404.html: noindex directive is missing');
 if ((notFoundPage.match(/<h1\b/gi) || []).length !== 1) fail('404.html: expected one H1');
-if (notFoundPage.includes('—')) fail('404.html: contains an em dash');
 if (notFoundPage.includes('cdn.tailwindcss.com')) fail('404.html: still uses the Tailwind browser CDN');
-if (/fonts\.(googleapis|gstatic)\.com/.test(notFoundPage)) fail('404.html: requests third-party fonts');
+checkDocument('404.html', notFoundPage);
+
+for (const stylesheet of ['assets/theme.css', 'assets/site.css']) {
+  const css = readFileSync(resolve(root, stylesheet), 'utf8');
+  if (/@import|url\(\s*['"]?(?:https?:)?\/\//i.test(css)) fail(`${stylesheet}: loads a third-party resource`);
+}
 if (!/href="\/assets\/site\.css(?:\?[^\"]*)?"/.test(notFoundPage)) fail('404.html: compiled production stylesheet is missing');
 
 for (const asset of [
