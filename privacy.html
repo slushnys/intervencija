@@ -7,66 +7,77 @@
   <meta name="description" content="How information submitted through the Intervencija website is handled.">
   <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#fbfaf7">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="canonical" href="https://intervencija.eu/privacy.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css?v=20260909">
-  <link rel="stylesheet" href="/assets/theme.css?v=20260909">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css?v=20261026">
+  <link rel="stylesheet" href="/assets/theme.css?v=20261026">
+  <script defer src="/assets/site.js?v=20261026"></script>
 </head>
-<body class="grain min-h-screen bg-ivory font-sans text-stone-900 antialiased">
-  <header class="border-b border-line bg-ivory/90">
-    <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-8" aria-label="Primary navigation">
-      <a href="/" class="inline-flex items-center gap-3" aria-label="Intervencija home">
-        <span class="square-mark" aria-hidden="true"></span>
-        <span class="font-serif text-2xl font-semibold tracking-[-0.035em]">Intervencija</span>
-      </a>
-      <a href="/#contact" class="border border-stone-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] hover:bg-stone-900 hover:text-ivory">Contact</a>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap header-inner" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a>
+      <div class="desktop-nav">
+        <a href="/#engagements">Services</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#approach">How we work</a>
+        <a href="/insights/">Insights</a>
+        <a class="button button-small" href="/#contact" data-track="header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
+      </div>
+      <details class="mobile-nav" data-nav-menu>
+        <summary>Menu <span aria-hidden="true">+</span></summary>
+        <div class="mobile-panel">
+          <a href="/#engagements">Services</a><a href="/#experience">Experience</a><a href="/#approach">How we work</a><a href="/insights/">Insights</a>
+          <p class="mobile-group">Engagements</p>
+          <a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a>
+          <a class="button" href="/#contact" data-track="mobile_header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
     </nav>
   </header>
+  <main id="content">
+    <header class="article-shell legal-header">
+      <p class="eyebrow">Website information</p>
+      <h1>Privacy notice.</h1>
+      <p class="article-meta"><span>Last updated <time datetime="2026-10-26">26 October 2026</time></span></p>
+    </header>
+    <div class="article-shell prose legal">
+      <h2 id="controller">Who is responsible</h2>
+      <p>This website is operated by Intervencija, based in Vilnius, Lithuania. Intervencija decides how the information described here is used. For any question about this notice or your information, email <a href="mailto:hello@intervencija.eu">hello@intervencija.eu</a>.</p>
 
-  <main class="relative z-10 mx-auto max-w-3xl px-6 py-16 sm:px-8 sm:py-20">
-    <p class="small-caps text-stone-500">Website information</p>
-    <h1 class="mt-4 font-serif text-5xl font-semibold leading-none tracking-[-0.045em] sm:text-6xl">Privacy notice.</h1>
-    <p class="mt-6 text-sm text-stone-500">Last updated: 9 September 2026</p>
+      <h2 id="information-collected">Information you choose to share</h2>
+      <p>The enquiry form collects your name, work email address, the service you are interested in, and the message you write. Your company name and preferred timing are optional. You can also contact Intervencija directly by email instead of using the form.</p>
 
-    <div class="mt-12 space-y-10 text-base leading-8 text-stone-700">
-      <section aria-labelledby="information-collected">
-        <h2 id="information-collected" class="font-serif text-3xl font-semibold tracking-[-0.035em] text-stone-900">Information you choose to share</h2>
-        <p class="mt-4">The enquiry form collects your name, email address, selected service or project interest, optional company name, and the message you provide. You may also contact Intervencija directly by email instead of using the form.</p>
-      </section>
+      <h2 id="information-use">How the information is used</h2>
+      <p>Information you send is used to review your enquiry, assess whether a conversation would be useful, respond to you, and maintain the resulting correspondence. It is processed because you asked us to respond, as a step before any agreement, and in our legitimate interest in answering business enquiries. It is not used for advertising, sold, or added to mailing lists.</p>
 
-      <section aria-labelledby="information-use">
-        <h2 id="information-use" class="font-serif text-3xl font-semibold tracking-[-0.035em] text-stone-900">How the information is used</h2>
-        <p class="mt-4">Information submitted through the website is used to review your enquiry, assess whether a conversation would be useful, respond to you, and maintain the resulting correspondence.</p>
-      </section>
+      <h2 id="form-processing">Form delivery</h2>
+      <p>Enquiries submitted through the form are delivered by Formspark, a form-processing service, which stores the submission and forwards it to Intervencija by email. Submissions that appear automated may be held by its spam protection. If you prefer not to use the form, email <a href="mailto:hello@intervencija.eu">hello@intervencija.eu</a>.</p>
 
-      <section aria-labelledby="form-processing">
-        <h2 id="form-processing" class="font-serif text-3xl font-semibold tracking-[-0.035em] text-stone-900">Form delivery</h2>
-        <p class="mt-4">The website currently uses a third-party form-delivery service to transmit enquiries to Intervencija. Information entered into the form is sent to that provider for delivery. If you prefer not to use the form, email <a href="mailto:hello@intervencija.eu" class="border-b border-stone-500 text-stone-900">hello@intervencija.eu</a>.</p>
-      </section>
+      <h2 id="site-services">Hosting and website services</h2>
+      <p>The website is hosted on GitHub Pages, provided by GitHub, Inc. Like any web host, it receives technical request information such as your IP address, browser details and the time of the request. Fonts and other assets are served from this website. Intervencija does not use analytics, advertising trackers or behavioural profiling on this website, and sets no cookies.</p>
 
-      <section aria-labelledby="site-services">
-        <h2 id="site-services" class="font-serif text-3xl font-semibold tracking-[-0.035em] text-stone-900">Website services</h2>
-        <p class="mt-4">The site is hosted through external infrastructure and loads typography assets from Google Fonts. Those services may receive ordinary technical request information, such as an IP address, browser details, and request time. Intervencija does not currently use advertising trackers or behavioural profiling on this website.</p>
-      </section>
+      <h2 id="retention">How long information is kept</h2>
+      <p>Enquiry correspondence is kept for as long as it is needed to respond and to maintain any resulting business relationship. You can ask for it to be deleted at any time, unless it must be retained for legal or accounting reasons.</p>
 
-      <section aria-labelledby="retention-contact">
-        <h2 id="retention-contact" class="font-serif text-3xl font-semibold tracking-[-0.035em] text-stone-900">Questions and requests</h2>
-        <p class="mt-4">To ask about information you have submitted, request a correction, or ask that correspondence be removed where appropriate, contact <a href="mailto:hello@intervencija.eu" class="border-b border-stone-500 text-stone-900">hello@intervencija.eu</a>.</p>
-      </section>
-
+      <h2 id="rights">Your rights</h2>
+      <p>You can ask to access, correct or delete the personal information you have shared, or object to its use, by emailing <a href="mailto:hello@intervencija.eu">hello@intervencija.eu</a>. You also have the right to lodge a complaint with a data protection authority. In Lithuania, this is the State Data Protection Inspectorate.</p>
     </div>
   </main>
-
-  <footer class="border-t border-line px-6 py-8 sm:px-8">
-    <div class="mx-auto flex max-w-5xl flex-col gap-4 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between">
-      <p>Intervencija © 2026.</p>
-      <a href="/" class="text-stone-700 hover:text-stone-950">Return to the website</a>
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <div><a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a><p>Senior-led software architecture and engineering for systems that have to work.</p><p class="footer-location">Vilnius, Lithuania · Working internationally</p></div>
+      <nav aria-label="Services"><p class="eyebrow">Services</p><a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a></nav>
+      <nav aria-label="Company"><p class="eyebrow">Company</p><a href="/#experience">Experience</a><a href="/#approach">How we work</a><a href="/insights/">Insights</a></nav>
+      <div><p class="eyebrow">Contact</p><a class="text-link" href="mailto:hello@intervencija.eu" data-track="footer_email">hello@intervencija.eu <span aria-hidden="true">↗</span></a><p>Tell us what you’re planning.<br>A few lines are enough to start.</p></div>
     </div>
+    <div class="wrap footer-bottom"><p>© 2026 Intervencija</p><a href="/privacy.html" aria-current="page">Privacy notice</a><a href="#content">Back to top <span aria-hidden="true">↑</span></a></div>
   </footer>
 </body>
 </html>

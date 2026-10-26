@@ -29,7 +29,6 @@ const rootFiles = [
   'apple-touch-icon.png',
   'logo.svg',
   'og-image.png',
-  'og-image.svg',
   'site.webmanifest',
   'robots.txt',
   'sitemap.xml'
@@ -39,6 +38,17 @@ const assetFiles = [
   'assets/site.css',
   'assets/theme.css',
   'assets/site.js',
+  'assets/fonts/inter-latin.woff2',
+  'assets/fonts/inter-latin-ext.woff2',
+  'assets/fonts/playfair-display-latin.woff2',
+  'assets/fonts/playfair-display-latin-ext.woff2',
+  'assets/og/system-audits.png',
+  'assets/og/critical-builds.png',
+  'assets/og/fractional-architecture.png',
+  'assets/og/insights.png',
+  'assets/og/insight-before-you-replatform.png',
+  'assets/og/insight-production-ready-critical-software.png',
+  'assets/og/insight-when-a-fractional-architect-makes-sense.png',
   'assets/logos/sendcloud.svg',
   'assets/logos/new10.svg',
   'assets/logos/abn-amro.svg',
@@ -53,13 +63,21 @@ const assetFiles = [
 const pageDirectories = [
   'system-audits',
   'critical-builds',
-  'fractional-architecture'
+  'fractional-architecture',
+  'insights'
+];
+
+const nestedPages = [
+  'insights/before-you-replatform/index.html',
+  'insights/production-ready-critical-software/index.html',
+  'insights/when-a-fractional-architect-makes-sense/index.html'
 ];
 
 const requiredSources = [
   ...rootFiles,
   ...assetFiles,
-  ...pageDirectories.map((directory) => `${directory}/index.html`)
+  ...pageDirectories.map((directory) => `${directory}/index.html`),
+  ...nestedPages
 ];
 
 for (const relativePath of requiredSources) {

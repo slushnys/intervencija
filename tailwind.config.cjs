@@ -5,6 +5,7 @@ module.exports = {
     './system-audits/**/*.html',
     './critical-builds/**/*.html',
     './fractional-architecture/**/*.html',
+    './insights/**/*.html',
     './assets/**/*.js'
   ],
   theme: {

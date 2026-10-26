@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Before You Replatform: 12 Questions to Answer First | Intervencija</title>
+  <meta name="description" content="A practical checklist for CTOs: twelve questions an architecture review should answer before a replatforming or migration decision is committed.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#fbfaf7">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="canonical" href="https://intervencija.eu/insights/before-you-replatform/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Intervencija">
+  <meta property="og:title" content="Before you replatform: 12 questions to answer first">
+  <meta property="og:description" content="Twelve questions an architecture review should answer before a replatforming or migration decision is committed.">
+  <meta property="og:url" content="https://intervencija.eu/insights/before-you-replatform/">
+  <meta property="og:image" content="https://intervencija.eu/assets/og/insight-before-you-replatform.png">
+  <meta property="og:image:secure_url" content="https://intervencija.eu/assets/og/insight-before-you-replatform.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Before you replatform: 12 questions to answer first">
+  <meta property="article:published_time" content="2026-10-26">
+  <meta property="article:section" content="System Audits">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Before you replatform: 12 questions to answer first">
+  <meta name="twitter:description" content="Twelve questions an architecture review should answer before a replatforming or migration decision is committed.">
+  <meta name="twitter:image" content="https://intervencija.eu/assets/og/insight-before-you-replatform.png">
+  <meta name="twitter:image:alt" content="Before you replatform: 12 questions to answer first">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Before you replatform: 12 questions to answer first",
+          "description": "Twelve questions an architecture review should answer before a replatforming or migration decision is committed.",
+          "url": "https://intervencija.eu/insights/before-you-replatform/",
+          "mainEntityOfPage": "https://intervencija.eu/insights/before-you-replatform/",
+          "image": "https://intervencija.eu/assets/og/insight-before-you-replatform.png",
+          "datePublished": "2026-10-26",
+          "dateModified": "2026-10-26",
+          "inLanguage": "en",
+          "author": { "@type": "Organization", "@id": "https://intervencija.eu/#organization", "name": "Intervencija", "url": "https://intervencija.eu/" },
+          "publisher": { "@type": "Organization", "@id": "https://intervencija.eu/#organization", "name": "Intervencija", "url": "https://intervencija.eu/", "logo": { "@type": "ImageObject", "url": "https://intervencija.eu/apple-touch-icon.png" } }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://intervencija.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://intervencija.eu/insights/" },
+            { "@type": "ListItem", "position": 3, "name": "Before you replatform", "item": "https://intervencija.eu/insights/before-you-replatform/" }
+          ]
+        }
+      ]
+    }
+  </script>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css?v=20261026">
+  <link rel="stylesheet" href="/assets/theme.css?v=20261026">
+  <script defer src="/assets/site.js?v=20261026"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap header-inner" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a>
+      <div class="desktop-nav">
+        <a href="/#engagements">Services</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#approach">How we work</a>
+        <a href="/insights/" aria-current="true">Insights</a>
+        <a class="button button-small" href="/#contact" data-track="header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
+      </div>
+      <details class="mobile-nav" data-nav-menu>
+        <summary>Menu <span aria-hidden="true">+</span></summary>
+        <div class="mobile-panel">
+          <a href="/#engagements">Services</a><a href="/#experience">Experience</a><a href="/#approach">How we work</a><a href="/insights/" aria-current="true">Insights</a>
+          <p class="mobile-group">Engagements</p>
+          <a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a>
+          <a class="button" href="/#contact" data-track="mobile_header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+    </nav>
+  </header>
+  <main id="content">
+    <article aria-labelledby="article-title">
+      <header class="article-shell article-header">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Before you replatform</span></nav>
+        <p class="eyebrow">System Audits · Checklist</p>
+        <h1 id="article-title">Before you replatform: 12 questions to answer first</h1>
+        <p class="lead">Replatforming is one of the most expensive commitments a technology organisation makes, and one of the hardest to reverse. Most of the risk is visible in advance, if someone asks the right questions before the contract is signed.</p>
+        <p class="article-meta"><span>Intervencija</span><span><time datetime="2026-10-26">26 October 2026</time></span><span>5 min read</span></p>
+      </header>
+      <div class="article-shell prose">
+        <p>A replatform rarely fails because the new technology is wrong. It fails because the old system did more than anyone wrote down, because data turned out to be the critical path, or because the business could not tolerate the cutover the plan assumed. None of these are surprises in hindsight. All of them can be found before the commitment, when changing course still costs a meeting rather than a quarter.</p>
+        <p>These are the twelve questions we expect a serious architecture review to answer before a replatforming decision. They fall into four themes: the decision itself, what the current system really does, how the change will happen, and who will own the result.</p>
+        <div class="callout"><p><strong>Short on time?</strong> Start with three: what the system does that nobody wrote down (question 4), where the data is and how good it is (question 6), and whether the change can happen incrementally (question 8). They expose the largest risks for the least effort.</p></div>
+
+        <h2>The decision</h2>
+        <h3>1. What decision are we actually making?</h3>
+        <p>“Replatform” covers everything from moving hosting to rewriting a core product. Write down the business outcome the change must deliver, the scope it covers, and what would count as success in two years. If the answer is “modernise the stack”, the decision is not ready. If it is “launch in three new markets without duplicating the order system”, it is.</p>
+        <h3>2. What happens if we do nothing for two years?</h3>
+        <p>The cost of standing still is the baseline every option is measured against. Make it concrete: delayed features, incident load, licence or support deadlines, hiring difficulty, security exposure. Sometimes this question ends the project, and that is a useful result.</p>
+        <h3>3. Is a full replacement the only option?</h3>
+        <p>Compare at least three options honestly: replace, refactor in place, and replace selectively behind stable interfaces. Include a vendor product where one exists. A decision record that lists one option and its justification is not a decision record.</p>
+
+        <h2>What the current system really does</h2>
+        <h3>4. What does the system do that nobody wrote down?</h3>
+        <p>Established systems accumulate behaviour: nightly jobs, report extracts that finance depends on, validation rules added after an incident, a field another team reads directly from the database. Interview the people who operate the system, not only the people who built it, and trace the batch schedule end to end. Every undocumented behaviour found now is a production incident you will not have later.</p>
+        <h3>5. Who depends on it, and how?</h3>
+        <p>Build an inventory of every inbound and outbound integration: APIs, file transfers, shared databases, message queues, scheduled exports, and the spreadsheet someone uploads every Monday. For each one, record the owner, the volume, the impact of failure, and whether the consumer can change on your timeline. Integrations owned by partners or regulators set the pace of the whole programme.</p>
+        <h3>6. Where is the data, and how good is it?</h3>
+        <p>Data migration is usually the critical path, not the new platform. Establish volumes, quality, retention obligations, and which system is the source of truth for each entity. Profile the data early. Duplicated customers, orphaned records and free-text fields used as structured data are far cheaper to find in a review than in a cutover rehearsal.</p>
+
+        <h2>How the change will happen</h2>
+        <h3>7. What must not break, and when?</h3>
+        <p>List the operational constraints: availability targets, regulatory reporting dates, month-end and year-end processes, peak trading periods and contractual service levels. Together they define your change windows. A plan that needs a weekend cutover during the busiest quarter is not a plan.</p>
+        <h3>8. Can it be done incrementally?</h3>
+        <p>Look for seams where the new platform can take over one capability at a time while the old system keeps running, for example behind an existing API or by routing a subset of traffic. Incremental migration costs more in coordination and much less in risk. It also gives you an exit after each step, which a single cutover never does.</p>
+        <h3>9. How will we know the new system is right?</h3>
+        <p>Decide how equivalence will be proven before you build: parallel runs, reconciliation reports, shadow traffic, or acceptance tests derived from real production cases. If nobody can say how the old and new systems will be compared, the first real comparison will happen in production.</p>
+        <h3>10. What would change the recommendation?</h3>
+        <p>Every option rests on assumptions about volumes, vendor capability, team capacity or data quality. Name the two or three assumptions that would change the decision if they were wrong, and test them with a short spike or proof of concept before committing the full budget.</p>
+
+        <h2>Who will own the result</h2>
+        <h3>11. Who will run it at three in the morning?</h3>
+        <p>Ownership after go-live is part of the design. Confirm which team operates the new platform, what skills it needs, how on-call works, and what the vendor relationship looks like if the platform is bought rather than built. A platform without a clear owner becomes the next legacy system faster than the one it replaced.</p>
+        <h3>12. What does the total cost look like over five years?</h3>
+        <p>Compare options on their full cost: build or licence, migration, parallel running, decommissioning the old system, operations, and the time of the teams involved. Migration and parallel running are the costs most often missing from the business case, and they are rarely small.</p>
+
+        <h2>What a good review leaves you with</h2>
+        <p>A review that answers these questions should leave you with four things:</p>
+        <ul>
+          <li><strong>A dependency map</strong> of the systems, integrations and data flows the decision touches.</li>
+          <li><strong>A risk register</strong> in which every risk is backed by evidence, with its likelihood, impact and an owner.</li>
+          <li><strong>Options compared honestly</strong>, with a decision record stating the recommendation and its assumptions.</li>
+          <li><strong>A sequenced plan</strong> for the first phase, including the validation points that would tell you to change course.</li>
+        </ul>
+        <p>With those in hand, a replatforming decision becomes what it should be: a considered business commitment with known risks, rather than a technology bet.</p>
+      </div>
+      <aside class="article-shell article-cta" aria-labelledby="cta-title">
+        <p class="eyebrow">System Audits</p>
+        <h2 id="cta-title">Facing a replatforming decision?</h2>
+        <p>An independent System Audit answers these questions with evidence, before the commitment is made. Fixed scope and fee, agreed upfront.</p>
+        <div class="button-row"><a class="button button-light" href="/system-audits/#contact" data-track="article_replatform_contact">Discuss a system review <span aria-hidden="true">↗</span></a><a class="text-link" href="/system-audits/">About System Audits <span aria-hidden="true">↗</span></a></div>
+      </aside>
+    </article>
+    <section class="more-insights" aria-labelledby="more-title">
+      <div class="wrap">
+        <h2 id="more-title" class="eyebrow">More insights</h2>
+        <div class="insight-grid">
+          <article class="insight-card"><p class="insight-meta">Critical Builds · 5 min read</p><h3><a href="/insights/production-ready-critical-software/">What production-ready means for business-critical software</a></h3><p>Eight properties to verify before go-live when software moves money, orders or customer data.</p></article>
+          <article class="insight-card"><p class="insight-meta">Fractional Architecture · 4 min read</p><h3><a href="/insights/when-a-fractional-architect-makes-sense/">When a fractional architect makes sense, and when it doesn’t</a></h3><p>The signals that you need senior architecture leadership part-time, and the cases where you don’t.</p></article>
+          <article class="insight-card"><p class="insight-meta">All articles</p><h3><a href="/insights/">Insights for technology leaders</a></h3><p>Practical checklists and perspectives on reviewing, building and guiding business-critical software.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <div><a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a><p>Senior-led software architecture and engineering for systems that have to work.</p><p class="footer-location">Vilnius, Lithuania · Working internationally</p></div>
+      <nav aria-label="Services"><p class="eyebrow">Services</p><a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a></nav>
+      <nav aria-label="Company"><p class="eyebrow">Company</p><a href="/#experience">Experience</a><a href="/#approach">How we work</a><a href="/insights/">Insights</a></nav>
+      <div><p class="eyebrow">Contact</p><a class="text-link" href="mailto:hello@intervencija.eu" data-track="footer_email">hello@intervencija.eu <span aria-hidden="true">↗</span></a><p>Tell us what you’re planning.<br>A few lines are enough to start.</p></div>
+    </div>
+    <div class="wrap footer-bottom"><p>© 2026 Intervencija</p><a href="/privacy.html">Privacy notice</a><a href="#content">Back to top <span aria-hidden="true">↑</span></a></div>
+  </footer>
+</body>
+</html>

@@ -7,33 +7,53 @@
   <meta name="description" content="The requested Intervencija page could not be found.">
   <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#fbfaf7">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico" sizes="32x32">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css?v=20260909">
-  <link rel="stylesheet" href="/assets/theme.css?v=20260909">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css?v=20261026">
+  <link rel="stylesheet" href="/assets/theme.css?v=20261026">
+  <script defer src="/assets/site.js?v=20261026"></script>
 </head>
-<body class="grain min-h-screen bg-ivory font-sans text-stone-900 antialiased">
-  <div class="paper-grid pointer-events-none fixed inset-0 opacity-80" aria-hidden="true"></div>
-  <main class="relative z-10 flex min-h-screen items-center px-6 py-16 sm:px-8">
-    <section class="mx-auto w-full max-w-5xl border border-line bg-ivory/80 p-8 shadow-paper backdrop-blur sm:p-12" aria-labelledby="not-found-title">
-      <div class="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-end">
-        <div>
-          <a href="/" class="inline-flex items-center gap-3" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span class="font-serif text-2xl font-semibold tracking-[-0.035em]">Intervencija</span></a>
-          <p class="small-caps mt-16 text-stone-500">404 - Page not found</p>
-        </div>
-        <div>
-          <h1 id="not-found-title" class="font-serif text-5xl font-semibold leading-[.95] tracking-[-.045em] sm:text-7xl">This path does not lead to a published page.</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-stone-600">Return to the main site, review an engagement model, or contact Intervencija directly.</p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="/" class="inline-flex justify-center border border-stone-900 bg-stone-900 px-6 py-4 text-xs font-semibold uppercase tracking-[.18em] text-ivory">Return home</a>
-            <a href="/#contact" class="inline-flex justify-center border border-line px-6 py-4 text-xs font-semibold uppercase tracking-[.18em] text-stone-700">Contact</a>
-          </div>
-        </div>
+<body class="page-fill">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap header-inner" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a>
+      <div class="desktop-nav">
+        <a href="/#engagements">Services</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#approach">How we work</a>
+        <a href="/insights/">Insights</a>
+        <a class="button button-small" href="/#contact" data-track="header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
       </div>
+      <details class="mobile-nav" data-nav-menu>
+        <summary>Menu <span aria-hidden="true">+</span></summary>
+        <div class="mobile-panel">
+          <a href="/#engagements">Services</a><a href="/#experience">Experience</a><a href="/#approach">How we work</a><a href="/insights/">Insights</a>
+          <p class="mobile-group">Engagements</p>
+          <a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a>
+          <a class="button" href="/#contact" data-track="mobile_header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+    </nav>
+  </header>
+  <main id="content">
+    <section class="wrap not-found" aria-labelledby="not-found-title">
+      <p class="eyebrow">404 - Page not found</p>
+      <h1 id="not-found-title">This page could not be found.</h1>
+      <p class="lead">The link may be out of date, or the page may have moved. These are the most useful places to continue.</p>
+      <ul class="not-found-links">
+        <li><a href="/#engagements">Services <span aria-hidden="true">↗</span></a><p>System Audits, Critical Builds and Fractional Architecture.</p></li>
+        <li><a href="/insights/">Insights <span aria-hidden="true">↗</span></a><p>Practical notes for technology leaders.</p></li>
+        <li><a href="/#contact">Contact <span aria-hidden="true">↗</span></a><p>Discuss your project, or email hello@intervencija.eu.</p></li>
+      </ul>
     </section>
   </main>
+  <footer class="site-footer">
+    <div class="wrap footer-bottom"><p>© 2026 Intervencija</p><a href="/privacy.html">Privacy notice</a><a href="mailto:hello@intervencija.eu">hello@intervencija.eu</a></div>
+  </footer>
 </body>
 </html>

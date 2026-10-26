@@ -17,13 +17,23 @@ const expectedFiles = [
   'apple-touch-icon.png',
   'logo.svg',
   'og-image.png',
-  'og-image.svg',
   'site.webmanifest',
   'robots.txt',
   'sitemap.xml',
   'assets/site.css',
   'assets/theme.css',
   'assets/site.js',
+  'assets/fonts/inter-latin.woff2',
+  'assets/fonts/inter-latin-ext.woff2',
+  'assets/fonts/playfair-display-latin.woff2',
+  'assets/fonts/playfair-display-latin-ext.woff2',
+  'assets/og/system-audits.png',
+  'assets/og/critical-builds.png',
+  'assets/og/fractional-architecture.png',
+  'assets/og/insights.png',
+  'assets/og/insight-before-you-replatform.png',
+  'assets/og/insight-production-ready-critical-software.png',
+  'assets/og/insight-when-a-fractional-architect-makes-sense.png',
   'assets/logos/sendcloud.svg',
   'assets/logos/new10.svg',
   'assets/logos/abn-amro.svg',
@@ -35,7 +45,11 @@ const expectedFiles = [
   'assets/logos/vml.svg',
   'system-audits/index.html',
   'critical-builds/index.html',
-  'fractional-architecture/index.html'
+  'fractional-architecture/index.html',
+  'insights/index.html',
+  'insights/before-you-replatform/index.html',
+  'insights/production-ready-critical-software/index.html',
+  'insights/when-a-fractional-architect-makes-sense/index.html'
 ].sort();
 
 function listFiles(directory) {
@@ -71,6 +85,9 @@ for (const htmlFile of actualFiles.filter((file) => file.endsWith('.html'))) {
   const html = readFileSync(join(distRoot, htmlFile), 'utf8');
   if (html.includes('cdn.tailwindcss.com')) {
     throw new Error(`${htmlFile} still loads Tailwind from the CDN.`);
+  }
+  if (/fonts\.(googleapis|gstatic)\.com/.test(html)) {
+    throw new Error(`${htmlFile} still requests third-party fonts.`);
   }
   if (!html.includes('/assets/site.css')) {
     throw new Error(`${htmlFile} does not load the compiled site stylesheet.`);

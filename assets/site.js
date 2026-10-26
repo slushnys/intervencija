@@ -106,17 +106,23 @@ const initializeMeasurement = () => {
 const buildPayload = (form) => {
   const data = new FormData(form);
   const interest = data.get('interest') || 'General enquiry';
-
-  return {
+  const payload = {
     name: data.get('name'),
     email: data.get('email'),
     company: data.get('company') || 'N/A',
     interest,
+    timeline: data.get('timeline') || 'Not specified',
     message: data.get('message'),
     _email: {
       subject: `Intervencija enquiry - ${interest} - ${data.get('company') || 'no company given'}`
     }
   };
+
+  // Formspark rejects submissions that carry a filled honeypot, so forward it only when a bot set it.
+  const honeypot = data.get('_honeypot');
+  if (honeypot) payload._honeypot = honeypot;
+
+  return payload;
 };
 
 const requestForEnvironment = async (endpoint, payload) => {

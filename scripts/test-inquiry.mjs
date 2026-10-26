@@ -5,7 +5,7 @@ import { runInNewContext } from 'node:vm';
 
 const source = readFileSync(new URL('../assets/site.js', import.meta.url), 'utf8');
 
-function harness(fetchImpl, location = { hostname: 'intervencija.eu', search: '' }) {
+function harness(fetchImpl, location = { hostname: 'intervencija.eu', search: '' }, fields = {}) {
   const listeners = {};
   const events = [];
   const timers = new Map();
@@ -14,7 +14,9 @@ function harness(fetchImpl, location = { hostname: 'intervencija.eu', search: ''
     email: 'test@example.com',
     company: 'Test Company',
     interest: 'Critical Builds',
-    message: 'Test project context'
+    timeline: 'Within 3 months',
+    message: 'Test project context',
+    ...fields
   }));
   const button = {
     disabled: false,
@@ -69,6 +71,8 @@ test('successful enquiries send the selected service and restore button markup',
   assert.equal(request.headers.Accept, 'application/json');
   assert.equal(request.headers['Content-Type'], 'application/json');
   assert.equal(payload.interest, 'Critical Builds');
+  assert.equal(payload.timeline, 'Within 3 months');
+  assert.equal('_honeypot' in payload, false, 'A human submission must not carry the honeypot field');
   assert.match(payload._email.subject, /Critical Builds/);
   assert.equal(h.values.get('message'), '');
   assert.equal(h.note.dataset.state, 'success');
@@ -122,6 +126,29 @@ test('a timed-out request is aborted and the form remains usable', async () => {
   assert.equal(h.button.disabled, false);
   assert.equal(h.values.get('message'), 'Test project context');
   assert.equal(h.timers.size, 0);
+});
+
+test('optional timing defaults to a readable value when left empty', async () => {
+  let payload;
+  const h = harness(async (endpoint, options) => {
+    payload = JSON.parse(options.body);
+    return { ok: true };
+  }, undefined, { timeline: '', company: '' });
+  await h.submit();
+  assert.equal(payload.timeline, 'Not specified');
+  assert.equal(payload.company, 'N/A');
+});
+
+test('a filled honeypot is forwarded so the provider can reject the submission', async () => {
+  let payload;
+  const h = harness(async (endpoint, options) => {
+    payload = JSON.parse(options.body);
+    return { ok: false, status: 403 };
+  }, undefined, { _honeypot: '1' });
+  await h.submit();
+  assert.equal(payload._honeypot, '1');
+  assert.equal(h.note.dataset.state, 'error');
+  assert.equal(h.button.disabled, false);
 });
 
 test('local test parameters cannot bypass submission on the production domain', async () => {

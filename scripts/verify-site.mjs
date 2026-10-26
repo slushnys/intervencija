@@ -8,9 +8,19 @@ const pages = [
   'system-audits/index.html',
   'critical-builds/index.html',
   'fractional-architecture/index.html',
+  'insights/index.html',
+  'insights/before-you-replatform/index.html',
+  'insights/production-ready-critical-software/index.html',
+  'insights/when-a-fractional-architect-makes-sense/index.html',
   'privacy.html'
 ];
 const publicPages = pages.filter((page) => page !== 'privacy.html');
+const formPages = [
+  'index.html',
+  'system-audits/index.html',
+  'critical-builds/index.html',
+  'fractional-architecture/index.html'
+];
 const siteOrigin = 'https://intervencija.eu';
 const errors = [];
 const titles = new Map();
@@ -45,6 +55,10 @@ for (const page of pages) {
   if (h1Count !== 1) fail(`${page}: expected one H1, found ${h1Count}`);
   if (html.includes('—')) fail(`${page}: contains an em dash`);
   if (html.includes('cdn.tailwindcss.com')) fail(`${page}: still uses the Tailwind browser CDN`);
+  if (/fonts\.(googleapis|gstatic)\.com/.test(html)) fail(`${page}: requests third-party fonts`);
+  for (const match of html.matchAll(/<link\s+rel="preload"\s+href="([^"]+)"/g)) {
+    if (!existsSync(resolve(root, match[1].replace(/^\//, '').split('?')[0]))) fail(`${page}: preloaded file ${match[1]} is missing`);
+  }
   if (!/href="\/assets\/site\.css(?:\?[^\"]*)?"/.test(html)) fail(`${page}: compiled production stylesheet is missing`);
 
   if (titles.has(title)) fail(`${page}: title duplicates ${titles.get(title)}`);
@@ -116,7 +130,19 @@ for (const page of pages) {
 
 for (const page of publicPages) {
   const html = documents.get(page) || '';
+  const image = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)?.[1] || '';
+  if (!image.startsWith(`${siteOrigin}/`)) {
+    fail(`${page}: og:image must be an absolute ${siteOrigin} URL`);
+  } else if (!existsSync(resolve(root, new URL(image).pathname.slice(1)))) {
+    fail(`${page}: og:image ${image} does not exist`);
+  }
+  if (!html.includes('mailto:hello@intervencija.eu')) fail(`${page}: direct email contact is missing`);
+}
+
+for (const page of formPages) {
+  const html = documents.get(page) || '';
   if (!/<form\b[^>]*\bmethod="post"/i.test(html)) fail(`${page}: enquiry form is not POST`);
+  if (!html.includes('name="_honeypot"')) fail(`${page}: enquiry form spam honeypot is missing`);
   if (!/<form\b[^>]*\baction="https:\/\/submit-form\.com\//i.test(html)) fail(`${page}: enquiry form action is missing`);
   if (!html.includes('id="form-note"') || !html.includes('role="status"')) fail(`${page}: form status is missing`);
   if (!html.includes('mailto:hello@intervencija.eu')) fail(`${page}: direct email fallback is missing`);
@@ -139,15 +165,23 @@ for (const page of publicPages) {
   if (canonical && !sitemap.includes(`<loc>${canonical}</loc>`)) fail(`sitemap.xml: missing ${canonical}`);
 }
 if (sitemap.includes('privacy.html')) fail('sitemap.xml: noindex privacy page should not be included');
+for (const [, loc] of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+  const pathname = new URL(loc).pathname;
+  const target = pathname.endsWith('/') ? `${pathname.slice(1)}index.html` : pathname.slice(1);
+  if (!existsSync(resolve(root, target))) fail(`sitemap.xml: ${loc} has no matching page`);
+}
 
 const notFoundPage = readFileSync(resolve(root, '404.html'), 'utf8');
 if (!notFoundPage.includes('name="robots" content="noindex, follow"')) fail('404.html: noindex directive is missing');
 if ((notFoundPage.match(/<h1\b/gi) || []).length !== 1) fail('404.html: expected one H1');
 if (notFoundPage.includes('—')) fail('404.html: contains an em dash');
 if (notFoundPage.includes('cdn.tailwindcss.com')) fail('404.html: still uses the Tailwind browser CDN');
+if (/fonts\.(googleapis|gstatic)\.com/.test(notFoundPage)) fail('404.html: requests third-party fonts');
 if (!/href="\/assets\/site\.css(?:\?[^\"]*)?"/.test(notFoundPage)) fail('404.html: compiled production stylesheet is missing');
 
 for (const asset of [
+  'assets/fonts/inter-latin.woff2',
+  'assets/fonts/playfair-display-latin.woff2',
   'favicon.svg',
   'favicon.ico',
   'apple-touch-icon.png',
