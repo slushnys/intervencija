@@ -178,6 +178,21 @@ p { text-wrap: pretty; }
 .decision-record dd li::marker { color: var(--accent); font-size: .8125rem; }
 .status-pill { display: inline-block; padding: 1px 9px; background: #e3e9d3; color: #3d4a24; font-size: .75rem; font-weight: 600; }
 
+/* Founder */
+.founder-section { background: var(--ink); color: var(--paper); }
+.founder-section .eyebrow { color: #c4cbb6; }
+.founder-section :focus-visible { outline-color: #dbe5c9; }
+.founder-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 85px; align-items: start; }
+.founder-intro h2 { margin-top: 18px; color: var(--on-dark); }
+.founder-role { margin-top: 10px; color: var(--on-dark-accent); font-size: .9375rem; font-weight: 500; }
+.company-facts, .founder-experience { margin: 34px 0 0; border-top: 1px solid var(--on-dark-line); }
+.company-facts > div, .founder-experience > div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--on-dark-line); }
+.company-facts dt, .founder-experience dt { padding-top: 3px; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--on-dark-accent); }
+.company-facts dd, .founder-experience dd { margin: 0; font-size: .9375rem; color: var(--on-dark); }
+.founder-body .lead { color: var(--on-dark); }
+.founder-body > p:not(.lead) { margin-top: 18px; color: var(--on-dark-muted); }
+.founder-body .founder-experience { margin-top: 26px; }
+
 /* Insights */
 .insight-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px; }
 .insight-card { display: flex; flex-direction: column; padding-top: 24px; border-top: 1px solid var(--ink); }
@@ -369,7 +384,7 @@ button:disabled { cursor: wait; opacity: .7; }
   .hero { gap: 40px; grid-template-columns: 1.15fr .85fr; }
   .desktop-nav { gap: 22px; }
   .section { padding-block: 80px; }
-  .contact-layout, .approach-grid, .faq-layout, .service-hero-layout, .standard-layout { gap: 48px; }
+  .contact-layout, .approach-grid, .faq-layout, .service-hero-layout, .standard-layout, .founder-layout { gap: 48px; }
   .service-card { padding: 28px 23px; }
   .service-card h3 { font-size: 1.75rem; }
   .logo-grid li { padding: 18px; }
@@ -408,7 +423,7 @@ button:disabled { cursor: wait; opacity: .7; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { padding: 28px; border-right: 0; border-bottom: 1px solid var(--line); }
   .service-card h3 { margin-top: 15px; font-size: 2rem; }
-  .approach-grid, .faq-layout, .contact-layout, .service-hero-layout, .standard-layout { grid-template-columns: 1fr; gap: 37px; }
+  .approach-grid, .faq-layout, .contact-layout, .service-hero-layout, .standard-layout, .founder-layout { grid-template-columns: 1fr; gap: 37px; }
   .decision-record { position: static; }
   .insight-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 35px; }
@@ -445,6 +460,7 @@ button:disabled { cursor: wait; opacity: .7; }
   .section { padding-block: 55px; }
   .decision-record { padding: 22px 20px; }
   .decision-record dl > div { grid-template-columns: 1fr; gap: 4px; }
+  .company-facts > div, .founder-experience > div { grid-template-columns: 1fr; gap: 2px; }
   .decision-record h3 { font-size: 1.4rem; }
   .inquiry-form { padding: 24px 20px; }
   .form-grid { grid-template-columns: 1fr; gap: 20px; }

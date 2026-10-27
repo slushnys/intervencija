@@ -81,6 +81,7 @@ for (const page of pages) {
 
 function checkDocument(page, html) {
   if (emDash.test(html)) fail(`${page}: contains an em dash`);
+  if (!html.includes('Intervencija, MB')) fail(`${page}: legal entity name is missing`);
   for (const url of thirdPartyLoads(html)) fail(`${page}: loads a third-party resource ${url}`);
   for (const match of html.matchAll(/<link\s+rel="preload"\s+href="([^"]+)"/g)) {
     if (!existsSync(resolve(root, match[1].replace(/^\//, '').split('?')[0]))) fail(`${page}: preloaded file ${match[1]} is missing`);
