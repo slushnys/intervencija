@@ -16,9 +16,11 @@ Listen for `intervencija:measurement` on `window`; the event name is in `event.d
 | related_replatform / related_production_ready / related_fractional | Service page links to the matching article |
 | article_replatform_contact / article_production_ready_contact / article_fractional_contact | Article CTA to the matching service enquiry |
 | insights_contact | Insights index CTA |
-| direct_email / footer_email / faq_email | Direct email alternative |
-| about_contact | Founder section "Talk to Zigmas" CTA |
-| founder_linkedin / footer_linkedin | Links to the founder's LinkedIn profile |
+| direct_email / footer_email / faq_email / supplier_email | Direct email alternative |
+| about_contact | About section "Talk to us" CTA |
+| capability_statement | Capability statement PDF download in the Enterprise section |
+| founder_linkedin | Leadership LinkedIn profile link in the About section |
+| footer_linkedin | Footer link to the company LinkedIn page |
 | form_start | First form interaction |
 | form_success | Form endpoint confirmed acceptance |
 | form_failure | Rejected, failed, or timed-out request |

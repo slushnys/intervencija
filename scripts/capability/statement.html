@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Intervencija capability statement</title>
+  <link rel="stylesheet" href="/assets/theme.css">
+  <style>
+    @page { size: A4; margin: 0; }
+    html, body { margin: 0; background: #fbfaf7; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sheet { box-sizing: border-box; width: 210mm; height: 297mm; padding: 13mm 15mm 10mm; overflow: hidden; display: flex; flex-direction: column; color: #20231f; font: 400 8.1pt/1.42 var(--sans); }
+    .top { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 5mm; border-bottom: 1px solid #20231f; }
+    .brand { display: flex; align-items: center; gap: 9px; font: 600 19pt/1 var(--serif); letter-spacing: -.045em; }
+    .mark { display: grid; place-items: center; width: 22px; height: 22px; border: 1.5px solid currentColor; }
+    .mark::after { content: ""; width: 6px; height: 6px; background: currentColor; }
+    .doc { text-align: right; font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; color: #62665d; font-weight: 600; }
+    .doc span { display: block; margin-top: 3px; letter-spacing: .04em; text-transform: none; font-weight: 500; }
+    h1 { margin: 6mm 0 0; font: 600 20pt/1.12 var(--serif); letter-spacing: -.035em; max-width: 150mm; }
+    h1 em { font-style: normal; color: #4f5d36; }
+    .intro { margin: 3mm 0 0; max-width: 165mm; font-size: 9pt; color: #3d4039; }
+    h2 { margin: 0 0 2.5mm; font: 600 7.2pt/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #4f5d36; }
+    section { margin-top: 5.5mm; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+    .service { padding-top: 3mm; border-top: 1px solid #20231f; }
+    .service h3 { margin: 0; font: 600 12pt/1.2 var(--serif); letter-spacing: -.02em; }
+    .service p { margin: 1.5mm 0 0; color: #3d4039; }
+    .service ul { margin: 2mm 0 0; padding: 0; list-style: none; }
+    .service li { padding: .8mm 0 .8mm 3mm; border-top: 1px solid #d9dcd1; position: relative; }
+    .service li::before { content: ""; position: absolute; left: 0; top: 2.6mm; width: 3px; height: 3px; background: #4f5d36; }
+    .service .format { margin-top: 2mm; font-size: 7.8pt; color: #62665d; }
+    .service .format strong { color: #20231f; font-weight: 600; }
+    .two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8mm; }
+    .terms { margin: 0; }
+    .terms > div { display: grid; grid-template-columns: 24mm 1fr; gap: 3mm; padding: 1.3mm 0; border-top: 1px solid #d9dcd1; }
+    .terms dt { font-weight: 600; }
+    .terms dd { margin: 0; color: #3d4039; }
+    .experience { margin: 0; }
+    .experience > div { display: grid; grid-template-columns: 27mm 1fr; gap: 3mm; padding: 1.3mm 0; border-top: 1px solid #d9dcd1; }
+    .experience dt { font-weight: 600; }
+    .experience dd { margin: 0; color: #3d4039; }
+    .note { margin: 2mm 0 0; font-size: 7.4pt; color: #62665d; }
+    .supplier { margin-top: auto; flex-shrink: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; padding: 4mm 5mm; background: #20231f; color: #f5f5ec; }
+    .supplier div span { display: block; font-size: 6.8pt; letter-spacing: .12em; text-transform: uppercase; color: #aebc93; font-weight: 600; }
+    .supplier div strong { display: block; margin-top: 1mm; font-weight: 500; font-size: 8.6pt; }
+    .foot { display: flex; justify-content: space-between; margin-top: 3mm; font-size: 7.4pt; color: #62665d; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top">
+      <div class="brand"><span class="mark" aria-hidden="true"></span><span>Intervencija</span></div>
+      <p class="doc">Capability statement<span>October 2026</span></p>
+    </div>
+
+    <h1>Software architecture and engineering for systems your business <em>can’t afford to get wrong.</em></h1>
+    <p class="intro">Intervencija is a software architecture and engineering consultancy for enterprises and scale-ups. We help CTOs and engineering leaders make high-stakes technical decisions and deliver the systems behind them. Every engagement starts with a written proposal: scope, deliverables, fee and acceptance criteria agreed before work begins.</p>
+
+    <section>
+      <h2>Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>System Audits</h3>
+          <p>An independent senior review before a replatform, migration, acquisition, funding round or build-versus-buy decision. Also used for technical due diligence.</p>
+          <ul><li>Architecture and dependency map</li><li>Risk register backed by evidence</li><li>Options, trade-offs and decision records</li><li>A sequenced plan for the next phase</li></ul>
+          <p class="format"><strong>Format:</strong> fixed scope and fee, agreed upfront.</p>
+        </div>
+        <div class="service">
+          <h3>Critical Builds</h3>
+          <p>Architecture and hands-on delivery for platforms and integrations that move money, orders or customer data.</p>
+          <ul><li>Production software with automated tests</li><li>Integrations with explicit failure handling</li><li>Deployment, monitoring and runbooks</li><li>Documented decisions and a structured handover</li></ul>
+          <p class="format"><strong>Format:</strong> milestones with agreed acceptance criteria.</p>
+        </div>
+        <div class="service">
+          <h3>Fractional Architecture</h3>
+          <p>Senior architecture leadership, part-time and embedded in your team’s rhythm, for organisations outgrowing their architecture.</p>
+          <ul><li>Design reviews at agreed points</li><li>Decision records and engineering standards</li><li>A maintained technical roadmap</li><li>A sounding board for engineering leaders</li></ul>
+          <p class="format"><strong>Format:</strong> ongoing, at an agreed cadence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div>
+        <h2>How we engage</h2>
+        <dl class="terms">
+          <div><dt>Contracting</dt><dd>Master services agreement with a statement of work per engagement, on our paper or yours. An NDA can be signed before anything sensitive is shared.</dd></div>
+          <div><dt>Governance</dt><dd>Named engagement lead, written status at an agreed cadence, live risk and decision log, regular sponsor reviews.</dd></div>
+          <div><dt>Security</dt><dd>Least-privilege access per scope, work inside your tooling and policies, access returned at the end. Security questionnaires are part of onboarding.</dd></div>
+          <div><dt>Data protection</dt><dd>EU company working under the GDPR. A data processing agreement can be put in place when personal data is in scope.</dd></div>
+          <div><dt>Ownership</dt><dd>Code, documentation and decision records delivered into your repositories, with ownership assigned to you.</dd></div>
+          <div><dt>Commercials</dt><dd>Fixed fees for reviews, milestone pricing for builds, agreed cadence and fee for ongoing architecture.</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h2>Leadership experience</h2>
+        <dl class="experience">
+          <div><dt>Banking</dt><dd>ABN AMRO, Rabobank, SNS Bank</dd></div>
+          <div><dt>Fintech lending</dt><dd>New10</dd></div>
+          <div><dt>Logistics software</dt><dd>Sendcloud</dd></div>
+          <div><dt>Global commerce</dt><dd>The Coca-Cola Company and Costa Coffee, with Wunderman Thompson Commerce (now VML)</dd></div>
+          <div><dt>Software delivery</dt><dd>Helmes</dd></div>
+        </dl>
+        <p class="note">Organisations our leadership has worked on software for, through direct engagements, previous roles and partner-led programmes. Not a list of Intervencija clients.</p>
+        <h2 style="margin-top:5mm">Leadership</h2>
+        <dl class="experience">
+          <div><dt>Zigmas Slušnys</dt><dd>Founder and Managing Director</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="supplier">
+      <div><span>Legal name</span><strong>Intervencija, MB</strong></div>
+      <div><span>Company code</span><strong>305284493</strong></div>
+      <div><span>Jurisdiction</span><strong>Lithuania, EU · est. 2019</strong></div>
+      <div><span>Contact</span><strong>hello@intervencija.eu</strong></div>
+    </div>
+    <div class="foot"><span>Based in Vilnius, Lithuania · Working internationally</span><span>intervencija.eu</span></div>
+  </div>
+</body>
+</html>

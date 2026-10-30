@@ -17,6 +17,7 @@ const expectedFiles = [
   'apple-touch-icon.png',
   'logo.svg',
   'og-image.png',
+  'intervencija-capability-statement.pdf',
   'site.webmanifest',
   'robots.txt',
   'sitemap.xml',

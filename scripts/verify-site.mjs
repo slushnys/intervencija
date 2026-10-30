@@ -200,6 +200,7 @@ for (const asset of [
   'favicon.ico',
   'apple-touch-icon.png',
   'og-image.png',
+  'intervencija-capability-statement.pdf',
   'logo.svg',
   'site.webmanifest',
   'robots.txt',
@@ -209,6 +210,11 @@ for (const asset of [
 ]) {
   if (!existsSync(resolve(root, asset))) fail(`${asset}: required asset is missing`);
 }
+
+const statement = readFileSync(resolve(root, 'scripts/capability/statement.html'), 'utf8');
+if (emDash.test(statement)) fail('scripts/capability/statement.html: contains an em dash');
+if (thirdPartyLoads(statement).length) fail('scripts/capability/statement.html: loads a third-party resource');
+if (!statement.includes('Not a list of Intervencija clients')) fail('scripts/capability/statement.html: experience is not attributed to leadership');
 
 const theme = readFileSync(resolve(root, 'assets/theme.css'), 'utf8');
 if (!/\.reveal\s*\{\s*opacity:\s*1;/m.test(theme)) fail('assets/theme.css: reveal content is not visible by default');
