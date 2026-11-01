@@ -214,7 +214,7 @@ for (const asset of [
 const statement = readFileSync(resolve(root, 'scripts/capability/statement.html'), 'utf8');
 if (emDash.test(statement)) fail('scripts/capability/statement.html: contains an em dash');
 if (thirdPartyLoads(statement).length) fail('scripts/capability/statement.html: loads a third-party resource');
-if (!statement.includes('Not a list of Intervencija clients')) fail('scripts/capability/statement.html: experience is not attributed to leadership');
+if (!statement.includes('Track record of Intervencija’s leadership')) fail('scripts/capability/statement.html: experience is not attributed to leadership');
 
 const theme = readFileSync(resolve(root, 'assets/theme.css'), 'utf8');
 if (!/\.reveal\s*\{\s*opacity:\s*1;/m.test(theme)) fail('assets/theme.css: reveal content is not visible by default');
