@@ -24,6 +24,7 @@ npm run ci:pages      # build, verify the source, run tests, verify the deployme
 | `assets/fonts/` | Self-hosted Inter and Playfair Display, see `assets/fonts/LICENSE.md` |
 | `assets/og/`, `og-image.png` | Social preview images, rendered by `scripts/render-og.mjs` |
 | `intervencija-capability-statement.pdf` | One-page capability statement for procurement, rendered from `scripts/capability/statement.html` by `scripts/render-capability.mjs` |
+| `intervencija-sample-monthly-report.pdf` | One-page sample monthly report with fictional data, rendered from `scripts/report/sample-report.html` by `scripts/render-capability.mjs` |
 | `scripts/` | Build, verification, tests and social-card rendering |
 
 Adding a page means adding it to `scripts/build-site.mjs`, `scripts/verify-dist.mjs`, `scripts/verify-site.mjs` and `sitemap.xml`. The verifier fails on a missing canonical, duplicate title, broken internal link, missing social image or third-party font request.

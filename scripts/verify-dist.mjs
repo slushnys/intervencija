@@ -18,6 +18,7 @@ const expectedFiles = [
   'logo.svg',
   'og-image.png',
   'intervencija-capability-statement.pdf',
+  'intervencija-sample-monthly-report.pdf',
   'site.webmanifest',
   'robots.txt',
   'sitemap.xml',

@@ -8,9 +8,9 @@ Listen for `intervencija:measurement` on `window`; the event name is in `event.d
 |---|---|
 | header_contact / mobile_header_contact | Header project enquiry link |
 | hero_contact | Homepage primary CTA |
-| hero_services | Homepage service exploration |
-| service_system_audits / service_critical_builds / service_fractional_architecture | Homepage service links |
-| situation_replatform / situation_due_diligence / situation_core_system / situation_integrations / situation_new_platform / situation_growing_team | Homepage "Recognise one of these moments?" routes; shows which buyer situation resonates |
+| hero_how | Homepage "See how it works" link |
+| engagements_system_audits | Homepage engagements note linking to System Audits |
+| sample_report | Sample monthly report PDF download from the homepage hero |
 | system-audits_contact / critical-builds_contact / fractional-architecture_contact | Service page primary CTA |
 | insight_replatform / insight_production_ready / insight_fractional / insights_index | Homepage article links |
 | related_replatform / related_production_ready / related_fractional | Service page links to the matching article |

@@ -201,6 +201,7 @@ for (const asset of [
   'apple-touch-icon.png',
   'og-image.png',
   'intervencija-capability-statement.pdf',
+  'intervencija-sample-monthly-report.pdf',
   'logo.svg',
   'site.webmanifest',
   'robots.txt',
@@ -215,6 +216,11 @@ const statement = readFileSync(resolve(root, 'scripts/capability/statement.html'
 if (emDash.test(statement)) fail('scripts/capability/statement.html: contains an em dash');
 if (thirdPartyLoads(statement).length) fail('scripts/capability/statement.html: loads a third-party resource');
 if (!statement.includes('Track record of Intervencija’s leadership')) fail('scripts/capability/statement.html: experience is not attributed to leadership');
+
+const sampleReport = readFileSync(resolve(root, 'scripts/report/sample-report.html'), 'utf8');
+if (emDash.test(sampleReport)) fail('scripts/report/sample-report.html: contains an em dash');
+if (thirdPartyLoads(sampleReport).length) fail('scripts/report/sample-report.html: loads a third-party resource');
+if (!sampleReport.includes('are fictional')) fail('scripts/report/sample-report.html: the sample is not marked as fictional');
 
 const theme = readFileSync(resolve(root, 'assets/theme.css'), 'utf8');
 if (!/\.reveal\s*\{\s*opacity:\s*1;/m.test(theme)) fail('assets/theme.css: reveal content is not visible by default');

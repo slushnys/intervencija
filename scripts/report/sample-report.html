@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Intervencija sample monthly report</title>
+  <link rel="stylesheet" href="/assets/theme.css">
+  <style>
+    @page { size: A4; margin: 0; }
+    html, body { margin: 0; background: #fbfaf7; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sheet { box-sizing: border-box; width: 210mm; height: 297mm; padding: 13mm 15mm 10mm; overflow: hidden; display: flex; flex-direction: column; color: #20231f; font: 400 8.1pt/1.42 var(--sans); }
+    .top { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 5mm; border-bottom: 1px solid #20231f; }
+    .brand { display: flex; align-items: center; gap: 9px; font: 600 19pt/1 var(--serif); letter-spacing: -.045em; }
+    .mark { display: grid; place-items: center; width: 22px; height: 22px; border: 1.5px solid currentColor; }
+    .mark::after { content: ""; width: 6px; height: 6px; background: currentColor; }
+    .doc { text-align: right; font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; color: #62665d; font-weight: 600; }
+    .doc span { display: block; margin-top: 3px; letter-spacing: .04em; text-transform: none; font-weight: 500; }
+    h1 { margin: 6mm 0 0; font: 600 19pt/1.12 var(--serif); letter-spacing: -.035em; }
+    .meta { display: flex; flex-wrap: wrap; gap: 1mm 6mm; margin: 2.5mm 0 0; color: #4a4e45; }
+    .meta strong { color: #20231f; font-weight: 600; }
+    h2 { margin: 0 0 2mm; font: 600 7.2pt/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #4f5d36; }
+    section { margin-top: 4mm; }
+    .summary { margin-top: 4.5mm; padding: 3.5mm 4.5mm; background: #20231f; color: #f5f5ec; font-size: 9pt; line-height: 1.5; }
+    .summary h2 { color: #aebc93; }
+    .decision { padding: 3.5mm 4.5mm; border: 1.5px solid #8a4b0f; }
+    .decision h2 { color: #8a4b0f; }
+    .decision h3 { margin: 0; font: 600 11pt/1.3 var(--serif); letter-spacing: -.015em; }
+    .decision p { margin: 1.5mm 0 0; color: #3d4039; }
+    .options { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-top: 2.5mm; }
+    .options div { padding: 2mm 3mm; background: #f0f0e9; }
+    .options strong { display: block; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 1.4mm 2.5mm 1.4mm 0; border-top: 1px solid #d9dcd1; text-align: left; vertical-align: top; }
+    thead th { border-top: 1px solid #20231f; font-size: 6.8pt; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #62665d; }
+    td.ok { color: #4f5d36; font-weight: 600; }
+    td.attention { color: #8a4b0f; font-weight: 600; }
+    .bar { display: inline-block; width: 18mm; height: 2mm; margin-right: 2mm; background: #e6ead9; vertical-align: middle; }
+    .bar span { display: block; height: 100%; background: #68744a; }
+    .bar .warn { background: #8a4b0f; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+    ul.plain { margin: 0; padding: 0; list-style: none; }
+    ul.plain li { padding: 1.4mm 0 1.4mm 3mm; border-top: 1px solid #d9dcd1; position: relative; color: #3d4039; }
+    ul.plain li::before { content: ""; position: absolute; left: 0; top: 3mm; width: 3px; height: 3px; background: #4f5d36; }
+    ul.plain strong { color: #20231f; font-weight: 600; }
+    .note { margin: 1.5mm 0 0; font-size: 7.4pt; color: #62665d; }
+    .sample { margin-top: auto; padding: 3mm 4.5mm; border: 1px dashed #8c9284; font-size: 7.6pt; color: #3d4039; }
+    .foot { display: flex; justify-content: space-between; margin-top: 3mm; font-size: 7.4pt; color: #62665d; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top">
+      <div class="brand"><span class="mark" aria-hidden="true"></span><span>Intervencija</span></div>
+      <p class="doc">Monthly report · Sample<span>November 2026</span></p>
+    </div>
+
+    <h1>Monthly report for a sample client</h1>
+    <p class="meta"><span><strong>Engagement:</strong> Product delivery</span><span><strong>Period:</strong> 1 to 30 November 2026</span><span><strong>Accountable architect:</strong> Zigmas Slušnys</span></p>
+
+    <div class="summary">
+      <h2>Summary</h2>
+      Two objectives are on track and one needs a decision from you. Four releases were signed this month, and all automated tests passed. Agent usage stayed inside the agreed cap, and the monthly fee is unchanged.
+    </div>
+
+    <section class="decision">
+      <h2>Decision needed from you</h2>
+      <h3>Retry failed card payments automatically, or also email the customer?</h3>
+      <p>Automatic retries alone fit the current plan. Adding customer emails needs access to your email provider and moves the milestone by about three days.</p>
+      <div class="options">
+        <div><strong>Option A: retries only</strong>Stays on plan for 19 December.</div>
+        <div><strong>Option B: retries and emails</strong>Milestone moves to 22 December. Expected to recover more payments.</div>
+      </div>
+      <p>Please reply by 5 December. Until then, the team continues with work that does not depend on it.</p>
+    </section>
+
+    <section>
+      <h2>Objectives</h2>
+      <table>
+        <thead><tr><th>Objective</th><th>Status</th><th>Progress</th><th>Next milestone</th></tr></thead>
+        <tbody>
+          <tr><td>Move billing to the new platform</td><td class="ok">On track</td><td><span class="bar"><span style="width: 57%"></span></span>4 of 7 milestones</td><td>Invoice history migrated, 12 December</td></tr>
+          <tr><td>Reduce failed card payments</td><td class="attention">Decision needed</td><td><span class="bar"><span class="warn" style="width: 40%"></span></span>2 of 5 milestones</td><td>Retry rules live, 19 December</td></tr>
+          <tr><td>Invoice exports for finance</td><td class="ok">Delivered</td><td><span class="bar"><span style="width: 100%"></span></span>3 of 3 milestones</td><td>Delivered 28 October</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Signed releases</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Release</th><th>Tests</th><th>Rollback checked</th><th>Signed by</th></tr></thead>
+        <tbody>
+          <tr><td>27 Nov</td><td>Billing: invoice service on the new platform</td><td>214 passed</td><td>Yes</td><td>Z. Slušnys</td></tr>
+          <tr><td>21 Nov</td><td>Card payments: failure reasons recorded for every attempt</td><td>58 passed</td><td>Yes</td><td>Z. Slušnys</td></tr>
+          <tr><td>12 Nov</td><td>Security fix: PDF library upgraded</td><td>96 passed</td><td>Yes</td><td>Z. Slušnys</td></tr>
+          <tr><td>7 Nov</td><td>Billing: tax rules moved to a shared service</td><td>87 passed</td><td>Yes</td><td>Z. Slušnys</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Each release has its acceptance criteria, test evidence and rollback plan attached in the decision log.</p>
+    </section>
+
+    <section class="two">
+      <div>
+        <h2>Risks</h2>
+        <ul class="plain">
+          <li><strong>Open:</strong> about 2% of old billing records have no tax code. We fix them during migration. No effect on the deadline if confirmed before 10 December.</li>
+        </ul>
+        <h2 style="margin-top:4.5mm">Next month</h2>
+        <ul class="plain">
+          <li>Migrate invoice history and run both billing paths in parallel</li>
+          <li>Retry rules for failed card payments, after your decision</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Recommendations</h2>
+        <ul class="plain">
+          <li><strong>Offer annual billing.</strong> Customers on annual plans renew less often, so fewer payments can fail.</li>
+          <li><strong>Self-serve plan changes.</strong> About a fifth of support requests this month asked for a plan change.</li>
+          <li><strong>Remove the unused export service.</strong> It has had no traffic for six months and still needs security updates.</li>
+        </ul>
+        <p class="note">From our product, technical and growth reviews. Add any of these as an objective, or ignore them.</p>
+      </div>
+    </section>
+
+    <p class="sample"><strong>Sample document.</strong> The client, objectives, figures and releases in this report are fictional. They show the format of the monthly report that every engagement receives.</p>
+    <div class="foot"><span>Intervencija, MB · Company code 305284493 · Vilnius, Lithuania</span><span>intervencija.eu · hello@intervencija.eu</span></div>
+  </div>
+</body>
+</html>

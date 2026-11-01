@@ -11,7 +11,7 @@ const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const base = process.argv[2] || 'http://127.0.0.1:8765';
 
 const cards = [
-  { out: 'og-image.png', eyebrow: 'Software architecture & engineering', title: 'Software your business', accent: 'can’t afford to get wrong.', foot: 'System Audits · Critical Builds · Fractional Architecture' },
+  { out: 'og-image.png', eyebrow: 'Outcome-based software delivery', title: 'You set the objective.', accent: 'We deliver it, and sign for it.', foot: 'Modernisation · Product delivery · Run and maintain' },
   { out: 'assets/og/system-audits.png', eyebrow: 'System Audits', title: 'A clear view.', accent: 'A confident next decision.', foot: 'Architecture reviews and technical due diligence' },
   { out: 'assets/og/critical-builds.png', eyebrow: 'Critical Builds', title: 'Important software.', accent: 'Considered from the start.', foot: 'Senior-led delivery for business-critical systems' },
   { out: 'assets/og/fractional-architecture.png', eyebrow: 'Fractional Architecture', title: 'Senior perspective.', accent: 'Ongoing momentum.', foot: 'Part-time architecture leadership for engineering teams' },
