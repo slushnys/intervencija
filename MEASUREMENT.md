@@ -11,6 +11,7 @@ Listen for `intervencija:measurement` on `window`; the event name is in `event.d
 | hero_book_call / contact_book_call / audit_book_call | Cal.com booking buttons (hero, homepage contact, System Audit contact) |
 | hero_free_audit | Hero note linking to the free System Audit |
 | engagements_system_audits | Homepage engagements note linking to the free System Audit |
+| sample_release | Accountability section link to the sample signed release record PDF |
 | sample_report | Sample monthly report PDF download from the homepage hero |
 | system-audits_contact | System Audit page primary CTA |
 | insight_replatform / insight_production_ready / insights_index | Homepage article links |

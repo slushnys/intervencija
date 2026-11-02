@@ -1,4 +1,4 @@
-// Renders the one-page A4 PDFs: the capability statement and the sample monthly report.
+// Renders the one-page A4 PDFs: the capability statement, the sample monthly report and the sample release record.
 // Not part of the CI build: the PDF is committed. To regenerate after copy changes:
 //   npm run serve:local                      (in one terminal)
 //   npm i --no-save playwright-core && npx playwright install chromium
@@ -10,7 +10,8 @@ const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const base = process.argv[2] || 'http://127.0.0.1:8765';
 const documents = [
   ['scripts/capability/statement.html', 'intervencija-capability-statement.pdf'],
-  ['scripts/report/sample-report.html', 'intervencija-sample-monthly-report.pdf']
+  ['scripts/report/sample-report.html', 'intervencija-sample-monthly-report.pdf'],
+  ['scripts/release/sample-release.html', 'intervencija-sample-release-record.pdf']
 ];
 
 let chromium;

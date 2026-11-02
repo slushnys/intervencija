@@ -443,6 +443,7 @@ button:disabled { cursor: wait; opacity: .7; }
 .signature-panel ul { list-style: none; margin: 14px 0 0; padding: 0; }
 .signature-panel li { position: relative; padding: 14px 0 14px 30px; border-top: 1px solid var(--line); font-size: .9375rem; line-height: 1.6; }
 .signature-panel li::before { content: ""; position: absolute; left: 2px; top: 21px; width: 12px; height: 7px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+.signature-panel .text-link { margin-top: 12px; }
 
 
 @media (min-width: 1440px) { .hero { gap: 80px; } }

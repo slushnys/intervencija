@@ -195,6 +195,7 @@ for (const asset of [
   'og-image.png',
   'intervencija-capability-statement.pdf',
   'intervencija-sample-monthly-report.pdf',
+  'intervencija-sample-release-record.pdf',
   'logo.svg',
   'site.webmanifest',
   'robots.txt',
@@ -214,12 +215,17 @@ if (emDash.test(sampleReport)) fail('scripts/report/sample-report.html: contains
 if (thirdPartyLoads(sampleReport).length) fail('scripts/report/sample-report.html: loads a third-party resource');
 if (!sampleReport.includes('are fictional')) fail('scripts/report/sample-report.html: the sample is not marked as fictional');
 
+const sampleRelease = readFileSync(resolve(root, 'scripts/release/sample-release.html'), 'utf8');
+if (emDash.test(sampleRelease)) fail('scripts/release/sample-release.html: contains an em dash');
+if (thirdPartyLoads(sampleRelease).length) fail('scripts/release/sample-release.html: loads a third-party resource');
+if (!sampleRelease.includes('are fictional')) fail('scripts/release/sample-release.html: the sample is not marked as fictional');
+
 const theme = readFileSync(resolve(root, 'assets/theme.css'), 'utf8');
 if (!/\.reveal\s*\{\s*opacity:\s*1;/m.test(theme)) fail('assets/theme.css: reveal content is not visible by default');
 if (!theme.includes('.js .reveal')) fail('assets/theme.css: progressive reveal enhancement is missing');
 
 // The founder's employer must never appear publicly.
-const publicSources = [...documents.entries(), ['404.html', notFoundPage], ['scripts/capability/statement.html', statement], ['scripts/report/sample-report.html', sampleReport]];
+const publicSources = [...documents.entries(), ['404.html', notFoundPage], ['scripts/capability/statement.html', statement], ['scripts/report/sample-report.html', sampleReport], ['scripts/release/sample-release.html', sampleRelease]];
 for (const [name, html] of publicSources) {
   for (const banned of ['Shift4']) {
     if (html.toLowerCase().includes(banned.toLowerCase())) fail(`${name}: names ${banned}, which must not appear publicly`);

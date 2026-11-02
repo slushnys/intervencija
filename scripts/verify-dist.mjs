@@ -19,6 +19,7 @@ const expectedFiles = [
   'og-image.png',
   'intervencija-capability-statement.pdf',
   'intervencija-sample-monthly-report.pdf',
+  'intervencija-sample-release-record.pdf',
   'site.webmanifest',
   'robots.txt',
   'sitemap.xml',

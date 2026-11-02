@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Intervencija sample release record</title>
+  <link rel="stylesheet" href="/assets/theme.css">
+  <style>
+    @page { size: A4; margin: 0; }
+    html, body { margin: 0; background: #fbfaf7; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sheet { box-sizing: border-box; width: 210mm; height: 297mm; padding: 13mm 15mm 10mm; overflow: hidden; display: flex; flex-direction: column; color: #20231f; font: 400 8.1pt/1.42 var(--sans); }
+    .top { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 5mm; border-bottom: 1px solid #20231f; }
+    .brand { display: flex; align-items: center; gap: 9px; font: 600 19pt/1 var(--serif); letter-spacing: -.045em; }
+    .mark { display: grid; place-items: center; width: 22px; height: 22px; border: 1.5px solid currentColor; }
+    .mark::after { content: ""; width: 6px; height: 6px; background: currentColor; }
+    .doc { text-align: right; font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; color: #62665d; font-weight: 600; }
+    .doc span { display: block; margin-top: 3px; letter-spacing: .04em; text-transform: none; font-weight: 500; }
+    h1 { margin: 5mm 0 0; font: 600 19pt/1.12 var(--serif); letter-spacing: -.035em; }
+    .meta { display: flex; flex-wrap: wrap; gap: 1mm 6mm; margin: 2.5mm 0 0; color: #4a4e45; }
+    .meta strong { color: #20231f; font-weight: 600; }
+    h2 { margin: 0 0 2mm; font: 600 7.2pt/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #4f5d36; }
+    section { margin-top: 3.5mm; }
+    .summary { margin-top: 4mm; padding: 3.5mm 4.5mm; background: #20231f; color: #f5f5ec; font-size: 9pt; line-height: 1.5; }
+    .summary h2 { color: #aebc93; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 1.4mm 2.5mm 1.4mm 0; border-top: 1px solid #d9dcd1; text-align: left; vertical-align: top; }
+    thead th { border-top: 1px solid #20231f; font-size: 6.8pt; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #62665d; }
+    td.ok { color: #4f5d36; font-weight: 600; white-space: nowrap; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+    ul.plain { margin: 0; padding: 0; list-style: none; }
+    ul.plain li { padding: 1.4mm 0 1.4mm 3mm; border-top: 1px solid #d9dcd1; position: relative; color: #3d4039; }
+    ul.plain li::before { content: ""; position: absolute; left: 0; top: 3mm; width: 3px; height: 3px; background: #4f5d36; }
+    ul.plain strong { color: #20231f; font-weight: 600; }
+    .note { margin: 1.5mm 0 0; font-size: 7.4pt; color: #62665d; }
+    .signature { margin-top: 4mm; padding: 3.5mm 4.5mm; border: 1.5px solid #20231f; }
+    .signature .grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 8mm; }
+    .checks { margin: 0; padding: 0; list-style: none; }
+    .checks li { position: relative; padding: .6mm 0 .6mm 5mm; color: #3d4039; }
+    .checks li::before { content: ""; position: absolute; left: .5mm; top: 1.6mm; width: 2.6mm; height: 1.4mm; border-left: 1.5px solid #4f5d36; border-bottom: 1.5px solid #4f5d36; transform: rotate(-45deg); }
+    .statement { margin: 0; font: 500 10pt/1.45 var(--serif); letter-spacing: -.01em; }
+    .signed { margin-top: 3mm; padding-top: 2.5mm; border-top: 1px solid #d9dcd1; }
+    .signed dl { display: grid; grid-template-columns: 1.3fr .8fr 1.3fr; gap: 6mm; margin: 0; }
+    .signed dt { font-size: 6.8pt; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #62665d; }
+    .signed dd { margin: .6mm 0 0; font-weight: 600; }
+    .sample { margin-top: auto; padding: 3mm 4.5mm; border: 1px dashed #8c9284; font-size: 7.6pt; color: #3d4039; }
+    .foot { display: flex; justify-content: space-between; margin-top: 3mm; font-size: 7.4pt; color: #62665d; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top">
+      <div class="brand"><span class="mark" aria-hidden="true"></span><span>Intervencija</span></div>
+      <p class="doc">Signed release record · Sample<span>Release 2026-10-21.1</span></p>
+    </div>
+
+    <h1>Card payments: failure reasons recorded for every attempt</h1>
+    <p class="meta"><span><strong>Engagement:</strong> Product delivery</span><span><strong>Objective:</strong> Reduce failed card payments, milestone 2 of 5</span><span><strong>Released:</strong> 21 October 2026</span></p>
+
+    <div class="summary">
+      <h2>What changed</h2>
+      Every failed card payment now records the reason the bank gave, for example insufficient funds or an expired card. The retry rules in milestone 3 need this data to decide when a retry can work. Customers see no change.
+    </div>
+
+    <section>
+      <h2>Acceptance criteria</h2>
+      <table>
+        <thead><tr><th>Criterion</th><th>Evidence</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Each failed attempt stores the bank’s decline code and a readable reason</td><td>12 integration tests against the payment provider’s test environment, one for each decline type</td><td class="ok">Met</td></tr>
+          <tr><td>Successful payments work exactly as before</td><td>Full checkout and billing regression suite</td><td class="ok">Met</td></tr>
+          <tr><td>No card numbers or other personal data are stored with the reason</td><td>Review of the new table, the logs and the error reports</td><td class="ok">Met</td></tr>
+          <tr><td>Failure reasons appear in the finance export</td><td>Export test with three decline types</td><td class="ok">Met</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="two">
+      <div>
+        <h2>Tests and security</h2>
+        <ul class="plain">
+          <li><strong>Automated tests:</strong> 58 passed, 0 failed, 0 skipped (41 unit, 12 integration, 5 end to end)</li>
+          <li><strong>Security:</strong> dependency scan, secret scan and static analysis, with no new findings</li>
+        </ul>
+        <h2 style="margin-top:4mm">Who did the work</h2>
+        <ul class="plain">
+          <li><strong>Planned</strong> by the orchestrator agent, from milestone 2 of the agreed plan</li>
+          <li><strong>Built</strong> by the engineering agent, with tests written by the test agent</li>
+          <li><strong>Reviewed</strong> by the accountable architect: code, tests and rollback</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Rollback plan</h2>
+        <ul class="plain">
+          <li><strong>How:</strong> switch off the feature flag <em>record_decline_reasons</em>. Payments then work as before.</li>
+          <li><strong>Checked:</strong> on 20 October in the test environment. Rollback took under 2 minutes, with no payment errors.</li>
+        </ul>
+        <h2 style="margin-top:4mm">Release and monitoring</h2>
+        <ul class="plain">
+          <li>Switched on for 10% of payments, then for all payments after one hour with no new errors</li>
+          <li><strong>Known limitation:</strong> one older card type returns no reason (under 1% of attempts). It shows as “unknown” until milestone 3.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="signature">
+      <h2>Signature</h2>
+      <div class="grid">
+        <p class="statement">I reviewed this change against the acceptance criteria above. All automated tests and security checks passed, and the rollback plan was tested. The change is safe to release, and I answer for it.</p>
+        <div>
+          <ul class="checks">
+            <li>Meets the written acceptance criteria</li>
+            <li>All automated tests pass, evidence attached</li>
+            <li>Security checks pass, no new known vulnerabilities</li>
+            <li>Rollback plan exists and was checked</li>
+            <li>Decision recorded, with the name and the date</li>
+          </ul>
+        </div>
+      </div>
+      <div class="signed">
+        <dl>
+          <div><dt>Signed by</dt><dd>Zigmas Slušnys, accountable architect</dd></div>
+          <div><dt>Date</dt><dd>21 October 2026</dd></div>
+          <div><dt>Decision log</dt><dd>Entry 14, with the test reports attached</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <p class="sample"><strong>Sample document.</strong> The client, release, systems and figures in this record are fictional. They show the format of the record attached to every signed release. This release appears in the sample monthly report for October 2026.</p>
+    <div class="foot"><span>Intervencija, MB · Company code 305284493 · Vilnius, Lithuania</span><span>intervencija.eu · hello@intervencija.eu</span></div>
+  </div>
+</body>
+</html>
