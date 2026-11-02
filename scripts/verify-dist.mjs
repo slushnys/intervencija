@@ -100,7 +100,7 @@ for (const htmlFile of actualFiles.filter((file) => file.endsWith('.html'))) {
     }
   }
   for (const match of html.matchAll(/<(?:script|link|img|iframe|source|video|audio|embed)\b[^>]*?\s(?:src|href|srcset)="((?:https?:)?\/\/[^"\s]+)/gi)) {
-    if (new URL(match[1], `https://${siteHost}`).host !== siteHost) {
+    if (![siteHost, 'static.cloudflareinsights.com'].includes(new URL(match[1], `https://${siteHost}`).host)) {
       throw new Error(`${htmlFile} loads a third-party resource: ${match[1]}`);
     }
   }

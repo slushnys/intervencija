@@ -1,6 +1,6 @@
 # Intervencija measurement integration
 
-No analytics vendor is connected. The site emits browser events that can be connected to a selected provider later.
+Cloudflare Web Analytics (cookieless beacon on every public page) counts page views, referrers and countries. It does not record custom events, so the `data-track` browser events below are not collected yet.
 
 Listen for `intervencija:measurement` on `window`; the event name is in `event.detail.name`.
 
@@ -33,4 +33,4 @@ A form success event measures acceptance by the endpoint, not a qualified lead, 
 
 The enquiry form also sends an optional timing answer, so incoming leads can be prioritised by urgency without asking for budget.
 
-No tracker, consent service, external account, or Search Console integration is configured. The privacy notice states that the site uses no analytics and sets no cookies; update it in the same change that connects a provider.
+No consent service is needed: the only analytics is Cloudflare Web Analytics, which sets no cookies. The privacy notice describes it; update the notice in the same change as any new provider.

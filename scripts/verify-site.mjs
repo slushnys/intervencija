@@ -26,10 +26,13 @@ const documents = new Map();
 const fail = (message) => errors.push(message);
 const decode = (value) => value.replaceAll('&amp;', '&').replaceAll('&#39;', "'").replaceAll('&quot;', '"');
 const emDash = /—|&mdash;|&#8212;|&#x2014;/i;
+// Cloudflare Web Analytics is the only third-party script; it sets no cookies.
+const analyticsHost = 'static.cloudflareinsights.com';
+const analyticsToken = 'fd131710340f4b6db18818a26e03d540';
 const thirdPartyLoads = (html) => Array.from(
   html.matchAll(/<(?:script|link|img|iframe|source|video|audio|embed)\b[^>]*?\s(?:src|href|srcset)="((?:https?:)?\/\/[^"\s]+)/gi),
   (match) => match[1]
-).filter((url) => new URL(url, siteOrigin).host !== new URL(siteOrigin).host);
+).filter((url) => ![new URL(siteOrigin).host, analyticsHost].includes(new URL(url, siteOrigin).host));
 
 for (const page of pages) {
   const path = resolve(root, page);
@@ -230,6 +233,13 @@ for (const [name, html] of publicSources) {
   for (const banned of ['Shift4']) {
     if (html.toLowerCase().includes(banned.toLowerCase())) fail(`${name}: names ${banned}, which must not appear publicly`);
   }
+}
+
+for (const [name, html] of [...documents.entries(), ['404.html', notFoundPage]]) {
+  if (!html.includes(`https://${analyticsHost}/beacon.min.js`) || !html.includes(analyticsToken)) fail(`${name}: Cloudflare Web Analytics beacon is missing`);
+}
+for (const [name, html] of [['scripts/capability/statement.html', statement], ['scripts/report/sample-report.html', sampleReport], ['scripts/release/sample-release.html', sampleRelease]]) {
+  if (html.includes(analyticsHost)) fail(`${name}: PDF sources must not load analytics`);
 }
 
 if (errors.length) {
