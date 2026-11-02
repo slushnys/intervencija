@@ -12,13 +12,10 @@ const base = process.argv[2] || 'http://127.0.0.1:8765';
 
 const cards = [
   { out: 'og-image.png', eyebrow: 'Outcome-based software delivery', title: 'You set the objective.', accent: 'We deliver it, and sign for it.', foot: 'Modernisation · Product delivery · Run and maintain' },
-  { out: 'assets/og/system-audits.png', eyebrow: 'System Audits', title: 'A clear view.', accent: 'A confident next decision.', foot: 'Architecture reviews and technical due diligence' },
-  { out: 'assets/og/critical-builds.png', eyebrow: 'Critical Builds', title: 'Important software.', accent: 'Considered from the start.', foot: 'Built by AI agent teams, signed by a senior architect' },
-  { out: 'assets/og/fractional-architecture.png', eyebrow: 'Fractional Architecture', title: 'Senior perspective.', accent: 'Ongoing momentum.', foot: 'Part-time architecture leadership for engineering teams' },
+  { out: 'assets/og/system-audits.png', eyebrow: 'Free System Audit', title: 'A clear view of your system.', accent: 'Free, with no obligation.', foot: 'Examined by AI agents, signed by a senior architect' },
   { out: 'assets/og/insights.png', eyebrow: 'Insights', title: 'Practical notes for', accent: 'technology leaders.', foot: 'Checklists and perspectives on business-critical software' },
   { out: 'assets/og/insight-before-you-replatform.png', eyebrow: 'Insights · Checklist', title: 'Before you replatform:', accent: '12 questions to answer first.', foot: 'System Audits' },
-  { out: 'assets/og/insight-production-ready-critical-software.png', eyebrow: 'Insights · Checklist', title: 'What production-ready means', accent: 'for business-critical software.', foot: 'Critical Builds' },
-  { out: 'assets/og/insight-when-a-fractional-architect-makes-sense.png', eyebrow: 'Insights · Perspective', title: 'When a fractional architect makes sense,', accent: 'and when it doesn’t.', foot: 'Fractional Architecture' }
+  { out: 'assets/og/insight-production-ready-critical-software.png', eyebrow: 'Insights · Checklist', title: 'What production-ready means', accent: 'for business-critical software.', foot: 'Product delivery' }
 ];
 
 let chromium;

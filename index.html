@@ -80,9 +80,7 @@
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Modernisation", "url": "https://intervencija.eu/#engagements" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product delivery", "url": "https://intervencija.eu/#engagements" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Run and maintain", "url": "https://intervencija.eu/#engagements" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "System Audits", "url": "https://intervencija.eu/system-audits/" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Critical Builds", "url": "https://intervencija.eu/critical-builds/" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fractional Architecture", "url": "https://intervencija.eu/fractional-architecture/" } }
+              { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Free System Audit", "url": "https://intervencija.eu/system-audits/" } }
             ]
           }
         },
@@ -109,9 +107,9 @@
 
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/site.css?v=20261102">
-  <link rel="stylesheet" href="/assets/theme.css?v=20261102">
-  <script defer src="/assets/site.js?v=20261102"></script>
+  <link rel="stylesheet" href="/assets/site.css?v=20261103">
+  <link rel="stylesheet" href="/assets/theme.css?v=20261103">
+  <script defer src="/assets/site.js?v=20261103"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -131,7 +129,7 @@
         <div class="mobile-panel">
           <a href="/#how">How it works</a><a href="/#engagements">Engagements</a><a href="/#enterprise">Enterprise</a><a href="/#about">About</a><a href="/insights/">Insights</a>
           <p class="mobile-group">Services</p>
-          <a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a>
+          <a href="/system-audits/">Free System Audit</a>
           <a class="button" href="#contact" data-track="mobile_header_contact">Discuss a project <span aria-hidden="true">↗</span></a>
         </div>
       </details>
@@ -147,7 +145,7 @@
           <a class="button" href="#contact" data-track="hero_contact">Discuss your objective <span aria-hidden="true">↗</span></a>
           <a class="text-link" href="#how" data-track="hero_how">See how it works <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="hero-note">Start with one objective as a fixed-fee pilot. Scope, success measures and fee are agreed in writing before any work begins.</p>
+        <p class="hero-note">New clients start with a <a class="inline-link" href="/system-audits/" data-track="hero_free_audit">free System Audit</a> of one system. You get a written report and a plan before you pay for anything.</p>
       </div>
       <figure class="report-card" aria-labelledby="report-title">
         <figcaption><span id="report-title" class="eyebrow">Monthly report</span><span class="record-tag">Illustrative</span></figcaption>
@@ -160,24 +158,19 @@
           <div><dt>Decisions open</dt><dd>1</dd></div>
           <div><dt>Open risks</dt><dd>1</dd></div>
         </dl>
-        <a class="text-link" href="/intervencija-sample-monthly-report.pdf" data-track="sample_report">Sample monthly report (PDF) <span aria-hidden="true">↓</span></a>
+        <a class="text-link" href="/intervencija-sample-monthly-report.pdf" target="_blank" rel="noopener" data-track="sample_report">Sample monthly report (PDF) <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </figure>
     </section>
 
     <section id="experience" class="experience-section" aria-labelledby="experience-title">
       <div class="wrap">
-        <div class="experience-heading"><h2 id="experience-title">Experience behind Intervencija</h2><p>Our leadership’s track record spans regulated banking, fintech lending, high-volume logistics and global commerce.</p></div>
-        <ul class="logo-grid" aria-label="Organisations in our leadership’s delivery experience">
-          <li><img src="/assets/logos/sendcloud.svg?v=20260909" alt="Sendcloud" width="160" height="46" loading="lazy"></li>
-          <li><img class="logo-wide" src="/assets/logos/new10.svg?v=20260909" alt="New10" width="352" height="100" loading="lazy"></li>
+        <div class="experience-heading"><h2 id="experience-title">Selected clients</h2><p>Software we have delivered for banking, fintech and global brands.</p></div>
+        <ul class="logo-grid" aria-label="Selected clients">
           <li><img src="/assets/logos/abn-amro.svg?v=20260909" alt="ABN AMRO" width="162" height="40" loading="lazy"></li>
-          <li class="logo-with-name"><img src="/assets/logos/rabobank.png?v=20260909" alt="" width="108" height="102" loading="lazy"><span>Rabobank</span></li>
-          <li><img src="/assets/logos/sns.svg?v=20260909" alt="SNS Bank" width="193" height="42" loading="lazy"></li>
-          <li><img src="/assets/logos/helmes.svg?v=20260909" alt="Helmes" width="125" height="28" loading="lazy"></li>
-          <li><img class="logo-tall" src="/assets/logos/costa-coffee.svg?v=20260909" alt="Costa Coffee" width="114" height="48" loading="lazy"></li>
+          <li><img class="logo-wide" src="/assets/logos/new10.svg?v=20260909" alt="New10" width="352" height="100" loading="lazy"></li>
           <li><img class="logo-wide" src="/assets/logos/coca-cola.svg?v=20260909" alt="The Coca-Cola Company" width="125" height="20" loading="lazy"></li>
+          <li><img class="logo-tall" src="/assets/logos/costa-coffee.svg?v=20260909" alt="Costa Coffee" width="114" height="48" loading="lazy"></li>
           <li class="logo-with-name"><img src="/assets/logos/vml.svg?v=20260909" alt="" width="16" height="16" loading="lazy"><span>VML</span></li>
-          <li class="experience-caption">Software that moves money, orders and customer data.</li>
         </ul>
       </div>
     </section>
@@ -211,7 +204,7 @@
           <article class="service-card featured"><span class="service-number">02 / Deliver</span><h3>Product delivery</h3><p class="service-purpose">Deliver the objectives on your product roadmap, one signed release at a time.</p><p class="service-example">Example objective: “Let business customers change their plan themselves.”</p><p class="service-list-label">You receive</p><ul><li>Acceptance criteria agreed before work starts</li><li>Working features in your systems</li><li>A monthly report on progress, cost and risk</li></ul></article>
           <article class="service-card"><span class="service-number">03 / Run</span><h3>Run and maintain</h3><p class="service-purpose">Keep software, integrations and dependencies working and up to date. No software team? We host, run and fix it for you.</p><p class="service-example">Example objective: “Keep our payment integrations working.”</p><p class="service-list-label">You receive</p><ul><li>Security fixes and upgrades</li><li>Monitoring, with response times agreed in the proposal</li><li>Hosting and backups, if you need them</li></ul></article>
         </div>
-        <p class="section-note">Not sure where to start? A <a class="inline-link" href="/system-audits/" data-track="engagements_system_audits">System Audit</a> is a fixed-fee review that ends with a plan and a price.</p>
+        <p class="section-note">Not sure where to start? Begin with a <a class="inline-link" href="/system-audits/" data-track="engagements_system_audits">free System Audit</a>.</p>
       </div>
     </section>
 
@@ -236,37 +229,19 @@
       </div>
     </section>
 
-    <section class="section soft-section" aria-labelledby="compare-title">
-      <div class="wrap">
-        <div class="section-heading"><div><p class="eyebrow">Compared with a traditional vendor</p><h2 id="compare-title">Less to manage.<br><em>More to show for it.</em></h2></div></div>
-        <div class="compare-wrap">
-          <table class="compare">
-            <thead><tr><th scope="col"><span class="visually-hidden">Topic</span></th><th scope="col">Traditional vendor</th><th scope="col">Intervencija</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">What you buy</th><td data-label="Traditional vendor">People’s time, at day rates</td><td data-label="Intervencija">Agreed objectives, for a fixed monthly fee</td></tr>
-              <tr><th scope="row">Your effort</th><td data-label="Traditional vendor">You manage the team, the tasks and the backlog</td><td data-label="Intervencija">You set objectives and take the decisions that are yours</td></tr>
-              <tr><th scope="row">Accountability</th><td data-label="Traditional vendor">Spread across a team and its managers</td><td data-label="Intervencija">One named architect signs every release</td></tr>
-              <tr><th scope="row">Evidence</th><td data-label="Traditional vendor">Status meetings and slide decks</td><td data-label="Intervencija">Signed releases, test evidence and a monthly report</td></tr>
-              <tr><th scope="row">Documentation</th><td data-label="Traditional vendor">Often left until last</td><td data-label="Intervencija">Written with every change</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
     <section id="enterprise" class="section enterprise-section" aria-labelledby="enterprise-title">
       <div class="wrap">
         <div class="section-heading"><div><p class="eyebrow">For enterprise teams</p><h2 id="enterprise-title">Straightforward to engage.<br><em>Easy to govern.</em></h2></div><p>Set up to pass procurement, security review and steering committees, so work starts on clear terms and stays accountable once it does.</p></div>
         <div class="assurance-grid">
           <article class="assurance"><h3>Contracting</h3><p>A master services agreement with a statement of work for each engagement, on our paper or yours. An NDA can be signed before you share anything sensitive.</p></article>
-          <article class="assurance"><h3>Commercials</h3><p>A fixed monthly fee for each engagement, or a fixed fee for a pilot. Changes to scope are agreed in writing.</p></article>
+          <article class="assurance"><h3>Commercials</h3><p>A fixed monthly fee for each engagement. Changes to scope are agreed in writing. The first System Audit is free.</p></article>
           <article class="assurance"><h3>Reporting and decisions</h3><p>A monthly report on progress, cost and risk, a decision log, and a named architect you can escalate to at any time.</p></article>
           <article class="assurance"><h3>Security and access</h3><p>Each client’s work runs in a separate environment with its own credentials. Access is agreed for each scope and returned when the engagement ends. Security questionnaires are part of onboarding.</p></article>
           <article class="assurance"><h3>Data protection and AI use</h3><p>An EU company working under the GDPR. A data processing agreement can be put in place, and we tell you which work our agents do.</p></article>
           <article class="assurance"><h3>Ownership</h3><p>Code, tests and documentation are delivered into your repositories, and the agreement assigns ownership of them to you.</p></article>
         </div>
         <div class="supplier-panel">
-          <div><p class="eyebrow">Supplier details</p><p>The company details supplier onboarding starts with. Anything else your process needs, ask us.</p><a class="text-link" href="/intervencija-capability-statement.pdf" data-track="capability_statement">Capability statement (PDF) <span aria-hidden="true">↓</span></a></div>
+          <div><p class="eyebrow">Supplier details</p><p>The company details supplier onboarding starts with. Anything else your process needs, ask us.</p><a class="text-link" href="/intervencija-capability-statement.pdf" target="_blank" rel="noopener" data-track="capability_statement">Capability statement (PDF) <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
           <dl class="supplier-details" aria-label="Supplier details">
             <div><dt>Legal name</dt><dd>Intervencija, MB</dd></div>
             <div><dt>Company code</dt><dd>305284493</dd></div>
@@ -293,14 +268,6 @@
         <div class="company-body">
           <p class="lead">Intervencija was founded in 2019 to give organisations senior architecture and accountable delivery in one engagement. Today our AI agent teams do the engineering, and a senior architect signs every release. We don’t resell platforms or licences, so our recommendations follow your constraints rather than a vendor agreement.</p>
           <p>The name is Lithuanian for intervention, from the Latin <em>intervenire</em>: to come between. We put an accountable person between agent work and your production.</p>
-          <p>Our leadership’s track record spans banking, fintech lending, logistics and global commerce: regulated, high-volume and customer-facing environments where software has to work.</p>
-          <dl class="company-experience" aria-label="Leadership experience by sector">
-            <div><dt>Banking</dt><dd>ABN AMRO, Rabobank, SNS Bank</dd></div>
-            <div><dt>Fintech lending</dt><dd>New10</dd></div>
-            <div><dt>Logistics software</dt><dd>Sendcloud</dd></div>
-            <div><dt>Global commerce</dt><dd>The Coca-Cola Company and Costa Coffee, with Wunderman Thompson Commerce (now VML)</dd></div>
-            <div><dt>Software delivery</dt><dd>Helmes</dd></div>
-          </dl>
           <div class="leadership">
             <p class="eyebrow">Leadership</p>
             <div class="leader"><div><p class="leader-name">Zigmas Slušnys</p><p class="leader-role">Founder and Managing Director</p></div><a class="text-link" href="https://www.linkedin.com/in/zigmas-slusnys/" rel="me" data-track="founder_linkedin">LinkedIn <span aria-hidden="true">↗</span></a></div>
@@ -312,11 +279,10 @@
 
     <section id="insights" class="section" aria-labelledby="insights-title">
       <div class="wrap">
-        <div class="section-heading"><div><p class="eyebrow">Insights</p><h2 id="insights-title">Practical notes for<br>technology leaders.</h2></div><p>Checklists and perspectives from the work: what to settle before a replatform, what production-ready really means, and when fractional architecture fits.</p></div>
-        <div class="insight-grid">
+        <div class="section-heading"><div><p class="eyebrow">Insights</p><h2 id="insights-title">Practical notes for<br>technology leaders.</h2></div><p>Checklists and perspectives from the work: what to settle before a replatform and what production-ready really means.</p></div>
+        <div class="insight-grid insight-grid-2">
           <article class="insight-card"><p class="insight-meta">System Audits · 5 min read</p><h3><a href="/insights/before-you-replatform/">Before you replatform: 12 questions to answer first</a></h3><p>Most troubled migrations trace back to questions nobody asked before the commitment. These are the ones a review should settle.</p><a class="text-link" href="/insights/before-you-replatform/" data-track="insight_replatform">Read the checklist <span aria-hidden="true">↗</span></a></article>
-          <article class="insight-card"><p class="insight-meta">Critical Builds · 5 min read</p><h3><a href="/insights/production-ready-critical-software/">What production-ready means for business-critical software</a></h3><p>“It works in staging” is not the bar. Eight properties to verify before go-live when software moves money, orders or customer data.</p><a class="text-link" href="/insights/production-ready-critical-software/" data-track="insight_production_ready">Read the article <span aria-hidden="true">↗</span></a></article>
-          <article class="insight-card"><p class="insight-meta">Fractional Architecture · 4 min read</p><h3><a href="/insights/when-a-fractional-architect-makes-sense/">When a fractional architect makes sense, and when it doesn’t</a></h3><p>The signals that you need senior architecture leadership part-time, the cases where you don’t, and how to structure the engagement.</p><a class="text-link" href="/insights/when-a-fractional-architect-makes-sense/" data-track="insight_fractional">Read the article <span aria-hidden="true">↗</span></a></article>
+          <article class="insight-card"><p class="insight-meta">Product delivery · 5 min read</p><h3><a href="/insights/production-ready-critical-software/">What production-ready means for business-critical software</a></h3><p>“It works in staging” is not the bar. Eight properties to verify before go-live when software moves money, orders or customer data.</p><a class="text-link" href="/insights/production-ready-critical-software/" data-track="insight_production_ready">Read the article <span aria-hidden="true">↗</span></a></article>
         </div>
         <p class="insights-footer"><a class="text-link" href="/insights/" data-track="insights_index">All insights <span aria-hidden="true">↗</span></a></p>
       </div>
@@ -324,10 +290,6 @@
 
     <section class="section faq-section" aria-labelledby="faq-title">
       <div class="wrap faq-layout"><div><p class="eyebrow">Before we begin</p><h2 id="faq-title">Questions worth<br>asking early.</h2><p class="faq-intro">Procurement, security or commercial questions not covered here? Email <a class="text-link" href="mailto:hello@intervencija.eu" data-track="faq_email">hello@intervencija.eu</a></p></div><div class="faq-list">
-        <details><summary>Who does the work?</summary><p>AI agent teams that we set up and run for your engagement do the engineering. A senior architect reviews every release, signs it and answers for it. You never manage the agents.</p></details>
-        <details><summary>How much of our time does it take?</summary><p>You agree the objective and the plan once. After that, we ask you only for decisions that are yours: a change to scope, budget or deadline, a risk to accept, or a release that needs your go-ahead. A monthly report covers the rest.</p></details>
-        <details><summary>We don’t have a software team. Can you still help?</summary><p>Yes. Under Run and maintain we can host, run and fix the software for you, so you don’t need technical staff of your own.</p></details>
-        <details><summary>How are engagements priced?</summary><p>Each engagement has a fixed monthly fee, set out in a written proposal with the objectives, success measures and assumptions. A first objective can run as a fixed-fee pilot. Changes to scope are agreed in writing.</p></details>
         <details><summary>Where do our code and data go?</summary><p>Each client’s work runs in a separate environment with its own credentials. The proposal and the data processing agreement name every AI model provider and other service that processes your code or data, and where it is based. Code and documentation are delivered into your repositories.</p></details>
         <details><summary>What should we share in the first message?</summary><p>The result you need, a short description of the systems involved, and any important timing. There is no need to share source code, customer data or detailed internal documents at this stage.</p></details>
       </div></div>
@@ -348,7 +310,7 @@
         </div>
         <form id="inquiry-form" class="inquiry-form" action="https://submit-form.com/4GyxKJ37V" method="post" accept-charset="UTF-8" aria-describedby="form-privacy form-note">
           <h3 class="form-heading">Tell us about your objective</h3>
-          <div class="form-field form-interest"><label for="interest">How can we help? <span>(optional)</span></label><select id="interest" name="interest"><option value="General enquiry">Let’s explore the right approach</option><option value="Modernisation">Modernise a system</option><option value="Product delivery">Deliver product features</option><option value="Run and maintain">Keep software running</option><option value="System Audits">Start with a review</option></select></div>
+          <div class="form-field form-interest"><label for="interest">How can we help? <span>(optional)</span></label><select id="interest" name="interest"><option value="General enquiry">Let’s explore the right approach</option><option value="Modernisation">Modernise a system</option><option value="Product delivery">Deliver product features</option><option value="Run and maintain">Keep software running</option><option value="Free System Audit">Start with a free audit</option></select></div>
           <div class="form-grid">
             <div class="form-field"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name" maxlength="120" placeholder="Full name"></div>
             <div class="form-field"><label for="email">Work email</label><input id="email" name="email" type="email" required autocomplete="email" maxlength="254" placeholder="you@company.com"></div>
@@ -369,7 +331,7 @@
   <footer class="site-footer">
     <div class="wrap footer-main">
       <div><a class="brand" href="/" aria-label="Intervencija home"><span class="square-mark" aria-hidden="true"></span><span>Intervencija</span></a><p>Software delivered by AI agent teams and signed by an accountable architect.</p><p class="footer-location">Vilnius, Lithuania · Working internationally</p></div>
-      <nav aria-label="Services"><p class="eyebrow">Services</p><a href="/#engagements">Engagements</a><a href="/system-audits/">System Audits</a><a href="/critical-builds/">Critical Builds</a><a href="/fractional-architecture/">Fractional Architecture</a></nav>
+      <nav aria-label="Services"><p class="eyebrow">Services</p><a href="/#engagements">Engagements</a><a href="/system-audits/">Free System Audit</a></nav>
       <nav aria-label="Company"><p class="eyebrow">Company</p><a href="/#about">About</a><a href="/#how">How it works</a><a href="/#enterprise">Enterprise</a><a href="/insights/">Insights</a></nav>
       <div class="footer-contact"><p class="eyebrow">Contact</p><a class="text-link" href="mailto:hello@intervencija.eu" data-track="footer_email">hello@intervencija.eu <span aria-hidden="true">↗</span></a><a class="text-link" href="https://www.linkedin.com/company/intervencija" data-track="footer_linkedin">LinkedIn <span aria-hidden="true">↗</span></a><p>Tell us what you need to achieve.<br>A few lines are enough to start.</p></div>
     </div>

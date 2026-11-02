@@ -9,12 +9,13 @@ Listen for `intervencija:measurement` on `window`; the event name is in `event.d
 | header_contact / mobile_header_contact | Header project enquiry link |
 | hero_contact | Homepage primary CTA |
 | hero_how | Homepage "See how it works" link |
-| engagements_system_audits | Homepage engagements note linking to System Audits |
+| hero_free_audit | Hero note linking to the free System Audit |
+| engagements_system_audits | Homepage engagements note linking to the free System Audit |
 | sample_report | Sample monthly report PDF download from the homepage hero |
-| system-audits_contact / critical-builds_contact / fractional-architecture_contact | Service page primary CTA |
-| insight_replatform / insight_production_ready / insight_fractional / insights_index | Homepage article links |
-| related_replatform / related_production_ready / related_fractional | Service page links to the matching article |
-| article_replatform_contact / article_production_ready_contact / article_fractional_contact | Article CTA to the matching service enquiry |
+| system-audits_contact | System Audit page primary CTA |
+| insight_replatform / insight_production_ready / insights_index | Homepage article links |
+| related_replatform | Service page links to the matching article |
+| article_replatform_contact / article_production_ready_contact | Article CTA to the matching enquiry |
 | insights_contact | Insights index CTA |
 | direct_email / footer_email / faq_email / supplier_email | Direct email alternative |
 | about_contact | About section "Talk to us" CTA |

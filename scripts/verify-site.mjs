@@ -6,20 +6,15 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const pages = [
   'index.html',
   'system-audits/index.html',
-  'critical-builds/index.html',
-  'fractional-architecture/index.html',
   'insights/index.html',
   'insights/before-you-replatform/index.html',
   'insights/production-ready-critical-software/index.html',
-  'insights/when-a-fractional-architect-makes-sense/index.html',
   'privacy.html'
 ];
 const publicPages = pages.filter((page) => page !== 'privacy.html');
 const formPages = [
   'index.html',
-  'system-audits/index.html',
-  'critical-builds/index.html',
-  'fractional-architecture/index.html'
+  'system-audits/index.html'
 ];
 const siteOrigin = 'https://intervencija.eu';
 const errors = [];
@@ -160,9 +155,7 @@ for (const page of formPages) {
 }
 
 for (const [page, interest] of [
-  ['system-audits/index.html', 'System Audits'],
-  ['critical-builds/index.html', 'Critical Builds'],
-  ['fractional-architecture/index.html', 'Fractional Architecture']
+  ['system-audits/index.html', 'Free System Audit']
 ]) {
   if (!documents.get(page)?.includes(`name="interest" value="${interest}"`)) {
     fail(`${page}: the enquiry does not identify its service`);
@@ -215,7 +208,6 @@ for (const asset of [
 const statement = readFileSync(resolve(root, 'scripts/capability/statement.html'), 'utf8');
 if (emDash.test(statement)) fail('scripts/capability/statement.html: contains an em dash');
 if (thirdPartyLoads(statement).length) fail('scripts/capability/statement.html: loads a third-party resource');
-if (!statement.includes('Track record of Intervencija’s leadership')) fail('scripts/capability/statement.html: experience is not attributed to leadership');
 
 const sampleReport = readFileSync(resolve(root, 'scripts/report/sample-report.html'), 'utf8');
 if (emDash.test(sampleReport)) fail('scripts/report/sample-report.html: contains an em dash');
@@ -225,6 +217,14 @@ if (!sampleReport.includes('are fictional')) fail('scripts/report/sample-report.
 const theme = readFileSync(resolve(root, 'assets/theme.css'), 'utf8');
 if (!/\.reveal\s*\{\s*opacity:\s*1;/m.test(theme)) fail('assets/theme.css: reveal content is not visible by default');
 if (!theme.includes('.js .reveal')) fail('assets/theme.css: progressive reveal enhancement is missing');
+
+// Only organisations that contracted Intervencija, MB may be named, and the founder's employer never.
+const publicSources = [...documents.entries(), ['404.html', notFoundPage], ['scripts/capability/statement.html', statement], ['scripts/report/sample-report.html', sampleReport]];
+for (const [name, html] of publicSources) {
+  for (const banned of ['Rabobank', 'SNS Bank', 'Sendcloud', 'Helmes', 'Shift4']) {
+    if (html.toLowerCase().includes(banned.toLowerCase())) fail(`${name}: names ${banned}, which must not appear publicly`);
+  }
+}
 
 if (errors.length) {
   console.error(`Site verification failed with ${errors.length} issue(s):`);
