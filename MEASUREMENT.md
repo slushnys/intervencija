@@ -8,7 +8,7 @@ Listen for `intervencija:measurement` on `window`; the event name is in `event.d
 |---|---|
 | header_contact / mobile_header_contact | Header project enquiry link |
 | hero_contact | Homepage primary CTA |
-| hero_how | Homepage "See how it works" link |
+| hero_book_call / contact_book_call / audit_book_call | Cal.com booking buttons (hero, homepage contact, System Audit contact) |
 | hero_free_audit | Hero note linking to the free System Audit |
 | engagements_system_audits | Homepage engagements note linking to the free System Audit |
 | sample_report | Sample monthly report PDF download from the homepage hero |
