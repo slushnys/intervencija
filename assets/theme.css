@@ -123,6 +123,7 @@ p { text-wrap: pretty; }
 .logo-grid .logo-with-name { gap: 10px; }
 .logo-grid .logo-with-name img { max-width: 32px; max-height: 32px; }
 .logo-with-name span { font-size: .9375rem; font-weight: 600; letter-spacing: -.025em; }
+.logo-grid .experience-caption { justify-content: start; font-size: .75rem; color: var(--muted); line-height: 1.6; }
 
 /* Situations (dark) */
 .dark-section { background: var(--ink); color: var(--paper); }

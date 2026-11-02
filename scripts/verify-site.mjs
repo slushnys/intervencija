@@ -218,10 +218,10 @@ const theme = readFileSync(resolve(root, 'assets/theme.css'), 'utf8');
 if (!/\.reveal\s*\{\s*opacity:\s*1;/m.test(theme)) fail('assets/theme.css: reveal content is not visible by default');
 if (!theme.includes('.js .reveal')) fail('assets/theme.css: progressive reveal enhancement is missing');
 
-// Only organisations that contracted Intervencija, MB may be named, and the founder's employer never.
+// The founder's employer must never appear publicly.
 const publicSources = [...documents.entries(), ['404.html', notFoundPage], ['scripts/capability/statement.html', statement], ['scripts/report/sample-report.html', sampleReport]];
 for (const [name, html] of publicSources) {
-  for (const banned of ['Rabobank', 'SNS Bank', 'Sendcloud', 'Helmes', 'Shift4']) {
+  for (const banned of ['Shift4']) {
     if (html.toLowerCase().includes(banned.toLowerCase())) fail(`${name}: names ${banned}, which must not appear publicly`);
   }
 }

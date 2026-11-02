@@ -48,8 +48,12 @@ const assetFiles = [
   'assets/og/insights.png',
   'assets/og/insight-before-you-replatform.png',
   'assets/og/insight-production-ready-critical-software.png',
+  'assets/logos/sendcloud.svg',
   'assets/logos/new10.svg',
   'assets/logos/abn-amro.svg',
+  'assets/logos/rabobank.png',
+  'assets/logos/sns.svg',
+  'assets/logos/helmes.svg',
   'assets/logos/costa-coffee.svg',
   'assets/logos/coca-cola.svg',
   'assets/logos/vml.svg'
